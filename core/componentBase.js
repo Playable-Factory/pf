@@ -10,13 +10,25 @@ class ComponentBase {
 	_initPublicVariables() {
 		if (!this._configVarData) return;
 
+		console.log(this._className, this._configVarData);
 		for (let varData of this._configVarData) {
-			if (this[varData.var_name] !== undefined || this[varData.var_name] !== null) {
+			if (
+				this[varData.var_name] !== undefined ||
+				this[varData.var_name] !== null
+			) {
 				if (this._isUUID(varData.var_value)) {
 					let uuid = varData.var_value;
 					let obj = this._sceneManager.getObjectByUUID(uuid);
-					if (obj && obj.entity) {
-						this[varData.var_name] = obj.entity.getComponent(varData.var_type);
+					if (obj) {
+						if (obj.entity) {
+							let target = obj.entity.getComponent(varData.var_type);
+							if (!target) {
+								target = obj.entity.mainObj;
+							}
+							this[varData.var_name] = target;
+						} else {
+							this[varData.var_name] = obj;
+						}
 					}
 				} else {
 					this[varData.var_name] = varData.var_value;
@@ -26,7 +38,8 @@ class ComponentBase {
 	}
 
 	_isUUID(str) {
-		const uuidRegex = /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/;
+		const uuidRegex =
+			/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/;
 		return uuidRegex.test(str);
 	}
 
