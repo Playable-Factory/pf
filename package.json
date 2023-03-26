@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "description": "pf",
   "main": "index.js",
+  "dependencies": {
+    "pixi-spine": "^3.1.0",
+    "pixi-viewport": "^4.37.0",
+    "pixi.js-legacy": "6.5.8",
+    "three": "^0.148.0",
+    "three.quarks": "^0.8.6"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
