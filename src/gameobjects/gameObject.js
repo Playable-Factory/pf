@@ -22,6 +22,10 @@ class GameObject {
         this.pixiObj.removeChild(child.pixiObj);
     }
 
+    remove(){
+        this.pixiObj.parent.remove(this.pixiObj);
+    }
+
     get parent(){
         return this.pixiObj.parent;
     }
@@ -69,7 +73,8 @@ class GameObject {
 	}
 
     set scale(value){
-        this.pixiObj.scale.set(value, value);
+        this.pixiObj.scale.x = value;
+        this.pixiObj.scale.y = value;
     }
 
     get scale(){

@@ -1,12 +1,12 @@
 import GameObjectFactory from './gameobjects/factory';
 
 
-class gs2d {
+class gx {
 
     // static add = new GameObjectFactory();
     
     static init(pixiScene) {
-        gs2d.scene = pixiScene;
+        gx.scene = pixiScene;
 
         this.add = new GameObjectFactory(pixiScene);
     }
@@ -15,12 +15,12 @@ class gs2d {
 
 }
 
-// var gs2d = {
+// var gx = {
 //     init: (pixiScene) => {
-//         gs2d.scene = pixiScene;
+//         gx.scene = pixiScene;
         
 //     },
 //     add: new GameObjectFactory(),
 // }
 
-export default gs2d;
+export default gx;
