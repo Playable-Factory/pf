@@ -10,8 +10,12 @@ class ComponentBase {
 	_initPublicVariables() {
 		if (!this._configVarData) return;
 
+		console.log(this._className, this._configVarData);
 		for (let varData of this._configVarData) {
-			if (this[varData.var_name] !== undefined || this[varData.var_name] !== null) {
+			if (
+				this[varData.var_name] !== undefined ||
+				this[varData.var_name] !== null
+			) {
 				if (this._isUUID(varData.var_value)) {
 					let uuid = varData.var_value;
 					let obj = this._sceneManager.getObjectByUUID(uuid);
@@ -26,7 +30,11 @@ class ComponentBase {
 							this[varData.var_name] = obj;
 						}
 					}
-				} else {
+				} 
+				else if(varData.var_type == 'params'){
+					this[varData.var_name] = app.data[varData.var_value];
+				}
+				else {
 					this[varData.var_name] = varData.var_value;
 				}
 			}
