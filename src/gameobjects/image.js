@@ -1,30 +1,30 @@
 // import { AnimatedSprite, Graphics, Loader, TextStyle, Text, Texture, utils, NineSlicePlane } from "pixi.js-legacy";
 import { Sprite, utils } from "pixi.js-legacy";
 
-import GameObject from "pf.js/src/2d/gameobjects/gameObject";
-
-
-const TextureCache = utils.TextureCache;
+import GameObject from "./gameObject";
+import pfGlobals from "pf.js/src/pfGlobals";
 
 class Image extends GameObject {
 	constructor(x, y, texture) {
 		let pixiObj = new Sprite.from(texture);
 		super(pixiObj, x, y);
 
-        pixiObj.gameObject = this;
+		pixiObj.gameObject = this;
 
-		if(!TextureCache[texture]){
+		if (!pfGlobals.TextureCache[texture]) {
 			console.warn("Texture not found: " + texture);
 		}
 	}
 
 	//TEXTURE
 	setTexture(texture) {
-		if(!TextureCache[texture]){
+		if (!pfGlobals.TextureCache[texture]) {
 			console.warn("Texture not found: " + texture);
 			return;
 		}
-		this.pixiObj.texture = TextureCache[texture];
+		this.pixiObj.texture = pfGlobals.TextureCache[texture];
+		this.baseWidth = this.pixiObj.texture.orig.width;
+		this.baseHeight = this.pixiObj.texture.orig.height;
 	}
 	set texture(texture) {
 		this.setTexture(texture);
@@ -33,40 +33,37 @@ class Image extends GameObject {
 		return this.pixiObj.texture;
 	}
 
-	//DIMENSIONS - WIDTH
-	set width(width) {
-		this.pixiObj.width = width;
-	}
-	get width() {
-		return this.pixiObj.texture.orig.width;
-	}
+	// //DIMENSIONS - WIDTH
+	// set width(width) {
+	// 	this.pixiObj.width = width;
+	// }
+	// get width() {
+	// 	return this.pixiObj.texture.orig.width;
+	// }
 
-	set displayWidth(width) {
-		this.pixiObj.width = width;
-	}
+	// set displayWidth(width) {
+	// 	this.pixiObj.width = width;
+	// }
 
-	get displayWidth() {
-		return this.pixiObj.width;
-	}
+	// get displayWidth() {
+	// 	return this.pixiObj.width;
+	// }
 
-	//DIMENSIONS - HEIGHT
-	set height(height) {
-		this.pixiObj.height = height;
-	}
-	get height() {
-		return this.pixiObj.texture.orig.height;
-	}
+	// //DIMENSIONS - HEIGHT
+	// set height(height) {
+	// 	this.pixiObj.height = height;
+	// }
+	// get height() {
+	// 	return this.pixiObj.texture.orig.height;
+	// }
 
-	set displayHeight(height) {
-		this.pixiObj.height = height;
-	}
+	// set displayHeight(height) {
+	// 	this.pixiObj.height = height;
+	// }
 
-	get displayHeight() {
-		return this.pixiObj.height;
-	}
-	
-	
+	// get displayHeight() {
+	// 	return this.pixiObj.height;
+	// }
 }
-
 
 export default Image;
