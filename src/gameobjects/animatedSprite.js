@@ -34,15 +34,15 @@ class ASprite extends GameObject {
 	}
 
 	//TIMESCALE
-	set timescale(value) {
-		this.pixiObj.timeScale = value;
+	set animationSpeed(value) {
+		this.pixiObj.animationSpeed = value;
 	}
-	get timescale() {
-		return this.pixiObj.timeScale;
+	get animationSpeed() {
+		return this.pixiObj.animationSpeed;
 	}
 
-	setTimeScale(value) {
-		this.pixiObj.timeScale = value;
+	setAnimationSpeed(value) {
+		this.pixiObj.animationSpeed = value;
 	}
 }
 
