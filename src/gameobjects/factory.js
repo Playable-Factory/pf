@@ -1,5 +1,7 @@
+import Container from "./container";
 import ASprite from "./animatedSprite";
 import Image from "./image";
+import Text from "./text";
 
 class GameObjectFactory {
 	constructor(scene) {
@@ -17,6 +19,18 @@ class GameObjectFactory {
 		this.scene.addChild(aSprite.pixiObj);
 		return aSprite;
 		// return new Sprite(this.scene, x, y, texture);
+	}
+
+	container(x, y) {
+		let container = new Container(x, y);
+		this.scene.addChild(container.pixiObj);
+		return container;
+	}
+
+	text(x, y, text = "", style = {}) {
+		let textObj = new Text(x, y, text, style);
+		this.scene.addChild(textObj.pixiObj);
+		return textObj;
 	}
 }
 
