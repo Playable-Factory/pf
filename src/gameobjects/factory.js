@@ -7,8 +7,13 @@ class GameObjectFactory {
 	constructor(scene) {
 		this.scene = scene;
 	}
-
+    
 	sprite(x, y, texture) {
+		if (isNaN(x)) {
+			texture = x;
+			x = 0;
+			y = 0;
+		}
 		let img = new Image(x, y, texture);
 		this.scene.addChild(img.pixiObj);
 		return img;

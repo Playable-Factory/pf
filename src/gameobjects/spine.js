@@ -18,14 +18,16 @@ class Spine extends GameObject {
 			this.play(animName, loop);
 		}
 	}
-
+    
 	setSkinByName(skinName) {
 		this.pixiObj.skeleton.setSkinByName(skinName);
         this.baseWidth = this.pixiObj.width;
         this.baseHeight = this.pixiObj.height;
+        return this;
 	}
 	play(animName, loop) {
 		this.pixiObj.state.setAnimation(0, animName, loop);
+        return this;
 	}
 
     set timescale(value) {
@@ -37,6 +39,7 @@ class Spine extends GameObject {
 
     setTimeScale(value) {
         this.pixiObj.state.timeScale = value;
+        return this;
     }
 }
 
