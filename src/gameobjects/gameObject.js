@@ -1,3 +1,5 @@
+import pfGlobals from "pf.js/src/pfGlobals";
+
 class GameObject {
 	constructor(pixiObj, x = 0, y = 0) {
 		this.pixiObj = pixiObj;
@@ -297,6 +299,63 @@ class GameObject {
 
 	get displayHeight() {
 		return this.pixiObj.height;
+	}
+
+	///CLONE
+	clone() {
+		let sceneController = pfGlobals.pixiApp.sceneController;
+
+		let clone = (obj) => {
+			if (obj.isEditorObject) {
+				let newData = JSON.parse(JSON.stringify(obj.data));
+				delete newData.parentUUID;
+				newData.uuid = uuidv4();
+				let newObj = sceneController._addObject(newData);
+				return newObj;
+			} else {
+				let newObj;
+				if (obj.clone) {
+					newObj = obj.clone();
+				} else {
+					if (obj.isSprite) {
+						newObj = new Sprite.from(obj.texture);
+					} else {
+						console.warn("Object cannot be cloned, ask Omer to add support for it.");
+					}
+				}
+
+				if (newObj) {
+					newObj.x = obj.x;
+					newObj.y = obj.y;
+					newObj.scale.x = obj.scale.x;
+					newObj.scale.y = obj.scale.y;
+					newObj.rotation = obj.rotation;
+					newObj.alpha = obj.alpha;
+					newObj.tint = obj.tint;
+					newObj.blendMode = obj.blendMode;
+					newObj.visible = obj.visible;
+
+					return newObj;
+				}
+			}
+		};
+
+		let traverse = (obj, parent) => {
+			if (obj.children) {
+				for (let child of obj.children) {
+					let newObj = clone(child);
+					if (newObj) {
+						parent.addChild(newObj);
+						traverse(child, newObj);
+					}
+				}
+			}
+		};
+
+		let returnObj = clone(this);
+		traverse(this, returnObj);
+
+		return returnObj;
 	}
 
 	//RESIZE
