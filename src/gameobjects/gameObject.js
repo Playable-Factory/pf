@@ -31,6 +31,10 @@ class GameObject {
 		this.pixiObj.parent.remove(this.pixiObj);
 	}
 
+	get children() {
+		return this.pixiObj.children;
+	}
+
 	get parent() {
 		return this.pixiObj.parent;
 	}
@@ -111,6 +115,15 @@ class GameObject {
 		return this.pixiObj.skew.x;
 	}
 
+	//ANGLE
+	set angle(value) {
+		this.pixiObj.angle = value;
+	}
+
+	get angle() {
+		return this.pixiObj.angle;
+	}
+
 	//HELPER FUNCTIONS
 	setAlpha(value) {
 		this.pixiObj.alpha = value;
@@ -148,7 +161,11 @@ class GameObject {
 
 	setRotation(value) {
 		this.pixiObj.rotation = value;
+		return this;
+	}
 
+	setAngle(value) {
+		this.pixiObj.angle = value;
 		return this;
 	}
 

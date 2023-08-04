@@ -2,12 +2,13 @@ import Container from "./container";
 import ASprite from "./animatedSprite";
 import Image from "./image";
 import Text from "./text";
+import PfSpine from "./spine";
 
 class GameObjectFactory {
 	constructor(scene) {
 		this.scene = scene;
 	}
-    /** @type {Image} @return {Image}*/
+	/** @type {Image} @return {Image}*/
 	sprite(x, y, texture) {
 		if (isNaN(x)) {
 			texture = x;
@@ -16,7 +17,7 @@ class GameObjectFactory {
 		}
 		let img = new Image(x, y, texture);
 		this.scene.addChild(img.pixiObj);
-        /** @type {Image} */
+		/** @type {Image} */
 		return img;
 	}
 
@@ -37,6 +38,12 @@ class GameObjectFactory {
 		let textObj = new Text(x, y, text, style);
 		this.scene.addChild(textObj.pixiObj);
 		return textObj;
+	}
+
+	spine(x, y, spineName, skinName, animName, loop = false) {
+		let spineObj = new PfSpine(x, y, spineName, skinName, animName, loop);
+		this.scene.addChild(spineObj.pixiObj);
+		return spineObj;
 	}
 }
 

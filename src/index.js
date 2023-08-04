@@ -6,6 +6,7 @@ import ASprite from "./gameobjects/animatedSprite";
 import Container from "./gameobjects/container";
 import Text from "./gameobjects/text";
 import GameObject from "./gameobjects/gameObject";
+import Spine from "./gameobjects/spine";
 
 class gx {
 	// static add = new GameObjectFactory();
