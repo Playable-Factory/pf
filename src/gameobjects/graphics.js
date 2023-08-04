@@ -50,4 +50,4 @@ class Graphics extends GameObject {
 
 }
 
-export default Text;
+export default Graphics;
