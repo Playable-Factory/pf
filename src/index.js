@@ -13,7 +13,7 @@ import NineSlice from "./gameobjects/nineslice";
 class gx {
 	// static add = new GameObjectFactory();
 
-	static init(pixiScene, TextureCache, Resources) {
+	static init(pixiScene, pixiApp, TextureCache, Resources) {
 		gx.scene = pixiScene;
 
 		let allAnims = {};
@@ -27,6 +27,7 @@ class gx {
 		pfGlobals.allAnims = allAnims;
 		pfGlobals.TextureCache = TextureCache;
 		pfGlobals.Resources = Resources;
+		pfGlobals.pixiApp = pixiApp;
 
 		this.add = new GameObjectFactory(pixiScene);
 	}

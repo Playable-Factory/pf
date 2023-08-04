@@ -1,7 +1,8 @@
 var pfGlobals = {
 	allAnims: [],
-    TextureCache: {},
-    Resources: {},
+	TextureCache: {},
+	Resources: {},
+	pixiApp: null,
 };
 
 export default pfGlobals;

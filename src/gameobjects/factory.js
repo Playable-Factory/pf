@@ -5,6 +5,7 @@ import Text from "./text";
 import Graphics from "pf.js/src/gameobjects/graphics";
 import PfSpine from "./spine";
 import NineSlice from "./nineslice";
+import ParticleEmitter from "./particleEmitter";
 
 class GameObjectFactory {
 	constructor(scene) {
@@ -58,6 +59,12 @@ class GameObjectFactory {
 		let nineslice = new NineSlice(x, y, texture, width, height, left, right, top, bottom);
 		this.scene.addChild(nineslice.pixiObj);
 		return nineslice;
+	}
+
+	particleEmitter(x, y, particleData) {
+		let emitter = new ParticleEmitter(x, y, particleData);
+		this.scene.addChild(emitter.pixiObj);
+		return emitter;
 	}
 }
 
