@@ -8,6 +8,7 @@ import Text from "./gameobjects/text";
 import GameObject from "./gameobjects/gameObject";
 import Spine from "./gameobjects/spine";
 import Graphics from "./gameobjects/graphics";
+import NineSlice from "./gameobjects/nineslice";
 
 class gx {
 	// static add = new GameObjectFactory();

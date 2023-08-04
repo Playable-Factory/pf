@@ -4,6 +4,7 @@ import Image from "./image";
 import Text from "./text";
 import Graphics from "pf.js/src/gameobjects/graphics";
 import PfSpine from "./spine";
+import NineSlice from "./nineslice";
 
 class GameObjectFactory {
 	constructor(scene) {
@@ -51,6 +52,12 @@ class GameObjectFactory {
 		let graphics = new Graphics(x, y);
 		this.scene.addChild(graphics.pixiObj);
 		return graphics;
+	}
+
+	nineslice(x, y, texture, width, height, left, right, top, bottom) {
+		let nineslice = new NineSlice(x, y, texture, width, height, left, right, top, bottom);
+		this.scene.addChild(nineslice.pixiObj);
+		return nineslice;
 	}
 }
 
