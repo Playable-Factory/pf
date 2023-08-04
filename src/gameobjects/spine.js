@@ -16,7 +16,6 @@ class PfSpine extends GameObject {
 
 		this.setSkinByName(skinName || "default");
 
-		console.log(loop);
 		if (animName) {
 			this.play(animName, loop);
 		}
@@ -29,7 +28,6 @@ class PfSpine extends GameObject {
 		return this;
 	}
 	play(animName, loop) {
-		console.log(loop);
 		this.pixiObj.state.setAnimation(0, animName, loop);
 		return this;
 	}

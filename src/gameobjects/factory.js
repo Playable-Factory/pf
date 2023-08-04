@@ -2,6 +2,7 @@ import Container from "./container";
 import ASprite from "./animatedSprite";
 import Image from "./image";
 import Text from "./text";
+import Graphics from "pf.js/src/gameobjects/graphics";
 import PfSpine from "./spine";
 
 class GameObjectFactory {
@@ -44,6 +45,12 @@ class GameObjectFactory {
 		let spineObj = new PfSpine(x, y, spineName, skinName, animName, loop);
 		this.scene.addChild(spineObj.pixiObj);
 		return spineObj;
+	}
+
+	graphics(x, y) {
+		let graphics = new Graphics(x, y);
+		this.scene.addChild(graphics.pixiObj);
+		return graphics;
 	}
 }
 

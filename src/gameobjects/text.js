@@ -9,38 +9,44 @@ class Text extends GameObject {
 		let pixiObj = new PIXI.Text(text, style);
 		super(pixiObj, x, y);
 		pixiObj.gameObject = this;
-        
 	}
-    ///SET TEXT
-    set text(text) {
-        this.pixiObj.text = text;
-    }
+	///SET TEXT
+	set text(text) {
+		this.pixiObj.text = text;
+	}
 
-    get text() {
-        return this.pixiObj.text;
-    }
+	get text() {
+		return this.pixiObj.text;
+	}
 
-    setText(text) {
-        this.pixiObj.text = text;
-    }
+	setText(text) {
+		this.pixiObj.text = text;
+	}
 
-    //SET STYLE
-    set style(style) {
-        this.pixiObj.style = style;
-    }
+	//SET STYLE
+	set style(style) {
+		this.pixiObj.style = style;
+	}
 
-    get style() {
-        return this.pixiObj.style;
-    }
+	get style() {
+		return this.pixiObj.style;
+	}
 
-    set color(color) {
-        this.pixiObj.style.fill = color;
-    }
+	set color(color) {
+		this.pixiObj.style.fill = color;
+	}
 
-    get color() {
-        return this.pixiObj.style.fill;
-    }
-    
+	get color() {
+		return this.pixiObj.style.fill;
+	}
+
+	set resolution(value) {
+		this.pixiObj.resolution = value;
+	}
+
+	get resolution() {
+		return this.pixiObj.resolution;
+	}
 }
 
 export default Text;

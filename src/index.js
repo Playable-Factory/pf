@@ -7,6 +7,7 @@ import Container from "./gameobjects/container";
 import Text from "./gameobjects/text";
 import GameObject from "./gameobjects/gameObject";
 import Spine from "./gameobjects/spine";
+import Graphics from "./gameobjects/graphics";
 
 class gx {
 	// static add = new GameObjectFactory();
