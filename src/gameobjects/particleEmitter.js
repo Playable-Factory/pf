@@ -1,12 +1,14 @@
 // import { AnimatedSprite, Graphics, Loader, TextStyle, Text, Texture, utils, NineSlicePlane } from "pixi.js-legacy";
 import { NineSlicePlane, Texture } from "pixi.js-legacy";
+import * as Particles from "@pixi/particle-emitter";
 
 import GameObject from "pf.js/src/gameobjects/gameObject";
 import pfGlobals from "pf.js/src/pfGlobals";
 
 class ParticleEmitter extends GameObject {
 	constructor(x, y, particleData) {
-		let textureBehaviour = particleData.find((a) => a.type == "textureSingle");
+		let enabledBehaviors = particleData.behaviors.filter((a) => a.config.enabled);
+		let textureBehaviour = enabledBehaviors.find((a) => a.type == "textureSingle");
 
 		if (textureBehaviour.config.textureData) {
 			textureBehaviour.config.texture = pfGlobals.TextureCache[textureBehaviour.config.textureData.uuid];
@@ -15,6 +17,7 @@ class ParticleEmitter extends GameObject {
 		}
 
 		let pixiObj = new PIXI.Container();
+		super(pixiObj, x, y);
 
 		let behaviors = particleData.behaviors;
 		let filteredBehaviors = behaviors.filter((a) => a.config.enabled);
@@ -51,10 +54,6 @@ class ParticleEmitter extends GameObject {
 		});
 
 		this.emitter = emitter;
-		emitter.spawnPos.x = data.width * 0.5;
-		emitter.spawnPos.y = data.height * 0.5;
-
-		emitter.emit = data.playAtStart;
 
 		pfGlobals.pixiApp.ticker.add((delta) => {
 			const msec = delta / PIXI.settings.TARGET_FPMS;
@@ -62,9 +61,23 @@ class ParticleEmitter extends GameObject {
 			emitter.update(sec);
 		});
 
-		super(pixiObj, x, y);
-
 		pixiObj.gameObject = this;
+	}
+
+	enable() {
+		this.emitter.emit = true;
+	}
+	disable() {
+		this.emitter.emit = false;
+	}
+
+	setEmit(value) {
+		this.emitter.emit = value;
+	}
+
+	setSpawnPos(x, y) {
+		this.emitter.spawnPos.x = x;
+		this.emitter.spawnPos.y = y;
 	}
 }
 
