@@ -124,6 +124,22 @@ class GameObject {
 		return this.pixiObj.angle;
 	}
 
+	//SORTABLE CHILDREN
+	set sortableChildren(value) {
+		this.pixiObj.sortableChildren = value;
+	}
+	get sortableChildren() {
+		return this.pixiObj.sortableChildren;
+	}
+
+	//ZINDEX
+	set zIndex(value) {
+		this.pixiObj.zIndex = value;
+	}
+	get zIndex() {
+		return this.pixiObj.zIndex;
+	}
+
 	//HELPER FUNCTIONS
 	setAlpha(value) {
 		this.pixiObj.alpha = value;
@@ -261,6 +277,20 @@ class GameObject {
 		return this.pixiObj.height;
 	}
 
+	//RESIZE
+	set onResize(callback) {
+		this.pixiObj.onResizeCallback = callback;
+	}
+	get onResize() {
+		return this.pixiObj.onResizeCallback;
+	}
+	set onResizeCallback(callback) {
+		this.onResize = callback;
+	}
+	get onResizeCallback() {
+		return this.onResize;
+	}
+
 	///TO SUPPORT PIXI CODES
 	scale = {
 		set: (x, y) => {
@@ -286,6 +316,15 @@ class GameObject {
 		},
 		get: () => {
 			return this.pixiObj.pivot;
+		},
+	};
+
+	position = {
+		set: (x, y) => {
+			this.setPosition(x, y);
+		},
+		get: () => {
+			return { x: this.pixiObj.x, y: this.pixiObj.y };
 		},
 	};
 }
