@@ -7,7 +7,7 @@ class GameObjectFactory {
 	constructor(scene) {
 		this.scene = scene;
 	}
-    
+    /** @type {Image} @return {Image}*/
 	sprite(x, y, texture) {
 		if (isNaN(x)) {
 			texture = x;
@@ -16,11 +16,12 @@ class GameObjectFactory {
 		}
 		let img = new Image(x, y, texture);
 		this.scene.addChild(img.pixiObj);
+        /** @type {Image} */
 		return img;
 	}
 
-	animatedSprite(x, y, animKey) {
-		let aSprite = new ASprite(x, y, animKey);
+	animatedSprite(x, y, animKey, autoplay = true, loop = false) {
+		let aSprite = new ASprite(x, y, animKey, autoplay, loop);
 		this.scene.addChild(aSprite.pixiObj);
 		return aSprite;
 		// return new Sprite(this.scene, x, y, texture);

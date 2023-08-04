@@ -162,6 +162,10 @@ class GameObject {
 		return this;
 	}
 
+	setAnchor(x, y) {
+		this.setOrigin(x, y);
+	}
+
 	destroy() {
 		this.pixiObj.destroy();
 	}
@@ -208,7 +212,7 @@ class GameObject {
 		this.pixiObj.x = value - this.pixiObj.width * (1 - temp.x);
 	}
 
-    //DIMENSIONS - WIDTH
+	//DIMENSIONS - WIDTH
 	set width(width) {
 		this.pixiObj.width = width;
 	}
@@ -239,6 +243,34 @@ class GameObject {
 	get displayHeight() {
 		return this.pixiObj.height;
 	}
+
+	///TO SUPPORT PIXI CODES
+	scale = {
+		set: (x, y) => {
+			this.setScale(x, y);
+		},
+		get: () => {
+			return this.pixiObj.scale.x;
+		},
+	};
+
+	anchor = {
+		set: (x, y) => {
+			this.setOrigin(x, y);
+		},
+		get: () => {
+			return this.pixiObj.anchor;
+		},
+	};
+
+	pivot = {
+		set: (x, y) => {
+			this.setOrigin(x, y);
+		},
+		get: () => {
+			return this.pixiObj.pivot;
+		},
+	};
 }
 
 export default GameObject;

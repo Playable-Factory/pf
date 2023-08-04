@@ -1,6 +1,11 @@
 import pfGlobals from "pf.js/src/pfGlobals";
 import GameObjectFactory from "./gameobjects/factory";
 
+import Image from "./gameobjects/image";
+import ASprite from "./gameobjects/animatedSprite";
+import Container from "./gameobjects/container";
+import Text from "./gameobjects/text";
+import GameObject from "./gameobjects/gameObject";
 
 class gx {
 	// static add = new GameObjectFactory();
@@ -16,9 +21,9 @@ class gx {
 			}
 		}
 
-        pfGlobals.allAnims = allAnims;
-        pfGlobals.TextureCache = TextureCache;
-        pfGlobals.Resources = Resources;
+		pfGlobals.allAnims = allAnims;
+		pfGlobals.TextureCache = TextureCache;
+		pfGlobals.Resources = Resources;
 
 		this.add = new GameObjectFactory(pixiScene);
 	}
