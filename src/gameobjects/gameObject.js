@@ -140,6 +140,28 @@ class GameObject {
 		return this.pixiObj.zIndex;
 	}
 
+	//ORIGIN
+	set origin(value) {
+		this.setOrigin(value);
+	}
+	get origin() {
+		return this.pixiObj.anchor || this.pixiObj.pivot;
+	}
+
+	set originX(value) {
+		this.pixiObj.anchor ? (this.pixiObj.anchor.x = value) : (this.pixiObj.pivot.x = value);
+	}
+	get originX() {
+		return this.pixiObj.anchor ? this.pixiObj.anchor.x : this.pixiObj.pivot.x;
+	}
+
+	set originY(value) {
+		this.pixiObj.anchor ? (this.pixiObj.anchor.y = value) : (this.pixiObj.pivot.y = value);
+	}
+	get originY() {
+		return this.pixiObj.anchor ? this.pixiObj.anchor.y : this.pixiObj.pivot.y;
+	}
+
 	//HELPER FUNCTIONS
 	setAlpha(value) {
 		this.pixiObj.alpha = value;
@@ -325,6 +347,15 @@ class GameObject {
 		},
 		get: () => {
 			return { x: this.pixiObj.x, y: this.pixiObj.y };
+		},
+	};
+
+	skew = {
+		set: (x, y) => {
+			this.setSkew(x, y);
+		},
+		get: () => {
+			return { x: this.pixiObj.skew.x, y: this.pixiObj.skew.y };
 		},
 	};
 }
