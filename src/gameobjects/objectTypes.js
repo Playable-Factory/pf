@@ -7,5 +7,5 @@ export default {
 	GRAPHICS: "graphics",
 	PARTICLE_EMITTER: "particleEmitter",
 	SPINE: "spine",
-	NINESLICE: "nineSlice",
+	NINESLICE: "nineslice",
 };

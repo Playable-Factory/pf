@@ -10,6 +10,7 @@ class Image extends GameObject {
 		let useTexture = texture ? Texture.from(texture) : Texture.WHITE;
 		let pixiObj = new Sprite(useTexture);
 		super(pixiObj, x, y);
+		this.textureName = texture;
 
 		pixiObj.gameObject = this;
 
@@ -29,12 +30,21 @@ class Image extends GameObject {
 		this.pixiObj.texture = pfGlobals.TextureCache[texture];
 		this.baseWidth = this.pixiObj.texture.orig.width;
 		this.baseHeight = this.pixiObj.texture.orig.height;
+
+		this.textureName = texture;
 	}
 	set texture(texture) {
 		this.setTexture(texture);
 	}
 	get texture() {
 		return this.pixiObj.texture;
+	}
+
+	set textureName(textureName) {
+		this._textureName = textureName;
+	}
+	get textureName() {
+		return this._textureName;
 	}
 
 	// //DIMENSIONS - WIDTH

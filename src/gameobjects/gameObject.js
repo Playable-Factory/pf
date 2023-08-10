@@ -1,3 +1,5 @@
+import gx from "pf.js/src";
+import objectTypes from "pf.js/src/gameobjects/objectTypes";
 import pfGlobals from "pf.js/src/pfGlobals";
 
 class GameObject {
@@ -301,47 +303,53 @@ class GameObject {
 		return this.pixiObj.height;
 	}
 
-    cloneInternal(){
-
-    }
+	cloneInternal() {}
 
 	///CLONE
 	clone() {
 		let sceneController = pfGlobals.pixiApp.sceneController;
 
 		let clone = (obj) => {
-			if (obj.isEditorObject) {
-				let newData = JSON.parse(JSON.stringify(obj.data));
-				delete newData.parentUUID;
-				newData.uuid = uuidv4();
-				let newObj = sceneController._addObject(newData);
-				return newObj;
-			} else {
-				let newObj = obj.cloneInternal();
-				// if (obj.clone) {
-				// 	newObj = obj.clone();
-				// } else {
-				// 	if (obj.isSprite) {
-				// 		newObj = new Sprite.from(obj.texture);
-				// 	} else {
-				// 		console.warn("Object cannot be cloned, ask Omer to add support for it.");
-				// 	}
-				// }
+			// if (obj.isEditorObject) {
+			// 	let newData = JSON.parse(JSON.stringify(obj.data));
+			// 	delete newData.parentUUID;
+			// 	newData.uuid = uuidv4();
+			// 	let newObj = sceneController._addObject(newData);
+			// 	return newObj;
+			// } else {
+			// 	let newObj = obj.cloneInternal();
+			// 	// if (obj.clone) {
+			// 	// 	newObj = obj.clone();
+			// 	// } else {
+			// 	// 	if (obj.isSprite) {
+			// 	// 		newObj = new Sprite.from(obj.texture);
+			// 	// 	} else {
+			// 	// 		console.warn("Object cannot be cloned, ask Omer to add support for it.");
+			// 	// 	}
+			// 	// }
 
-				if (newObj) {
-					newObj.x = obj.x;
-					newObj.y = obj.y;
-					newObj.scale.x = obj.scale.x;
-					newObj.scale.y = obj.scale.y;
-					newObj.rotation = obj.rotation;
-					newObj.alpha = obj.alpha;
-					newObj.tint = obj.tint;
-					newObj.blendMode = obj.blendMode;
-					newObj.visible = obj.visible;
+			// 	if (newObj) {
+			// 		newObj.x = obj.x;
+			// 		newObj.y = obj.y;
+			// 		newObj.scale.x = obj.scale.x;
+			// 		newObj.scale.y = obj.scale.y;
+			// 		newObj.rotation = obj.rotation;
+			// 		newObj.alpha = obj.alpha;
+			// 		newObj.tint = obj.tint;
+			// 		newObj.blendMode = obj.blendMode;
+			// 		newObj.visible = obj.visible;
 
-					return newObj;
-				}
+			// 		return newObj;
+			// 	}
+			// }
+
+			let type = obj.type;
+			let newObj = null;
+
+			if (type == objectTypes.SPRITE) {
+				newObj = gx.add.sprite(obj.x, obj.y, obj.textureName);
 			}
+			return newObj;
 		};
 
 		let traverse = (obj, parent) => {
@@ -359,7 +367,7 @@ class GameObject {
 		let returnObj = clone(this);
 		// traverse(this, returnObj);
 
-		// return returnObj;
+		return returnObj;
 	}
 
 	//RESIZE
