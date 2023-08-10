@@ -3,6 +3,7 @@ import { NineSlicePlane } from "pixi.js-legacy";
 
 import GameObject from "./gameObject";
 import pfGlobals from "pf.js/src/pfGlobals";
+import objectTypes from "./objectTypes";
 
 class NineSlice extends GameObject {
 	constructor(x, y, texture, width, height, left, right, top, bottom) {
@@ -12,6 +13,9 @@ class NineSlice extends GameObject {
 		pixiObj.width = width;
 		pixiObj.height = height;
 		pixiObj.gameObject = this;
+
+		this.isNineSlice = true;
+		this.type = objectTypes.NINESLICE;
 	}
 }
 

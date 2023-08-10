@@ -301,6 +301,10 @@ class GameObject {
 		return this.pixiObj.height;
 	}
 
+    cloneInternal(){
+
+    }
+
 	///CLONE
 	clone() {
 		let sceneController = pfGlobals.pixiApp.sceneController;
@@ -313,16 +317,16 @@ class GameObject {
 				let newObj = sceneController._addObject(newData);
 				return newObj;
 			} else {
-				let newObj;
-				if (obj.clone) {
-					newObj = obj.clone();
-				} else {
-					if (obj.isSprite) {
-						newObj = new Sprite.from(obj.texture);
-					} else {
-						console.warn("Object cannot be cloned, ask Omer to add support for it.");
-					}
-				}
+				let newObj = obj.cloneInternal();
+				// if (obj.clone) {
+				// 	newObj = obj.clone();
+				// } else {
+				// 	if (obj.isSprite) {
+				// 		newObj = new Sprite.from(obj.texture);
+				// 	} else {
+				// 		console.warn("Object cannot be cloned, ask Omer to add support for it.");
+				// 	}
+				// }
 
 				if (newObj) {
 					newObj.x = obj.x;
@@ -353,9 +357,9 @@ class GameObject {
 		};
 
 		let returnObj = clone(this);
-		traverse(this, returnObj);
+		// traverse(this, returnObj);
 
-		return returnObj;
+		// return returnObj;
 	}
 
 	//RESIZE

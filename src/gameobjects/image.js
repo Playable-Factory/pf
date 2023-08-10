@@ -3,6 +3,7 @@ import { Sprite, Texture, utils } from "pixi.js-legacy";
 
 import GameObject from "./gameObject";
 import pfGlobals from "pf.js/src/pfGlobals";
+import objectTypes from "./objectTypes";
 
 class Image extends GameObject {
 	constructor(x, y, texture) {
@@ -15,6 +16,8 @@ class Image extends GameObject {
 		if (!pfGlobals.TextureCache[texture]) {
 			console.warn("Texture not found: " + texture);
 		}
+		this.isSprite = true;
+		this.type = objectTypes.SPRITE;
 	}
 
 	//TEXTURE

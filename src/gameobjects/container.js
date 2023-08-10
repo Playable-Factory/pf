@@ -3,6 +3,7 @@ import { Sprite, utils } from "pixi.js-legacy";
 
 import GameObject from "./gameObject";
 import pfGlobals from "pf.js/src/pfGlobals";
+import objectTypes from "./objectTypes";
 
 class Container extends GameObject {
 	constructor(x, y, texture) {
@@ -10,9 +11,10 @@ class Container extends GameObject {
 		super(pixiObj, x, y);
 
 		pixiObj.gameObject = this;
-        
+
+		this.isContainer = true;
+		this.type = objectTypes.CONTAINER;
 	}
-    
 }
 
 export default Container;

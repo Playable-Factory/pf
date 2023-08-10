@@ -2,6 +2,7 @@ import { AnimatedSprite, utils } from "pixi.js-legacy";
 
 import GameObject from "./gameObject";
 import pfGlobals from "../pfGlobals";
+import objectTypes from "./objectTypes";
 
 class ASprite extends GameObject {
 	constructor(x, y, animKey, autoplay = true, loop = false) {
@@ -17,6 +18,9 @@ class ASprite extends GameObject {
 		pixiObj.gameObject = this;
 
 		autoplay && this.play(null, loop);
+
+		this.isAnimatedSprite = true;
+		this.type = objectTypes.ANIMATED_SPRITE;
 	}
 
 	//TEXTURE

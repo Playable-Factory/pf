@@ -4,6 +4,7 @@ import { Spine } from "pixi-spine";
 
 import GameObject from "./gameObject";
 import pfGlobals from "pf.js/src/pfGlobals";
+import objectTypes from "./objectTypes";
 
 class PfSpine extends GameObject {
 	constructor(x, y, spineName, skinName, animName, loop) {
@@ -19,6 +20,9 @@ class PfSpine extends GameObject {
 		if (animName) {
 			this.play(animName, loop);
 		}
+
+		this.isSpine = true;
+		this.type = objectTypes.SPINE;
 	}
 
 	setSkinByName(skinName) {

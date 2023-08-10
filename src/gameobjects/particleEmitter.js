@@ -4,6 +4,7 @@ import * as Particles from "@pixi/particle-emitter";
 
 import GameObject from "pf.js/src/gameobjects/gameObject";
 import pfGlobals from "pf.js/src/pfGlobals";
+import objectTypes from "./objectTypes";
 
 class ParticleEmitter extends GameObject {
 	constructor(x, y, particleData) {
@@ -62,6 +63,9 @@ class ParticleEmitter extends GameObject {
 		});
 
 		pixiObj.gameObject = this;
+
+		this.isParticleEmitter = true;
+		this.type = objectTypes.PARTICLE_EMITTER;
 	}
 
 	enable() {

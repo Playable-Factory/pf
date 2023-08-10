@@ -3,12 +3,16 @@ import { Sprite, utils } from "pixi.js-legacy";
 
 import GameObject from "./gameObject";
 import pfGlobals from "pf.js/src/pfGlobals";
+import objectTypes from "./objectTypes";
 
 class Text extends GameObject {
 	constructor(x, y, text = "", style = {}) {
 		let pixiObj = new PIXI.Text(text, style);
 		super(pixiObj, x, y);
 		pixiObj.gameObject = this;
+
+		this.isText = true;
+		this.type = objectTypes.TEXT;
 	}
 	///SET TEXT
 	set text(text) {
