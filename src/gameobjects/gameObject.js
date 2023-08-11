@@ -16,6 +16,8 @@ class GameObject {
 		this.setPosition(x, y);
 
 		this.setPivot = this.setOrigin;
+
+		this.eventListeners = {};
 	}
 
 	addChild(child) {
@@ -380,7 +382,6 @@ class GameObject {
 	///CLONE
 	clone() {
 		// let sceneController = pfGlobals.pixiApp.sceneController;
-
 		let clone = (obj) => {
 			let type = obj.type;
 			let newObj = null;
@@ -456,6 +457,62 @@ class GameObject {
 			return this.pixiObj.pivot;
 		},
 	};
+
+	///EVENTS
+	set interactive(value) {
+		this.pixiObj.interactive = value;
+	}
+
+	get interactive() {
+		return this.pixiObj.interactive;
+	}
+
+	setInteractive() {
+		this.interactive = true;
+	}
+
+	removeInteractive() {
+		this.interactive = false;
+	}
+
+	on(event, callback) {
+		if (!this.interactive) {
+			this.interactive = true;
+		}
+		this.pixiObj.on(event, callback);
+
+		if (!this.eventListeners[event]) {
+			this.eventListeners[event] = [];
+		}
+		this.eventListeners[event].push(callback);
+	}
+
+	off(event, callback) {
+		this.pixiObj.off(event, callback);
+
+		let list = this.eventListeners[event];
+		if (list) {
+			let index = list.indexOf(callback);
+			if (index > -1) {
+				list.splice(index, 1);
+			}
+		}
+	}
+
+	removeAllListeners(event) {
+		let list = [];
+
+		if (event) {
+			list = this.eventListeners[event] || [];
+		} else {
+			for (let key in this.eventListeners) {
+				list = list.concat(this.eventListeners[key]);
+			}
+		}
+		list.forEach((callback) => {
+			this.pixiObj.off(event, callback);
+		});
+	}
 }
 
 export default GameObject;
