@@ -1,6 +1,8 @@
 import gx from "pf.js/src";
 import objectTypes from "pf.js/src/gameobjects/objectTypes";
+import Position from "pf.js/src/gameobjects/props/position";
 import Scale from "pf.js/src/gameobjects/props/scale";
+import Skew from "pf.js/src/gameobjects/props/skew";
 import pfGlobals from "pf.js/src/pfGlobals";
 
 class GameObject {
@@ -130,14 +132,84 @@ class GameObject {
 		return this.pixiObj.scale.y;
 	}
 
-	///SKEW
+	setScale(x, y) {
+		if (y === undefined) {
+			y = x;
+		}
+		this.pixiObj.scale.set(x, y);
+		return this;
+	}
+
+	///SKEW///
+	_skew = new Skew(this);
+
 	set skew(value) {
 		this.pixiObj.skew.x = value;
 		this.pixiObj.skew.y = value;
 	}
 
 	get skew() {
+		return this._skew;
+	}
+
+	set skewX(value) {
+		this.pixiObj.skew.x = value;
+	}
+
+	get skewX() {
 		return this.pixiObj.skew.x;
+	}
+
+	set skewY(value) {
+		this.pixiObj.skew.y = value;
+	}
+
+	get skewY() {
+		return this.pixiObj.skew.y;
+	}
+
+	setSkew(x, y) {
+		if (y === undefined) {
+			y = x;
+		}
+		this.pixiObj.skew.set(x, y);
+		return this;
+	}
+
+	///POSITION///
+	_position = new Position(this);
+
+	set position(value) {
+		this.pixiObj.x = value;
+		this.pixiObj.y = value;
+	}
+
+	get position() {
+		return this._position;
+	}
+
+	set positionX(value) {
+		this.pixiObj.x = value;
+	}
+
+	get positionX() {
+		return this.pixiObj.x;
+	}
+
+	set positionY(value) {
+		this.pixiObj.position.y = value;
+	}
+
+	get positionY() {
+		return this.pixiObj.position.y;
+	}
+
+	setPosition(x, y) {
+		if (y === undefined) {
+			y = x;
+		}
+		this.pixiObj.position.set(x, y);
+		return this;
 	}
 
 	//ANGLE
@@ -198,27 +270,6 @@ class GameObject {
 	}
 	setBlendMode(value) {
 		this.pixiObj.blendMode = value;
-		return this;
-	}
-
-	setPosition(x, y) {
-		this.pixiObj.x = x;
-		this.pixiObj.y = y;
-	}
-
-	setScale(x, y) {
-		if (y === undefined) {
-			y = x;
-		}
-		this.pixiObj.scale.set(x, y);
-		return this;
-	}
-
-	setSkew(x, y) {
-		if (y === undefined) {
-			y = x;
-		}
-		this.pixiObj.skew.set(x, y);
 		return this;
 	}
 
@@ -328,27 +379,9 @@ class GameObject {
 
 	///CLONE
 	clone() {
-		let sceneController = pfGlobals.pixiApp.sceneController;
+		// let sceneController = pfGlobals.pixiApp.sceneController;
 
 		let clone = (obj) => {
-			// if (obj.isEditorObject) {
-			// 	let newData = JSON.parse(JSON.stringify(obj.data));
-			// 	delete newData.parentUUID;
-			// 	newData.uuid = uuidv4();
-			// 	let newObj = sceneController._addObject(newData);
-			// 	return newObj;
-			// } else {
-			// 	let newObj = obj.cloneInternal();
-			// 	// if (obj.clone) {
-			// 	// 	newObj = obj.clone();
-			// 	// } else {
-			// 	// 	if (obj.isSprite) {
-			// 	// 		newObj = new Sprite.from(obj.texture);
-			// 	// 	} else {
-			// 	// 		console.warn("Object cannot be cloned, ask Omer to add support for it.");
-			// 	// 	}
-			// 	// }
-
 			let type = obj.type;
 			let newObj = null;
 
@@ -386,7 +419,7 @@ class GameObject {
 		};
 
 		let returnObj = clone(this);
-		// traverse(this, returnObj);
+		traverse(this, returnObj);
 
 		return returnObj;
 	}
@@ -406,25 +439,6 @@ class GameObject {
 	}
 
 	///TO SUPPORT PIXI CODES
-	// scale = {
-	// 	set: (x, y) => {
-	// 		this.setScale(x, y);
-	// 	},
-	// 	get: () => {
-	// 		return this.pixiObj.scale.x;
-	// 	},
-	// };
-
-	// ///SCALE
-	// set scale(value) {
-	// 	this.pixiObj.scale.x = value;
-	// 	this.pixiObj.scale.y = value;
-	// }
-
-	// get scale() {
-	// 	return this.pixiObj.scale.x;
-	// }
-
 	anchor = {
 		set: (x, y) => {
 			this.setOrigin(x, y);
@@ -440,24 +454,6 @@ class GameObject {
 		},
 		get: () => {
 			return this.pixiObj.pivot;
-		},
-	};
-
-	position = {
-		set: (x, y) => {
-			this.setPosition(x, y);
-		},
-		get: () => {
-			return { x: this.pixiObj.x, y: this.pixiObj.y };
-		},
-	};
-
-	skew = {
-		set: (x, y) => {
-			this.setSkew(x, y);
-		},
-		get: () => {
-			return { x: this.pixiObj.skew.x, y: this.pixiObj.skew.y };
 		},
 	};
 }

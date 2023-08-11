@@ -1,32 +1,30 @@
-// Scale.js
 class Scale {
 	constructor(gameObject) {
 		this.gameObject = gameObject;
 	}
 
 	set(x, y) {
-		this.gameObject.pixiObj.scale.x = x;
-		this.gameObject.pixiObj.scale.y = y;
+		this.gameObject.setScale(x, y);
 	}
 
 	get() {
-		return this.gameObject.pixiObj.scale.x;
+		return this.gameObject.scale;
 	}
 
 	set x(value) {
-		this.gameObject.pixiObj.scale.x = value;
+		this.gameObject.scaleX = value;
 	}
 
 	get x() {
-		return this.gameObject.pixiObj.scale.x;
+		return this.gameObject.scaleX;
 	}
 
 	set y(value) {
-		this.gameObject.pixiObj.scale.y = value;
+		this.gameObject.scaleY = value;
 	}
 
 	get y() {
-		return this.gameObject.pixiObj.scale.y;
+		return this.gameObject.scaleY;
 	}
 }
 
