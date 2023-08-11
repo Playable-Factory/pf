@@ -1,5 +1,6 @@
 import gx from "pf.js/src";
 import objectTypes from "pf.js/src/gameobjects/objectTypes";
+import Scale from "pf.js/src/gameobjects/props/scale";
 import pfGlobals from "pf.js/src/pfGlobals";
 
 class GameObject {
@@ -92,7 +93,7 @@ class GameObject {
 	set tint(value) {
 		this.pixiObj.tint = value;
 	}
-	///TINT
+	///BLENDMODE
 	get blendMode() {
 		return this.pixiObj.blendMode;
 	}
@@ -100,15 +101,35 @@ class GameObject {
 	set blendMode(value) {
 		this.pixiObj.blendMode = value;
 	}
-	///SCALE
+
+	///SCALE///
+	_scale = new Scale(this);
+
 	set scale(value) {
 		this.pixiObj.scale.x = value;
 		this.pixiObj.scale.y = value;
 	}
 
 	get scale() {
+		return this._scale;
+	}
+
+	set scaleX(value) {
+		this.pixiObj.scale.x = value;
+	}
+
+	get scaleX() {
 		return this.pixiObj.scale.x;
 	}
+
+	set scaleY(value) {
+		this.pixiObj.scale.y = value;
+	}
+
+	get scaleY() {
+		return this.pixiObj.scale.y;
+	}
+
 	///SKEW
 	set skew(value) {
 		this.pixiObj.skew.x = value;
@@ -328,27 +349,27 @@ class GameObject {
 			// 	// 	}
 			// 	// }
 
-			// 	if (newObj) {
-			// 		newObj.x = obj.x;
-			// 		newObj.y = obj.y;
-			// 		newObj.scale.x = obj.scale.x;
-			// 		newObj.scale.y = obj.scale.y;
-			// 		newObj.rotation = obj.rotation;
-			// 		newObj.alpha = obj.alpha;
-			// 		newObj.tint = obj.tint;
-			// 		newObj.blendMode = obj.blendMode;
-			// 		newObj.visible = obj.visible;
-
-			// 		return newObj;
-			// 	}
-			// }
-
 			let type = obj.type;
 			let newObj = null;
 
 			if (type == objectTypes.SPRITE) {
 				newObj = gx.add.sprite(obj.x, obj.y, obj.textureName);
+			} else if (type == objectTypes.TEXT) {
+				newObj = gx.add.text(obj.x, obj.y, obj.text, obj.style);
 			}
+
+			newObj.x = obj.x;
+			newObj.y = obj.y;
+			newObj.scale.x = obj.scale.x;
+			newObj.scale.y = obj.scale.y;
+			newObj.rotation = obj.rotation;
+			newObj.alpha = obj.alpha;
+			newObj.tint = obj.tint;
+			newObj.blendMode = obj.blendMode;
+			newObj.visible = obj.visible;
+
+			newObj.onResizeCallback = obj.onResizeCallback;
+
 			return newObj;
 		};
 
@@ -385,14 +406,24 @@ class GameObject {
 	}
 
 	///TO SUPPORT PIXI CODES
-	scale = {
-		set: (x, y) => {
-			this.setScale(x, y);
-		},
-		get: () => {
-			return this.pixiObj.scale.x;
-		},
-	};
+	// scale = {
+	// 	set: (x, y) => {
+	// 		this.setScale(x, y);
+	// 	},
+	// 	get: () => {
+	// 		return this.pixiObj.scale.x;
+	// 	},
+	// };
+
+	// ///SCALE
+	// set scale(value) {
+	// 	this.pixiObj.scale.x = value;
+	// 	this.pixiObj.scale.y = value;
+	// }
+
+	// get scale() {
+	// 	return this.pixiObj.scale.x;
+	// }
 
 	anchor = {
 		set: (x, y) => {
