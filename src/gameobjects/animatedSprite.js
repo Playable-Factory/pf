@@ -1,10 +1,8 @@
-import { AnimatedSprite, utils } from "pixi.js-legacy";
-
 import GameObject from "./gameObject";
 import pfGlobals from "../pfGlobals";
 import objectTypes from "./objectTypes";
 
-class ASprite extends GameObject {
+class AnimatedSprite extends GameObject {
 	constructor(x, y, animKey, autoplay = true, loop = false) {
 		let atlasUUID = pfGlobals.allAnims[animKey];
 		if (!atlasUUID) {
@@ -12,7 +10,7 @@ class ASprite extends GameObject {
 		}
 
 		let textures = pfGlobals.Resources[atlasUUID].animations[animKey];
-		let pixiObj = new AnimatedSprite(textures);
+		let pixiObj = new PIXI.AnimatedSprite(textures);
 		super(pixiObj, x, y);
 
 		pixiObj.gameObject = this;
@@ -21,6 +19,8 @@ class ASprite extends GameObject {
 
 		this.isAnimatedSprite = true;
 		this.type = objectTypes.ANIMATED_SPRITE;
+
+		console.log(this);
 	}
 
 	//TEXTURE
@@ -50,4 +50,4 @@ class ASprite extends GameObject {
 	}
 }
 
-export default ASprite;
+export default AnimatedSprite;

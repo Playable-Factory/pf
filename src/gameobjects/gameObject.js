@@ -232,6 +232,22 @@ class GameObject {
 		return this;
 	}
 
+	//MASK
+	set mask(value) {
+		this.pixiObj.mask = value;
+	}
+	get mask() {
+		return this.pixiObj.mask;
+	}
+	setMask(value) {
+		this.pixiObj.mask = value;
+		return this;
+	}
+	removeMask() {
+		this.pixiObj.mask = null;
+		return this;
+	}
+
 	//ANGLE
 	set angle(value) {
 		this.pixiObj.angle = value;
@@ -404,6 +420,8 @@ class GameObject {
 				newObj = gx.add.sprite(obj.x, obj.y, obj.textureName);
 			} else if (type == objectTypes.TEXT) {
 				newObj = gx.add.text(obj.x, obj.y, obj.text, obj.style);
+			} else if (type == objectTypes.ANIMATED_SPRITE) {
+				newObj = gx.add.animatedSprite(obj.x, obj.y, obj.textureName);
 			}
 
 			newObj.x = obj.x;

@@ -1,5 +1,5 @@
 import Container from "./container";
-import ASprite from "./animatedSprite";
+import AnimatedSprite from "./animatedSprite";
 import Image from "./image";
 import Text from "./text";
 import Graphics from "pf.js/src/gameobjects/graphics";
@@ -25,7 +25,7 @@ class GameObjectFactory {
 	}
 
 	animatedSprite(x, y, animKey, autoplay = true, loop = false) {
-		let aSprite = new ASprite(x, y, animKey, autoplay, loop);
+		let aSprite = new AnimatedSprite(x, y, animKey, autoplay, loop);
 		this.scene.addChild(aSprite.pixiObj);
 		return aSprite;
 		// return new Sprite(this.scene, x, y, texture);
