@@ -7,7 +7,8 @@ import objectTypes from "./objectTypes";
 
 class Image extends GameObject {
 	constructor(x, y, texture) {
-		let useTexture = texture ? Texture.from(texture) : Texture.WHITE;
+		// let useTexture = texture ? Texture.from(texture) : Texture.WHITE;
+		let useTexture = texture ? pfGlobals.TextureCache[texture] : Texture.WHITE;
 		let pixiObj = new Sprite(useTexture);
 		super(pixiObj, x, y);
 		this.textureName = texture;

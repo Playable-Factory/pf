@@ -4,6 +4,7 @@
   "description": "pf",
   "main": "index.js",
   "dependencies": {
+    "pixi-filters": "^5.2.1",
     "pixi-spine": "^3.1.0",
     "pixi-viewport": "^4.37.0",
     "pixi.js-legacy": "6.5.8",

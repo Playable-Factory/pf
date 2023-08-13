@@ -4,6 +4,7 @@ import Position from "pf.js/src/gameobjects/props/position";
 import Scale from "pf.js/src/gameobjects/props/scale";
 import Skew from "pf.js/src/gameobjects/props/skew";
 import pfGlobals from "pf.js/src/pfGlobals";
+import { ColorOverlayFilter } from "pixi-filters";
 
 class GameObject {
 	constructor(pixiObj, x = 0, y = 0) {
@@ -97,6 +98,23 @@ class GameObject {
 	set tint(value) {
 		this.pixiObj.tint = value;
 	}
+	setTint(value) {
+		this.pixiObj.tint = value;
+		return this;
+	}
+	setTintFill(value) {
+		let filter = new ColorOverlayFilter(value, 1);
+		this.pixiObj.filters = [filter];
+	}
+
+	//FILTERS
+	get filters() {
+		return this.pixiObj.filters;
+	}
+	set filters(value) {
+		this.pixiObj.filters = value;
+	}
+
 	///BLENDMODE
 	get blendMode() {
 		return this.pixiObj.blendMode;
@@ -264,10 +282,6 @@ class GameObject {
 	//HELPER FUNCTIONS
 	setAlpha(value) {
 		this.pixiObj.alpha = value;
-		return this;
-	}
-	setTint(value) {
-		this.pixiObj.tint = value;
 		return this;
 	}
 	setBlendMode(value) {
