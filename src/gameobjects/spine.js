@@ -15,7 +15,10 @@ class PfSpine extends GameObject {
 		super(pixiObj, x, y);
 		pixiObj.gameObject = this;
 
-		this.setSkinByName(skinName || "default");
+		skinName = skinName || "default";
+		this.setSkinByName(skinName);
+
+		this.spineName = spineName;
 
 		if (animName) {
 			this.play(animName, loop);
@@ -29,10 +32,13 @@ class PfSpine extends GameObject {
 		this.pixiObj.skeleton.setSkinByName(skinName);
 		this.baseWidth = this.pixiObj.width;
 		this.baseHeight = this.pixiObj.height;
+		this.skinName = skinName;
 		return this;
 	}
 	play(animName, loop) {
 		this.pixiObj.state.setAnimation(0, animName, loop);
+		this.animName = animName;
+		this.loop = loop;
 		return this;
 	}
 

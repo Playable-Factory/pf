@@ -421,18 +421,26 @@ class GameObject {
 			} else if (type == objectTypes.TEXT) {
 				newObj = gx.add.text(obj.x, obj.y, obj.text, obj.style);
 			} else if (type == objectTypes.ANIMATED_SPRITE) {
-				newObj = gx.add.animatedSprite(obj.x, obj.y, obj.textureName);
+				newObj = gx.add.animatedSprite(obj.x, obj.y, obj.animKey, obj.isPlaying, obj.loop);
+				newObj.animationSpeed = obj.animationSpeed;
+			} else if (type == objectTypes.SPINE) {
+				newObj = gx.add.spine(obj.x, obj.y, obj.spineName, obj.skinName, obj.animName, obj.loop);
+			} else if (type == objectTypes.CONTAINER) {
+				newObj = gx.add.container(obj.x, obj.y);
 			}
 
 			newObj.x = obj.x;
 			newObj.y = obj.y;
 			newObj.scale.x = obj.scale.x;
 			newObj.scale.y = obj.scale.y;
+			newObj.skew.x = obj.skew.x;
+			newObj.skew.y = obj.skew.y;
 			newObj.rotation = obj.rotation;
 			newObj.alpha = obj.alpha;
 			newObj.tint = obj.tint;
 			newObj.blendMode = obj.blendMode;
 			newObj.visible = obj.visible;
+			newObj.mask = obj.mask;
 
 			newObj.onResizeCallback = obj.onResizeCallback;
 
@@ -440,6 +448,7 @@ class GameObject {
 		};
 
 		let traverse = (obj, parent) => {
+			if (obj.type == objectTypes.SPINE) return;
 			if (obj.children) {
 				for (let child of obj.children) {
 					let newObj = clone(child);
@@ -453,6 +462,11 @@ class GameObject {
 
 		let returnObj = clone(this);
 		traverse(this, returnObj);
+
+		if (this.parent) {
+			console.log(returnObj);
+			this.parent.addChild(returnObj);
+		}
 
 		return returnObj;
 	}

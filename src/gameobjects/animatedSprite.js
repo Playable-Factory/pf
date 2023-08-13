@@ -12,15 +12,13 @@ class AnimatedSprite extends GameObject {
 		let textures = pfGlobals.Resources[atlasUUID].animations[animKey];
 		let pixiObj = new PIXI.AnimatedSprite(textures);
 		super(pixiObj, x, y);
+		this.animKey = animKey;
 
 		pixiObj.gameObject = this;
-
 		autoplay && this.play(null, loop);
 
 		this.isAnimatedSprite = true;
 		this.type = objectTypes.ANIMATED_SPRITE;
-
-		console.log(this);
 	}
 
 	//TEXTURE
@@ -31,10 +29,15 @@ class AnimatedSprite extends GameObject {
 
 			this.baseWidth = this.pixiObj.texture.orig.width;
 			this.baseHeight = this.pixiObj.texture.orig.height;
+			this.animKey = animKey;
 		}
 
 		this.pixiObj.play();
 		this.pixiObj.loop = loop;
+	}
+
+	stop() {
+		this.pixiObj.stop();
 	}
 
 	//TIMESCALE
@@ -44,9 +47,31 @@ class AnimatedSprite extends GameObject {
 	get animationSpeed() {
 		return this.pixiObj.animationSpeed;
 	}
-
 	setAnimationSpeed(value) {
 		this.pixiObj.animationSpeed = value;
+	}
+
+	//LOOP
+	set loop(value) {
+		this.pixiObj.loop = value;
+	}
+	get loop() {
+		return this.pixiObj.loop;
+	}
+	setLoop(value) {
+		this.pixiObj.loop = value;
+	}
+
+	get isPlaying() {
+		return this.pixiObj.playing;
+	}
+
+	//CURRENT FRAME
+	set currentFrame(value) {
+		this.pixiObj.currentFrame = value;
+	}
+	get currentFrame() {
+		return this.pixiObj.currentFrame;
 	}
 }
 
