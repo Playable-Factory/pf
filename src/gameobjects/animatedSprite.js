@@ -73,6 +73,30 @@ class AnimatedSprite extends GameObject {
 	get currentFrame() {
 		return this.pixiObj.currentFrame;
 	}
+
+	get totalFrames() {
+		return this.pixiObj.totalFrames;
+	}
+
+	///ANIMATION EVENTS
+	set onComplete(value) {
+		this.pixiObj.onComplete = value;
+	}
+	get onComplete() {
+		return this.pixiObj.onComplete;
+	}
+	set onFrameChange(value) {
+		this.pixiObj.onFrameChange = value;
+	}
+	get onFrameChange() {
+		return this.pixiObj.onFrameChange;
+	}
+	set onLoop(value) {
+		this.pixiObj.onLoop = value;
+	}
+	get onLoop() {
+		return this.pixiObj.onLoop;
+	}
 }
 
 export default AnimatedSprite;

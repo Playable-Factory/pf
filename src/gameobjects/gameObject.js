@@ -505,6 +505,12 @@ class GameObject {
 	};
 
 	///EVENTS
+	set buttonMode(value) {
+		this.pixiObj.buttonMode = value;
+	}
+	get buttonMode() {
+		return this.pixiObj.buttonMode;
+	}
 	set interactive(value) {
 		this.pixiObj.interactive = value;
 	}
