@@ -37,6 +37,13 @@ class GameObject {
 		this.pixiObj.removeChild(child.pixiObj);
 	}
 
+	attach(child) {
+		const worldPosition = child.getGlobalPosition();
+		this.addChild(child);
+		const newPosition = this.toLocal(worldPosition);
+		child.setPosition(newPosition.x, newPosition.y);
+	}
+
 	remove() {
 		this.pixiObj.parent.remove(this.pixiObj);
 	}
@@ -80,6 +87,11 @@ class GameObject {
 
 	get rotation() {
 		return this.pixiObj.rotation;
+	}
+	setRotation(value) {
+		this.pixiObj.rotation = value;
+
+		return this;
 	}
 
 	///ALPHA
@@ -232,6 +244,22 @@ class GameObject {
 		return this;
 	}
 
+	toLocal(position) {
+		return this.pixiObj.toLocal(position);
+	}
+
+	getGlobalPosition() {
+		return this.pixiObj.getGlobalPosition();
+	}
+
+	getLocalPosition() {
+		return this.pixiObj.getLocalPosition();
+	}
+
+	getWorldPosition() {
+		return this.pixiObj.getGlobalPosition();
+	}
+
 	//MASK
 	set mask(value) {
 		this.pixiObj.mask = value;
@@ -255,6 +283,10 @@ class GameObject {
 
 	get angle() {
 		return this.pixiObj.angle;
+	}
+	setAngle(value) {
+		this.pixiObj.angle = value;
+		return this;
 	}
 
 	//SORTABLE CHILDREN
@@ -302,16 +334,6 @@ class GameObject {
 	}
 	setBlendMode(value) {
 		this.pixiObj.blendMode = value;
-		return this;
-	}
-
-	setRotation(value) {
-		this.pixiObj.rotation = value;
-		return this;
-	}
-
-	setAngle(value) {
-		this.pixiObj.angle = value;
 		return this;
 	}
 
@@ -406,8 +428,6 @@ class GameObject {
 	get displayHeight() {
 		return this.pixiObj.height;
 	}
-
-	cloneInternal() {}
 
 	///CLONE
 	clone() {

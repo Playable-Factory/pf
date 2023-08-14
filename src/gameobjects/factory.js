@@ -2,7 +2,7 @@ import Container from "./container";
 import AnimatedSprite from "./animatedSprite";
 import Image from "./image";
 import Text from "./text";
-import Graphics from "pf.js/src/gameobjects/graphics";
+import Graphics from "./graphics";
 import PfSpine from "./spine";
 import NineSlice from "./nineslice";
 import ParticleEmitter from "./particleEmitter";

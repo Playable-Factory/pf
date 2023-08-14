@@ -9,6 +9,7 @@ import GameObject from "./gameobjects/gameObject";
 import Spine from "./gameobjects/spine";
 import Graphics from "./gameobjects/graphics";
 import NineSlice from "./gameobjects/nineslice";
+import Utils from "pf.js/src/utils/utils";
 
 class gx {
 	// static add = new GameObjectFactory();
@@ -30,6 +31,7 @@ class gx {
 		pfGlobals.pixiApp = pixiApp;
 
 		this.add = new GameObjectFactory(pixiScene);
+		this.utils = new Utils(pixiScene);
 	}
 }
 
