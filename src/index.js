@@ -1,5 +1,6 @@
 import pfGlobals from "pf.js/src/pfGlobals";
 import GameObjectFactory from "./gameobjects/factory";
+import Utils from "./utils/utils";
 
 import Image from "./gameobjects/image";
 import AnimatedSprite from "./gameobjects/animatedSprite";
@@ -9,7 +10,6 @@ import GameObject from "./gameobjects/gameObject";
 import Spine from "./gameobjects/spine";
 import Graphics from "./gameobjects/graphics";
 import NineSlice from "./gameobjects/nineslice";
-import Utils from "pf.js/src/utils/utils";
 
 class gx {
 	// static add = new GameObjectFactory();

@@ -23,6 +23,27 @@ class Graphics extends GameObject {
 		this.pixiObj.beginFill(color, alpha);
 		return this;
 	}
+	beginPath() {
+		this.pixiObj.beginPath();
+		return this;
+	}
+	strokePath() {
+		this.pixiObj.strokePath();
+		return this;
+	}
+	moveTo(x, y) {
+		this.pixiObj.moveTo(x, y);
+		return this;
+	}
+	lineTo(x, y) {
+		this.pixiObj.lineTo(x, y);
+		return this;
+	}
+	// bezierCurveTo(cpX, cpY, cpX2, cpY2, toX, toY) {
+	//     this.pixiObj.bezierCurveTo(cpX, cpY, cpX2, cpY2, toX, toY);
+	//     return this;
+	// }
+
 	endFill() {
 		this.pixiObj.endFill();
 		return this;
