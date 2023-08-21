@@ -10,7 +10,7 @@ class ComponentBase {
 	_initPublicVariables() {
 		if (!this._configVarData) return;
 
-		console.log(this._className, this._configVarData);
+		//console.log(this._className, this._configVarData);
 		for (let varData of this._configVarData) {
 			if (
 				this[varData.var_name] !== undefined ||
