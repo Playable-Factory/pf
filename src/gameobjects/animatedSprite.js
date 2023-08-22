@@ -40,6 +40,14 @@ class AnimatedSprite extends GameObject {
 		this.pixiObj.stop();
 	}
 
+	gotoAndPlay(frameNumber) {
+		this.pixiObj.gotoAndPlay(frameNumber);
+	}
+
+	gotoAndStop(frameNumber) {
+		this.pixiObj.gotoAndStop(frameNumber);
+	}
+
 	//TIMESCALE
 	set animationSpeed(value) {
 		this.pixiObj.animationSpeed = value;
