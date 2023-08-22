@@ -3,7 +3,7 @@ import AnimatedSprite from "./animatedSprite";
 import Image from "./image";
 import Text from "./text";
 import Graphics from "./graphics";
-import PfSpine from "./spine";
+import Spine from "./spine";
 import NineSlice from "./nineslice";
 import ParticleEmitter from "./particleEmitter";
 
@@ -44,7 +44,7 @@ class GameObjectFactory {
 	}
 
 	spine(x, y, spineName, skinName, animName, loop = false) {
-		let spineObj = new PfSpine(x, y, spineName, skinName, animName, loop);
+		let spineObj = new Spine(x, y, spineName, skinName, animName, loop);
 		this.scene.addChild(spineObj.pixiObj);
 		return spineObj;
 	}
