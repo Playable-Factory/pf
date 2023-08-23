@@ -1,15 +1,15 @@
 // import { AnimatedSprite, Graphics, Loader, TextStyle, Text, Texture, utils, NineSlicePlane } from "pixi.js-legacy";
-import { Sprite, Texture, utils } from "pixi.js-legacy";
+import { Texture, utils } from "pixi.js-legacy";
 
-import GameObject from "./gameObject";
+import GameObject from "pf.js/src/gameobjects/gameObject";
 import pfGlobals from "pf.js/src/pfGlobals";
-import objectTypes from "./objectTypes";
+import objectTypes from "pf.js/src/gameobjects/objectTypes";
 
-class Image extends GameObject {
+class Sprite extends GameObject {
 	constructor(x, y, texture) {
 		// let useTexture = texture ? Texture.from(texture) : Texture.WHITE;
 		let useTexture = texture ? pfGlobals.TextureCache[texture] : Texture.WHITE;
-		let pixiObj = new Sprite(useTexture);
+		let pixiObj = new PIXI.Sprite(useTexture);
 		super(pixiObj, x, y);
 		this.textureName = texture;
 
@@ -81,4 +81,4 @@ class Image extends GameObject {
 	// }
 }
 
-export default Image;
+export default Sprite;

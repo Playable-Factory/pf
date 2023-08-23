@@ -23,6 +23,7 @@ class GameObject {
 
 	addChild(child) {
 		if (!child.pixiObj) {
+			console.log(child);
 			console.warn("Child does not have a pixi object");
 			return;
 		}
@@ -49,7 +50,7 @@ class GameObject {
 	}
 
 	get children() {
-		return this.pixiObj.children;
+		return this.pixiObj.children.map((child) => child.gameObject);
 	}
 
 	get parent() {
