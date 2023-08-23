@@ -8,4 +8,5 @@ export default {
 	PARTICLE_EMITTER: "particleEmitter",
 	SPINE: "spine",
 	NINESLICE: "nineslice",
+	SCENE: "scene",
 };

@@ -6,6 +6,7 @@ import Graphics from "./graphics";
 import Spine from "./spine";
 import NineSlice from "./nineslice";
 import ParticleEmitter from "./particleEmitter";
+import Scene from "./scene";
 
 class GameObjectFactory {
 	constructor(scene) {
@@ -29,6 +30,11 @@ class GameObjectFactory {
 		this.scene.addChild(aSprite.pixiObj);
 		return aSprite;
 		// return new Sprite(this.scene, x, y, texture);
+	}
+
+	scene(x, y) {
+		let scene = new Scene(x, y);
+		return scene;
 	}
 
 	container(x, y) {

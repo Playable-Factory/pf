@@ -431,7 +431,6 @@ class GameObject {
 
 	///CLONE
 	clone() {
-		// let sceneController = pfGlobals.pixiApp.sceneController;
 		let clone = (obj) => {
 			let type = obj.type;
 			let newObj = null;

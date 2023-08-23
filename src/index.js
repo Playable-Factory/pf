@@ -10,11 +10,16 @@ import GameObject from "./gameobjects/gameObject";
 import Spine from "./gameobjects/spine";
 import Graphics from "./gameobjects/graphics";
 import NineSlice from "./gameobjects/nineslice";
+import Scene from "./gameobjects/scene";
 
 class gx {
 	// static add = new GameObjectFactory();
 
-	static init(pixiScene, pixiApp, TextureCache, Resources) {
+	static init(pixiApp, TextureCache, Resources) {
+		let pixiScene = new Scene();
+		pixiScene.interactive = true;
+		pixiScene.sortableChildren = true;
+		pixiApp.stage.addChild(pixiScene.pixiObj);
 		gx.scene = pixiScene;
 
 		let allAnims = {};
@@ -32,6 +37,8 @@ class gx {
 
 		this.add = new GameObjectFactory(pixiScene);
 		this.utils = new Utils(pixiScene);
+
+		return pixiScene;
 	}
 }
 
