@@ -11,6 +11,7 @@ import Spine from "./gameobjects/spine";
 import Graphics from "./gameobjects/graphics";
 import NineSlice from "./gameobjects/nineslice";
 import Scene from "./gameobjects/scene";
+import Viewport from "./gameobjects/viewport";
 
 class gx {
 	// static add = new GameObjectFactory();

@@ -7,6 +7,7 @@ import Spine from "./spine";
 import NineSlice from "./nineslice";
 import ParticleEmitter from "./particleEmitter";
 import Scene from "./scene";
+import Viewport from "./viewport";
 
 class GameObjectFactory {
 	constructor(scene) {
@@ -75,7 +76,7 @@ class GameObjectFactory {
 
 	viewport(options) {
 		let viewport = new Viewport(options);
-		this.scene.addChildPixi(viewport);
+		this.scene.addChild(viewport);
 		return viewport;
 	}
 }

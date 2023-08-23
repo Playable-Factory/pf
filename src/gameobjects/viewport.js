@@ -1,12 +1,56 @@
+import objectTypes from "pf.js/src/gameobjects/objectTypes";
+import GameObject from "./gameObject";
+import pfGlobals from "pf.js/src/pfGlobals";
 import { Viewport as PixiViewport } from "pixi-viewport";
 
-class Viewport extends PixiViewport {
+// class Viewport extends PixiViewport {
+class Viewport extends GameObject {
 	constructor(options) {
-		super(options);
+		options.interaction = pfGlobals.pixiApp.renderer.plugins.interaction;
+		let pixiObj = new PixiViewport(options);
+		super(pixiObj, 0, 0);
+
+		this.pixiObj = pixiObj;
+		pixiObj.gameObject = this;
+		console.log(pixiObj);
+
+		this.isViewport = true;
+		this.type = objectTypes.VIEWPORT;
 	}
 
-	addChild(child) {
-		super.addChild(child.pixiObj);
+	drag() {
+		this.pixiObj.drag();
+		return this;
+	}
+
+	pinch() {
+		this.pixiObj.pinch();
+		return this;
+	}
+
+	wheel() {
+		this.pixiObj.wheel();
+		return this;
+	}
+
+	decelerate() {
+		this.pixiObj.decelerate();
+		return this;
+	}
+
+	clamp(options) {
+		this.pixiObj.clamp(options);
+		return this;
+	}
+
+	clampZoom(options) {
+		this.pixiObj.clampZoom(options);
+		return this;
+	}
+
+	moveCenter(x, y) {
+		this.pixiObj.moveCenter(x, y);
+		return this;
 	}
 }
 

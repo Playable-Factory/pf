@@ -23,7 +23,6 @@ class GameObject {
 
 	addChild(child) {
 		if (!child.pixiObj) {
-			console.log(child);
 			console.warn("Child does not have a pixi object");
 			return;
 		}

@@ -10,6 +10,10 @@ class Scene extends Container {
 		this.type = objectTypes.SCENE;
 	}
 
+	addChild(child) {
+		super.addChild(child);
+	}
+
 	addChildPixi(pixiObj) {
 		this.pixiObj.addChild(pixiObj);
 	}

@@ -9,4 +9,5 @@ export default {
 	SPINE: "spine",
 	NINESLICE: "nineslice",
 	SCENE: "scene",
+	VIEWPORT: "viewport",
 };
