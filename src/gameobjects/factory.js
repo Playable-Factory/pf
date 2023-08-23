@@ -10,9 +10,10 @@ import Scene from "./scene";
 
 class GameObjectFactory {
 	constructor(scene) {
+		/** @type {Scene} */
 		this.scene = scene;
 	}
-    
+
 	sprite(x, y, texture) {
 		if (isNaN(x)) {
 			texture = x;
@@ -70,6 +71,12 @@ class GameObjectFactory {
 		let emitter = new ParticleEmitter(x, y, particleData);
 		this.scene.addChild(emitter);
 		return emitter;
+	}
+
+	viewport(options) {
+		let viewport = new Viewport(options);
+		this.scene.addChildPixi(viewport);
+		return viewport;
 	}
 }
 

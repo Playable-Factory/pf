@@ -54,7 +54,7 @@ class GameObject {
 	}
 
 	get parent() {
-		return this.pixiObj.parent;
+		return this.pixiObj.parent.gameObject;
 	}
 
 	set visible(value) {

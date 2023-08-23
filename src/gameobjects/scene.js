@@ -5,8 +5,13 @@ class Scene extends Container {
 	constructor(x, y) {
 		super(x, y);
 
+		this.pixiObj.gameObject = this;
 		this.isScene = true;
 		this.type = objectTypes.SCENE;
+	}
+
+	addChildPixi(pixiObj) {
+		this.pixiObj.addChild(pixiObj);
 	}
 }
 
