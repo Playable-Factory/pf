@@ -12,7 +12,6 @@ class Viewport extends GameObject {
 
 		this.pixiObj = pixiObj;
 		pixiObj.gameObject = this;
-		console.log(pixiObj);
 
 		this.isViewport = true;
 		this.type = objectTypes.VIEWPORT;
