@@ -8,6 +8,7 @@ import NineSlice from "./nineslice";
 import ParticleEmitter from "./particleEmitter";
 import Scene from "./scene";
 import Viewport from "./viewport";
+import Rectangle from "./shape/rectangle";
 
 class GameObjectFactory {
 	constructor(scene) {
@@ -60,6 +61,12 @@ class GameObjectFactory {
 		let graphics = new Graphics(x, y);
 		this.scene.addChild(graphics);
 		return graphics;
+	}
+
+	rectangle(x, y, width, height, color) {
+		let rect = new Rectangle(x, y, width, height, color);
+		this.scene.addChild(rect);
+		return rect;
 	}
 
 	nineslice(x, y, texture, width, height, left, right, top, bottom) {

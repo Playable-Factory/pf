@@ -10,4 +10,6 @@ export default {
 	NINESLICE: "nineslice",
 	SCENE: "scene",
 	VIEWPORT: "viewport",
+    RECTANGLE: "rectangle",
+    CIRCLE: "circle",
 };

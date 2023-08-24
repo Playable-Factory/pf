@@ -9,6 +9,12 @@ import { ColorOverlayFilter } from "pixi-filters";
 class GameObject {
 	constructor(pixiObj, x = 0, y = 0) {
 		this.pixiObj = pixiObj;
+		if (!pixiObj.anchor) {
+			this.anchor = null;
+		}
+		if (!pixiObj.pivot) {
+			this.pivot = null;
+		}
 
 		this.baseWidth = this.pixiObj.width;
 		this.baseHeight = this.pixiObj.height;
@@ -341,8 +347,14 @@ class GameObject {
 		if (y === undefined) {
 			y = x;
 		}
-		let temp = this.pixiObj.anchor ? this.pixiObj.anchor : this.pixiObj.pivot;
-		temp.set(x, y);
+
+		if (this.pixiObj.anchor) {
+			this.pixiObj.anchor.set(x, y);
+		} else {
+			this.pixiObj.pivot.set(this.width * x, this.height * y);
+		}
+		// let temp = this.pixiObj.anchor ? this.pixiObj.anchor : this.pixiObj.pivot;
+		// temp.set(x, y);
 
 		return this;
 	}
