@@ -2,7 +2,7 @@
 import { NineSlicePlane } from "pixi.js-legacy";
 
 import GameObject from "./gameObject";
-import pfGlobals from "pf.js/src/pfGlobals";
+import pfGlobals from "../pfGlobals";
 import objectTypes from "./objectTypes";
 
 class NineSlice extends GameObject {

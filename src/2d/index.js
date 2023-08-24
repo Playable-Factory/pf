@@ -1,4 +1,4 @@
-import pfGlobals from "pf.js/src/pfGlobals";
+import pfGlobals from "./pfGlobals";
 import GameObjectFactory from "./gameobjects/factory";
 import Utils from "./utils/utils";
 
@@ -24,6 +24,8 @@ class gx {
 		pixiApp.stage.addChild(pixiScene.pixiObj);
 		gx.scene = pixiScene;
 
+        pfGlobals.gx = this;
+        
 		let allAnims = {};
 
 		for (let uuid in Resources) {

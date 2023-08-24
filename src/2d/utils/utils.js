@@ -4,7 +4,7 @@ import Curve from "./curve-2d/Curve";
 import QuadraticBezier from "./curve-2d/QuadraticBezierCurve";
 import Vector2 from "./curve-2d/Vector2";
 import gsap, { Power0 } from "gsap";
-import gx from "pf.js/src";
+import gx from "pf.js/src/2d";
 
 class Utils {
 	constructor(pixiScene) {

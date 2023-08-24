@@ -2,7 +2,6 @@
 import { Sprite, utils } from "pixi.js-legacy";
 
 import GameObject from "./gameObject";
-import pfGlobals from "pf.js/src/pfGlobals";
 import objectTypes from "./objectTypes";
 
 class Text extends GameObject {

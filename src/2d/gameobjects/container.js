@@ -1,5 +1,4 @@
 import GameObject from "./gameObject";
-import pfGlobals from "pf.js/src/pfGlobals";
 import objectTypes from "./objectTypes";
 
 class Container extends GameObject {

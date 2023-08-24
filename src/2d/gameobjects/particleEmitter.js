@@ -1,9 +1,9 @@
 // import { AnimatedSprite, Graphics, Loader, TextStyle, Text, Texture, utils, NineSlicePlane } from "pixi.js-legacy";
-import { NineSlicePlane, Texture } from "pixi.js-legacy";
+import { Texture } from "pixi.js-legacy";
 import * as Particles from "@pixi/particle-emitter";
 
-import GameObject from "pf.js/src/gameobjects/gameObject";
-import pfGlobals from "pf.js/src/pfGlobals";
+import GameObject from "./gameObject";
+import pfGlobals from "../pfGlobals";
 import objectTypes from "./objectTypes";
 
 class ParticleEmitter extends GameObject {

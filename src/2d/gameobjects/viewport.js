@@ -1,6 +1,6 @@
-import objectTypes from "pf.js/src/gameobjects/objectTypes";
+import objectTypes from "./objectTypes";
 import GameObject from "./gameObject";
-import pfGlobals from "pf.js/src/pfGlobals";
+import pfGlobals from "../pfGlobals";
 import { Viewport as PixiViewport } from "pixi-viewport";
 
 // class Viewport extends PixiViewport {

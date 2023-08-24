@@ -1,9 +1,9 @@
-import gx from "pf.js/src";
-import objectTypes from "pf.js/src/gameobjects/objectTypes";
-import Position from "pf.js/src/gameobjects/props/position";
-import Scale from "pf.js/src/gameobjects/props/scale";
-import Skew from "pf.js/src/gameobjects/props/skew";
-import pfGlobals from "pf.js/src/pfGlobals";
+// import gx from "pf.js/src";
+import objectTypes from "./objectTypes";
+import Position from "./props/position";
+import Scale from "./props/scale";
+import Skew from "./props/skew";
+import pfGlobals from "../pfGlobals";
 import { ColorOverlayFilter } from "pixi-filters";
 
 class GameObject {
@@ -448,16 +448,16 @@ class GameObject {
 			let newObj = null;
 
 			if (type == objectTypes.SPRITE) {
-				newObj = gx.add.sprite(obj.x, obj.y, obj.textureName);
+				newObj = pfGlobals.gx.add.sprite(obj.x, obj.y, obj.textureName);
 			} else if (type == objectTypes.TEXT) {
-				newObj = gx.add.text(obj.x, obj.y, obj.text, obj.style);
+				newObj = pfGlobals.gx.add.text(obj.x, obj.y, obj.text, obj.style);
 			} else if (type == objectTypes.ANIMATED_SPRITE) {
-				newObj = gx.add.animatedSprite(obj.x, obj.y, obj.animKey, obj.isPlaying, obj.loop);
+				newObj = pfGlobals.gx.add.animatedSprite(obj.x, obj.y, obj.animKey, obj.isPlaying, obj.loop);
 				newObj.animationSpeed = obj.animationSpeed;
 			} else if (type == objectTypes.SPINE) {
-				newObj = gx.add.spine(obj.x, obj.y, obj.spineName, obj.skinName, obj.animName, obj.loop);
+				newObj = pfGlobals.gx.add.spine(obj.x, obj.y, obj.spineName, obj.skinName, obj.animName, obj.loop);
 			} else if (type == objectTypes.CONTAINER) {
-				newObj = gx.add.container(obj.x, obj.y);
+				newObj = pfGlobals.gx.add.container(obj.x, obj.y);
 			}
 
 			newObj.x = obj.x;

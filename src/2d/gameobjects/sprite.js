@@ -1,9 +1,9 @@
 // import { AnimatedSprite, Graphics, Loader, TextStyle, Text, Texture, utils, NineSlicePlane } from "pixi.js-legacy";
 import { Texture, utils } from "pixi.js-legacy";
 
-import GameObject from "pf.js/src/gameobjects/gameObject";
-import pfGlobals from "pf.js/src/pfGlobals";
-import objectTypes from "pf.js/src/gameobjects/objectTypes";
+import GameObject from "./gameObject";
+import pfGlobals from "../pfGlobals";
+import objectTypes from "./objectTypes";
 
 class Sprite extends GameObject {
 	constructor(x, y, texture) {

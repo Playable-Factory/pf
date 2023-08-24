@@ -3,7 +3,7 @@
 import { Spine as PixiSpine } from "pixi-spine";
 
 import GameObject from "./gameObject";
-import pfGlobals from "pf.js/src/pfGlobals";
+import pfGlobals from "../pfGlobals";
 import objectTypes from "./objectTypes";
 
 class Spine extends GameObject {
