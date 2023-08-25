@@ -1,8 +1,13 @@
 import { gsap } from "gsap";
 import { Assets } from "@pixi/assets";
+import Text from "pf.js/src/2d/gameobjects/text";
+import Graphics from "pf.js/src/2d/gameobjects/graphics";
+import Sprite from "pf.js/src/2d/gameobjects/sprite";
+import Container from "pf.js/src/2d/gameobjects/container";
+import TilingSprite from "pf.js/src/2d/gameobjects/tilingSprite";
 
-const { Container, Graphics, Text, Sprite, Texture, TilingSprite, utils } = require("pixi.js-legacy");
-const TextureCache = utils.TextureCache;
+// const { Container, Graphics, Text, Sprite, Texture, TilingSprite, utils } = require("pixi.js-legacy");
+// const TextureCache = utils.TextureCache;
 
 class Banner extends Container {
 	constructor(scene, data) {

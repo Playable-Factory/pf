@@ -1,6 +1,7 @@
 export default {
 	IMAGE: "image",
 	SPRITE: "sprite",
+	TILING_SPRITE: "tilingSprite",
 	ANIMATED_SPRITE: "animatedSprite",
 	TEXT: "text",
 	CONTAINER: "container",
@@ -10,6 +11,6 @@ export default {
 	NINESLICE: "nineslice",
 	SCENE: "scene",
 	VIEWPORT: "viewport",
-    RECTANGLE: "rectangle",
-    CIRCLE: "circle",
+	RECTANGLE: "rectangle",
+	CIRCLE: "circle",
 };
