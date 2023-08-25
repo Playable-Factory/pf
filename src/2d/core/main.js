@@ -52,6 +52,7 @@ class Main2D {
 		let scene = gx.init(app, editorConfig, utils.TextureCache, Resources);
 		this.pixiApp = app;
 		this.pixiScene = scene;
+		this.scene = scene;
 
 		let loader = new Loader2D();
 		this.responsive = new Responsive(app, scene);

@@ -15,9 +15,7 @@ class SceneController {
 		this.scene2D = scene2D;
 		this.stuffsMapList2D = app.globals.stuffsMapList2D;
 
-		console.log(this.scene2D);
-
-		let pixiSceneData = this.editorConfig.pixiSceneData;
+		let pixiSceneData = this.editorConfig.sceneData2D || this.editorConfig.pixiSceneData;
 
 		for (let scene of pixiSceneData) {
 			scenes.push(scene);
