@@ -2,6 +2,8 @@ import Loader2D from "./loader";
 import Responsive from "./responsive";
 import PostProcessing from "./utils/postprocess/postprocess";
 
+import * as PIXI from "pixi.js-legacy";
+
 import gsap from "gsap";
 import PixiPlugin from "gsap/PixiPlugin";
 import CustomEase from "gsap/CustomEase";

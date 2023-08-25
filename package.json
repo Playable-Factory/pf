@@ -1,20 +1,27 @@
 {
-  "name": "pf.js",
-  "version": "1.0.0",
-  "description": "pf",
-  "main": "index.js",
-  "dependencies": {
-    "gsap": "^3.12.2",
-    "pixi-filters": "^5.2.1",
-    "pixi-spine": "^3.1.0",
-    "pixi-viewport": "^4.37.0",
-    "pixi.js-legacy": "6.5.8",
-    "three": "^0.148.0",
-    "three.quarks": "^0.8.6"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "playable factory",
-  "license": "ISC"
+	"name": "pf.js",
+	"version": "1.0.0",
+	"description": "pf",
+	"main": "index.js",
+	"dependencies": {
+		"@pixi-spine/all-3.8": "^3.1.0",
+		"@pixi-spine/all-4.1": "^3.1.0",
+		"@pixi/assets": "^6.5.1",
+		"@pixi/particle-emitter": "^5.0.7",
+		"@pixi/sound": "^4.3.1",
+		"gsap": "^3.10.4",
+		"pixi-filters": "^5.2.1",
+		"pixi-particles": "^4.3.1",
+		"pixi-spine": "^3.1.0",
+		"pixi-viewport": "^4.38.0",
+		"pixi.js-legacy": "^6.5.8",
+		"stringify-object": "^4.0.1",
+		"three": "^0.148.0",
+		"three.quarks": "0.8.6"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "playable factory",
+	"license": "ISC"
 }
