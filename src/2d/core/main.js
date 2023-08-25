@@ -47,7 +47,7 @@ class Main2D {
 		// app.stage.interactive = true;
 		// app.stage.sortableChildren = true;
 
-		let scene = gx.init(app, utils.TextureCache, Resources);
+		let scene = gx.init(app, editorConfig, utils.TextureCache, Resources);
 		this.pixiApp = app;
 		this.pixiScene = scene;
 

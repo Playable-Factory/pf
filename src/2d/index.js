@@ -1,6 +1,7 @@
 import pfGlobals from "./pfGlobals";
 import GameObjectFactory from "./gameobjects/factory";
 import Utils from "./utils/utils";
+import sceneController from "./core/editor/sceneController";
 
 import Sprite from "./gameobjects/sprite";
 import AnimatedSprite from "./gameobjects/animatedSprite";
@@ -17,15 +18,16 @@ import Viewport from "./gameobjects/viewport";
 class gx {
 	// static add = new GameObjectFactory();
 
-	static init(pixiApp, TextureCache, Resources) {
+	static init(pixiApp, editorConfig, TextureCache, Resources) {
 		let pixiScene = new Scene();
 		pixiScene.interactive = true;
 		pixiScene.sortableChildren = true;
 		pixiApp.stage.addChild(pixiScene.pixiObj);
 		gx.scene = pixiScene;
 
-        pfGlobals.gx = this;
-        
+		pfGlobals.gx = this;
+		pfGlobals.pixiScene = pixiScene;
+
 		let allAnims = {};
 
 		for (let uuid in Resources) {
@@ -38,6 +40,9 @@ class gx {
 		pfGlobals.TextureCache = TextureCache;
 		pfGlobals.Resources = Resources;
 		pfGlobals.pixiApp = pixiApp;
+
+		sceneController.init(pixiScene, editorConfig);
+		this.scene = sceneController;
 
 		this.add = new GameObjectFactory(pixiScene);
 		this.utils = new Utils(pixiScene);
