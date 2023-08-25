@@ -1,0 +1,278 @@
+import { TextureAtlas } from "pixi-spine";
+import { SkeletonJson, AtlasAttachmentLoader } from "@pixi-spine/runtime-4.1";
+//import { SkeletonJson, AtlasAttachmentLoader } from '@pixi-spine/all-3.8';
+//import { glTFAsset } from "pixi3d";
+import { Assets } from "@pixi/assets";
+// import globals from "../../../globals";
+import { Spritesheet, utils } from "pixi.js-legacy";
+// import { Buffer } from 'buffer';
+import { sound } from "@pixi/sound";
+
+//Assets.loader._parsers[0].config.preferWorkers = false;
+
+class Loader2D {
+	constructor() {}
+
+	load(assetList, callback) {
+		let loadAsset = (asset) => {
+			// let asset = assetList[i];
+			// if (!asset) {
+			// 	return;
+			// }
+			if (asset.type == "image") {
+				this.loadImage(asset.key, asset.src, assetLoaded);
+			} else if (asset.type == "atlas") {
+				this.loadAtlas(asset.key, asset.src, asset.json, assetLoaded);
+			} else if (asset.type == "video") {
+				this.loadVideo(asset.key, asset.src, assetLoaded);
+			} else if (asset.type == "spine") {
+				this.loadSpine(asset.key, asset.src, asset.json, asset.atlas, assetLoaded);
+			} else if (asset.type == "bitmapFont") {
+				this.loadBitmapFont(asset.key, asset.src, asset.xml, assetLoaded);
+			} else if (asset.type == "gltf") {
+				this.loadGltf(asset.key, asset.src, assetLoaded);
+			} else if (asset.type == "sound") {
+				this.loadSound(asset.key, asset.src, asset.json, assetLoaded);
+			}
+		};
+
+		let numOfAssetLoaded = 0;
+		let totalAssetToLoad = assetList.length;
+
+		let loadedAsset = 0;
+		loadAsset(loadedAsset);
+
+		function assetLoaded() {
+			numOfAssetLoaded++;
+			if (numOfAssetLoaded >= totalAssetToLoad) {
+				callback && callback();
+				callback = null;
+			}
+			// if (numOfAssetLoaded < totalAssetToLoad) {
+			// 	loadAsset(numOfAssetLoaded);
+			// } else {
+			// 	callback();
+			// }
+		}
+
+		for (let i = 0; i < assetList.length; i++) {
+			let asset = assetList[i];
+			loadAsset(asset);
+		}
+
+		if (assetList.length == 0) {
+			setTimeout(() => {
+				callback && callback();
+				callback = null;
+			}, 100);
+		}
+	}
+
+	async loadSpine(key, imageFile, jsonData, atlasData, callback) {
+		Assets.add(key, imageFile);
+		await Assets.load(key);
+		var spineAtlas = new TextureAtlas(atlasData, function (line, cb) {
+			// pass the image here.
+			cb(PIXI.utils.TextureCache[key]);
+		}); // specify path, image.png will be added automatically
+
+		var spineAtlasLoader = new AtlasAttachmentLoader(spineAtlas);
+		var spineJsonParser = new SkeletonJson(spineAtlasLoader);
+		var spineData = spineJsonParser.readSkeletonData(jsonData);
+
+		PIXI.utils.TextureCache[key].spineData = spineData;
+		callback();
+	}
+
+	async loadBitmapFont(key, imageFile, xmlData, callback) {
+		const parse = function (xml) {
+			var data = new PIXI.BitmapFontData();
+			var info = xml.getElementsByTagName("info");
+			var common = xml.getElementsByTagName("common");
+			var page = xml.getElementsByTagName("page");
+			var char = xml.getElementsByTagName("char");
+			var kerning = xml.getElementsByTagName("kerning");
+			for (var i = 0; i < info.length; i++) {
+				data.info.push({
+					face: info[i].getAttribute("face"),
+					size: parseInt(info[i].getAttribute("size"), 10),
+				});
+			}
+			for (var i = 0; i < common.length; i++) {
+				data.common.push({
+					lineHeight: parseInt(common[i].getAttribute("lineHeight"), 10),
+				});
+			}
+			for (var i = 0; i < page.length; i++) {
+				data.page.push({
+					id: parseInt(page[i].getAttribute("id"), 10) || 0,
+					file: page[i].getAttribute("file"),
+				});
+			}
+			for (var i = 0; i < char.length; i++) {
+				var letter = char[i];
+				data.char.push({
+					id: parseInt(letter.getAttribute("id"), 10),
+					page: parseInt(letter.getAttribute("page"), 10) || 0,
+					x: parseInt(letter.getAttribute("x"), 10),
+					y: parseInt(letter.getAttribute("y"), 10),
+					width: parseInt(letter.getAttribute("width"), 10),
+					height: parseInt(letter.getAttribute("height"), 10),
+					xoffset: parseInt(letter.getAttribute("xoffset"), 10),
+					yoffset: parseInt(letter.getAttribute("yoffset"), 10),
+					xadvance: parseInt(letter.getAttribute("xadvance"), 10),
+				});
+			}
+			for (var i = 0; i < kerning.length; i++) {
+				data.kerning.push({
+					first: parseInt(kerning[i].getAttribute("first"), 10),
+					second: parseInt(kerning[i].getAttribute("second"), 10),
+					amount: parseInt(kerning[i].getAttribute("amount"), 10),
+				});
+			}
+			return data;
+		};
+		let fontTag = document.createElement("font");
+		fontTag.innerHTML = xmlData;
+		let data = parse(fontTag.childNodes[0]);
+		data.info[0].face = key;
+
+		Assets.add(key, imageFile);
+		await Assets.load(key);
+
+		PIXI.BitmapFont.install(data, PIXI.utils.TextureCache[key]);
+		callback();
+	}
+
+	async loadImage(key, imageFile, callback) {
+		Assets.add(key, imageFile);
+		await Assets.load(key);
+		callback();
+	}
+
+	loadVideo(key, videoFile, callback) {
+		var video = document.createElement("VIDEO");
+		if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+			video.autoplay = true;
+		}
+
+		video.setAttribute("playsinline", "playsinline");
+
+		video.addEventListener("canplay", function () {
+			if (globals.isGameStarted) {
+				return;
+			}
+
+			var vidRes = new PIXI.VideoResource(video);
+			var baseTexture = new PIXI.BaseTexture(vidRes);
+			var texture = new PIXI.Texture(baseTexture);
+			PIXI.Texture.addToCache(texture, key);
+			callback();
+		});
+		video.src = videoFile;
+		video.muted = "muted";
+	}
+
+	async loadAtlas(key, imageFile, atlasData, callback) {
+		Assets.add(key, imageFile);
+		const asset = await Assets.load(key);
+
+		if (atlasData.textures) {
+			atlasData.frames = atlasData.textures[0].frames;
+			atlasData.textures = null;
+		}
+
+		const sheet = new Spritesheet(asset.baseTexture, atlasData);
+
+		function parse() {
+			return new Promise(function (resolve, reject) {
+				const resources = PIXI.Loader.shared.resources;
+				resources[key] = {};
+				resources[key].animations = sheet.animations;
+				resources[key].data = sheet.data;
+				resources[key].frameTextures = sheet.textures;
+				resources[key]._frameKeys = sheet._frameKeys;
+				resources[key]._frames = sheet._frames;
+				resources[key].resolution = sheet.resolution;
+
+				sheet.parse();
+				resolve();
+			});
+		}
+		parse().then(() => {
+			callback();
+		});
+	}
+
+	loadGltf(key, gltfSrc, callback) {
+		let src = JSON.parse(gltfSrc);
+		glTFAsset.load(src, PIXI.Loader.shared, (gltf) => {
+			globals.gltfAssets[key] = gltf;
+			callback();
+		});
+	}
+
+	loadSound(key, src, json, callback) {
+		var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+		var lookup = typeof Uint8Array === "undefined" ? [] : new Uint8Array(256);
+		for (var i = 0; i < chars.length; i++) {
+			lookup[chars.charCodeAt(i)] = i;
+		}
+
+		var decode = function (base64) {
+			var bufferLength = base64.length * 0.75,
+				len = base64.length,
+				i,
+				p = 0,
+				encoded1,
+				encoded2,
+				encoded3,
+				encoded4;
+			if (base64[base64.length - 1] === "=") {
+				bufferLength--;
+				if (base64[base64.length - 2] === "=") {
+					bufferLength--;
+				}
+			}
+			var arraybuffer = new ArrayBuffer(bufferLength),
+				bytes = new Uint8Array(arraybuffer);
+			for (i = 0; i < len; i += 4) {
+				encoded1 = lookup[base64.charCodeAt(i)];
+				encoded2 = lookup[base64.charCodeAt(i + 1)];
+				encoded3 = lookup[base64.charCodeAt(i + 2)];
+				encoded4 = lookup[base64.charCodeAt(i + 3)];
+				bytes[p++] = (encoded1 << 2) | (encoded2 >> 4);
+				bytes[p++] = ((encoded2 & 15) << 4) | (encoded3 >> 2);
+				bytes[p++] = ((encoded3 & 3) << 6) | (encoded4 & 63);
+			}
+			return arraybuffer;
+		};
+
+		fetch(src)
+			.then((res) => res.blob())
+			.then(
+				(blob) =>
+					new Promise((resolve) => {
+						const reader = new FileReader();
+						reader.onload = () => {
+							resolve(reader.result);
+						};
+						reader.readAsDataURL(blob);
+					})
+			)
+			.then((str) => {
+				const data = str.split(",").slice(1).join(",");
+				const buffer = decode(data);
+
+				sound.add(key, {
+					url: buffer,
+					source: buffer,
+					sprites: json && json.spritemap,
+				});
+
+				callback();
+			});
+	}
+}
+
+export default Loader2D;
