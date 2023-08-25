@@ -1,7 +1,7 @@
 import pfGlobals from "./pfGlobals";
 import GameObjectFactory from "./gameobjects/factory";
 import Utils from "./utils/utils";
-import sceneController from "./core/editor/sceneController";
+import SceneController from "./core/editor/sceneController";
 
 import Sprite from "./gameobjects/sprite";
 import AnimatedSprite from "./gameobjects/animatedSprite";
@@ -41,7 +41,7 @@ class gx {
 		pfGlobals.Resources = Resources;
 		pfGlobals.pixiApp = pixiApp;
 
-		sceneController.init(pixiScene, editorConfig);
+		let sceneController = new SceneController(pixiScene, editorConfig);
 		this.scene = sceneController;
 
 		this.add = new GameObjectFactory(pixiScene);

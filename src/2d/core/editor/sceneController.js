@@ -9,8 +9,8 @@ const Resources = Loader.shared.resources;
 
 let scenes = [];
 
-class sceneController {
-	static init(scene2D, editorConfig) {
+class SceneController {
+	constructor(scene2D, editorConfig) {
 		this.editorConfig = editorConfig;
 		this.scene2D = scene2D;
 		this.stuffsMapList2D = app.globals.stuffsMapList2D;
@@ -33,7 +33,7 @@ class sceneController {
 		this.allAnims = allAnims;
 	}
 
-	static cloneObject(obj) {
+	cloneObject(obj) {
 		let clone = (obj) => {
 			if (obj.isEditorObject) {
 				let newData = JSON.parse(JSON.stringify(obj.data));
@@ -87,7 +87,7 @@ class sceneController {
 		return returnObj;
 	}
 
-	static instantiate(prefabName) {
+	instantiate(prefabName) {
 		let traverse = (data, parent) => {
 			if (data.children) {
 				for (let child of data.children) {
@@ -108,7 +108,7 @@ class sceneController {
 		}
 	}
 
-	static _addObject(data) {
+	_addObject(data) {
 		let obj;
 
 		if (data.type == "container") {
@@ -268,7 +268,7 @@ class sceneController {
 			}
 		}
 
-		let objs = sceneController.getAllChilds(obj);
+		let objs = this.getAllChilds(obj);
 
 		objs.forEach((obj, index) => {
 			let data = obj.data;
@@ -369,7 +369,7 @@ class sceneController {
 		return obj;
 	}
 
-	static getAllChilds(parent) {
+	getAllChilds(parent) {
 		const objects = [];
 
 		objects.push(parent);
@@ -378,7 +378,7 @@ class sceneController {
 				const child = parent.children[i];
 
 				if (child.children.length) {
-					const childObjects = sceneController.getAllChilds(child);
+					const childObjects = this.getAllChilds(child);
 					if (child != this.scene2D) {
 						childObjects.push(child);
 					}
@@ -392,7 +392,7 @@ class sceneController {
 		return objects;
 	}
 
-	static getObject(name, fromScene) {
+	getObject(name, fromScene) {
 		let obj;
 
 		let sceneList = fromScene ? [fromScene] : scenes;
@@ -405,7 +405,7 @@ class sceneController {
 		return obj;
 	}
 
-	static getObjectByUUID(uuid, fromScene) {
+	getObjectByUUID(uuid, fromScene) {
 		let obj;
 
 		let sceneList = fromScene ? [fromScene] : scenes;
@@ -418,7 +418,7 @@ class sceneController {
 		return obj;
 	}
 
-	static update(time, delta) {
+	update(time, delta) {
 		for (let scene of scenes) {
 			for (let i = 0; i < scene.entityList.length; i++) {
 				let ent = scene.entityList[i].entity;
@@ -427,7 +427,7 @@ class sceneController {
 		}
 	}
 
-	static resize(w, h) {
+	resize(w, h) {
 		for (let scene of scenes) {
 			for (let obj of scene.entityList) {
 				obj.entity.resize(w, h);
@@ -435,12 +435,12 @@ class sceneController {
 		}
 	}
 
-	static getSceneByName(name) {
+	getSceneByName(name) {
 		return scenes.find((scene) => scene.name === name);
 	}
 
 	//SCENE RELATED FUNCTIONS
-	static startScene(name, removeCurScene) {
+	start(name, removeCurScene) {
 		let scene = scenes.find((scene) => scene.name === name);
 
 		if (!scene) {
@@ -580,7 +580,7 @@ class sceneController {
 		return scene;
 	}
 
-	static fillPublicVariables(entityList) {
+	fillPublicVariables(entityList) {
 		for (let obj of entityList) {
 			obj.entity.runOnAllComponents((component) => {
 				if (!component._configVarData) return;
@@ -589,7 +589,7 @@ class sceneController {
 		}
 	}
 
-	static removeObject(obj) {
+	removeObject(obj) {
 		let scene = obj.sceneRef;
 		if (!scene) return;
 
@@ -607,7 +607,7 @@ class sceneController {
 		}
 	}
 
-	static removeScene(name) {
+	remove(name) {
 		let scene = scenes.find((scene) => scene.name === name);
 
 		if (!scene) {
@@ -618,13 +618,13 @@ class sceneController {
 		this._removeScene(scene);
 	}
 
-	static removeAll() {
+	removeAll() {
 		scenes.forEach((scene) => {
 			this._removeScene(scene);
 		});
 	}
 
-	static _removeScene(scene) {
+	_removeScene(scene) {
 		if (!scene) return;
 
 		scene.objList.forEach((element) => {
@@ -639,7 +639,7 @@ class sceneController {
 	}
 }
 
-export default sceneController;
+export default SceneController;
 
 function RGBToHex(r, g, b) {
 	r *= 255;

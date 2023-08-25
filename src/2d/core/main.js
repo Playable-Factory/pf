@@ -73,6 +73,8 @@ class Main2D {
 
 	update(time, delta) {
 		this.updateCallback && this.updateCallback(time, delta);
+		gx.scene.update(time, delta);
+		// console.log(gx.scene);
 	}
 
 	render() {
