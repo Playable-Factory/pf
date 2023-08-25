@@ -1,3 +1,5 @@
+import { Filter } from "pixi.js-legacy";
+
 const fragShader = `
 #ifdef GL_FRAGMENT_PRECISION_HIGH
 #define highmedp highp
@@ -54,7 +56,7 @@ void main(void)
 
 `;
 
-class HueSaturationShader extends PIXI.Filter {
+class HueSaturationShader extends Filter {
 	constructor() {
 		super(null, fragShader, {
 			hue: 0,

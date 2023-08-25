@@ -1,4 +1,4 @@
-import { Point } from "pixi.js-legacy";
+import { Point, Filter } from "pixi.js-legacy";
 
 const fragShader = `
 #ifdef GL_FRAGMENT_PRECISION_HIGH
@@ -63,7 +63,7 @@ void main(void)
 
 `;
 
-class FilmShader extends PIXI.Filter {
+class FilmShader extends Filter {
 	constructor() {
 		super(null, fragShader, {
 			time: 0.0,

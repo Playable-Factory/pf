@@ -1,4 +1,4 @@
-import { Point } from "pixi.js-legacy";
+import { Filter } from "pixi.js-legacy";
 
 const fragShader = `
 #ifdef GL_FRAGMENT_PRECISION_HIGH
@@ -62,7 +62,7 @@ void main(void)
 
 `;
 
-class BloomShader extends PIXI.Filter {
+class BloomShader extends Filter {
 	constructor() {
 		super(null, fragShader, {
 			intensity: 0,

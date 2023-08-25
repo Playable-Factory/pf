@@ -1,4 +1,4 @@
-import { Point } from "pixi.js-legacy";
+import { Point, Filter } from "pixi.js-legacy";
 
 const fragShader = `
 #ifdef GL_FRAGMENT_PRECISION_HIGH
@@ -78,7 +78,7 @@ void main(void)
 
 `;
 
-class ToonShader extends PIXI.Filter {
+class ToonShader extends Filter {
 	constructor() {
 		super(null, fragShader, {
 			outlineColor: [1, 0, 0],

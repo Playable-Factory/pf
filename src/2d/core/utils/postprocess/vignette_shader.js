@@ -1,3 +1,5 @@
+import { Filter } from "pixi.js-legacy";
+
 const fragShader = `
 #ifdef GL_FRAGMENT_PRECISION_HIGH
 #define highmedp highp
@@ -57,7 +59,7 @@ void main(void)
 
 `;
 
-class VignetteShader extends PIXI.Filter {
+class VignetteShader extends Filter {
 	constructor() {
 		super(null, fragShader, {
 			offset: 2,
