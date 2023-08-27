@@ -10,23 +10,35 @@ import Scene from "./scene";
 import Viewport from "./viewport";
 import Rectangle from "./shape/rectangle";
 
+/**
+ * Factory class for creating game objects.
+ *
+ * @class GameObjectFactory
+ */
 class GameObjectFactory {
+	/**
+	 * Creates an instance of GameObjectFactory.
+	 * @param {Scene} scene - The scene to which game objects will be added.
+	 */
 	constructor(scene) {
-		/** @type {Scene} */
+		/**
+		 * The scene to which game objects will be added.
+		 * @type {Scene}
+		 */
 		this.scene = scene;
 	}
 
 	/**
-	 * Adds a sprite game object
+	 * Adds a sprite game object.
 	 *
-	 * @method GearboxStudio.GameObjects.Factory#sprite
+	 * @method GameObjectFactory#sprite
 	 * @since 1.0.0
 	 *
 	 * @param {number} x - X position of the sprite.
 	 * @param {number} y - Y position of the sprite.
 	 * @param {string} texture - Texture key of the sprite.
 	 *
-	 * @return {Sprite} Sprite GameObject.
+	 * @return {Sprite} The created Sprite game object.
 	 */
 	sprite(x, y, texture) {
 		if (isNaN(x)) {
@@ -40,84 +52,187 @@ class GameObjectFactory {
 	}
 
 	/**
-	 * Adds an animated sprite game object
+	 * Adds an animated sprite game object.
 	 *
-	 * @method GearboxStudio.GameObjects.Factory#animatedSprite
+	 * @method GameObjectFactory#animatedSprite
 	 * @since 1.0.0
 	 *
 	 * @param {number} x - X position of the sprite.
 	 * @param {number} y - Y position of the sprite.
 	 * @param {string} animKey - Animation key of the sprite.
-	 * @param {boolean} autoplay - Whether to play the animation immediately.
-	 * @param {boolean} loop - Whether to loop the animation.
+	 * @param {boolean} [autoplay=true] - Whether to play the animation immediately.
+	 * @param {boolean} [loop=false] - Whether to loop the animation.
 	 *
-	 * @return {AnimatedSprite} Animated Sprite GameObject.
+	 * @return {AnimatedSprite} The created AnimatedSprite game object.
 	 */
 	animatedSprite(x, y, animKey, autoplay = true, loop = false) {
 		let aSprite = new AnimatedSprite(x, y, animKey, autoplay, loop);
 		this.scene.addChild(aSprite);
 		return aSprite;
-		// return new Sprite(this.scene, x, y, texture);
 	}
 
 	/**
-	 * Adds a new scene
+	 * Adds a new scene.
 	 *
-	 * @method GearboxStudio.GameObjects.Factory#scene
+	 * @method GameObjectFactory#scene
 	 * @since 1.0.0
 	 *
 	 * @param {number} x - X position of the scene.
 	 * @param {number} y - Y position of the scene.
 	 *
-	 * @return {Scene} Scene.
+	 * @return {Scene} The created Scene.
 	 */
 	scene(x, y) {
 		let scene = new Scene(x, y);
 		return scene;
 	}
 
+	/**
+	 * Adds a container game object.
+	 *
+	 * @method GameObjectFactory#container
+	 * @since 1.0.0
+	 *
+	 * @param {number} x - X position of the container.
+	 * @param {number} y - Y position of the container.
+	 *
+	 * @return {Container} The created Container game object.
+	 */
 	container(x, y) {
 		let container = new Container(x, y);
 		this.scene.addChild(container);
 		return container;
 	}
 
+	/**
+	 * Adds a text game object.
+	 *
+	 * @method GameObjectFactory#text
+	 * @since 1.0.0
+	 *
+	 * @param {number} x - X position of the text.
+	 * @param {number} y - Y position of the text.
+	 * @param {string} [text=""] - The text content.
+	 * @param {object} [style={}] - The style configuration for the text.
+	 *
+	 * @return {Text} The created Text game object.
+	 */
 	text(x, y, text = "", style = {}) {
 		let textObj = new Text(x, y, text, style);
 		this.scene.addChild(textObj);
 		return textObj;
 	}
 
+	/**
+	 * Adds a Spine game object.
+	 *
+	 * @method GameObjectFactory#spine
+	 * @since 1.0.0
+	 *
+	 * @param {number} x - X position of the Spine object.
+	 * @param {number} y - Y position of the Spine object.
+	 * @param {string} spineName - The name of the Spine object.
+	 * @param {string} skinName - The name of the Spine object's skin.
+	 * @param {string} animName - The name of the initial animation to play.
+	 * @param {boolean} [loop=false] - Whether to loop the animation.
+	 *
+	 * @return {Spine} The created Spine game object.
+	 */
 	spine(x, y, spineName, skinName, animName, loop = false) {
 		let spineObj = new Spine(x, y, spineName, skinName, animName, loop);
 		this.scene.addChild(spineObj);
 		return spineObj;
 	}
 
+	/**
+	 * Adds a Graphics game object.
+	 *
+	 * @method GameObjectFactory#graphics
+	 * @since 1.0.0
+	 *
+	 * @param {number} x - X position of the Graphics object.
+	 * @param {number} y - Y position of the Graphics object.
+	 *
+	 * @return {Graphics} The created Graphics game object.
+	 */
 	graphics(x, y) {
 		let graphics = new Graphics(x, y);
 		this.scene.addChild(graphics);
 		return graphics;
 	}
 
+	/**
+	 * Adds a Rectangle game object.
+	 *
+	 * @method GameObjectFactory#rectangle
+	 * @since 1.0.0
+	 *
+	 * @param {number} x - X position of the Rectangle object.
+	 * @param {number} y - Y position of the Rectangle object.
+	 * @param {number} width - Width of the Rectangle.
+	 * @param {number} height - Height of the Rectangle.
+	 * @param {string} color - Color of the Rectangle.
+	 *
+	 * @return {Rectangle} The created Rectangle game object.
+	 */
 	rectangle(x, y, width, height, color) {
 		let rect = new Rectangle(x, y, width, height, color);
 		this.scene.addChild(rect);
 		return rect;
 	}
 
+	/**
+	 * Adds a NineSlice game object.
+	 *
+	 * @method GameObjectFactory#nineslice
+	 * @since 1.0.0
+	 *
+	 * @param {number} x - X position of the NineSlice object.
+	 * @param {number} y - Y position of the NineSlice object.
+	 * @param {string} texture - Texture key of the NineSlice object.
+	 * @param {number} width - Width of the NineSlice object.
+	 * @param {number} height - Height of the NineSlice object.
+	 * @param {number} left - Left size of the NineSlice object.
+	 * @param {number} right - Right size of the NineSlice object.
+	 * @param {number} top - Top size of the NineSlice object.
+	 * @param {number} bottom - Bottom size of the NineSlice object.
+	 *
+	 * @return {NineSlice} The created NineSlice game object.
+	 */
 	nineslice(x, y, texture, width, height, left, right, top, bottom) {
 		let nineslice = new NineSlice(x, y, texture, width, height, left, right, top, bottom);
 		this.scene.addChild(nineslice);
 		return nineslice;
 	}
 
+	/**
+	 * Adds a ParticleEmitter game object.
+	 *
+	 * @method GameObjectFactory#particleEmitter
+	 * @since 1.0.0
+	 *
+	 * @param {number} x - X position of the ParticleEmitter object.
+	 * @param {number} y - Y position of the ParticleEmitter object.
+	 * @param {object} particleData - Particle configuration data.
+	 *
+	 * @return {ParticleEmitter} The created ParticleEmitter game object.
+	 */
 	particleEmitter(x, y, particleData) {
 		let emitter = new ParticleEmitter(x, y, particleData);
 		this.scene.addChild(emitter);
 		return emitter;
 	}
 
+	/**
+	 * Adds a Viewport game object.
+	 *
+	 * @method GameObjectFactory#viewport
+	 * @since 1.0.0
+	 *
+	 * @param {object} options - Viewport configuration options.
+	 *
+	 * @return {Viewport} The created Viewport game object.
+	 */
 	viewport(options) {
 		let viewport = new Viewport(options);
 		this.scene.addChild(viewport);
