@@ -2,7 +2,7 @@ import * as PIXI from "pixi.js-legacy";
 /**
  * A class to apply a sprite mask to a PIXI DisplayObject.
  */
-export default class SpriteMask {
+class SpriteMask {
 	/**
 	 * Create a SpriteMask instance.
 	 * @param {PIXI.DisplayObject} obj - The DisplayObject to apply the mask to.
@@ -81,6 +81,8 @@ export default class SpriteMask {
 		this.obj.filters[this.obj.filters.length - 1].maskSprite = this.mask;
 	}
 }
+
+export default SpriteMask;
 
 /*
  * DOESN'T WORK IN CANVAS MODE!

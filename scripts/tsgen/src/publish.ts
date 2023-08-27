@@ -20,9 +20,9 @@ export function publish(data: any, opts: any) {
 
     var str = JSON.stringify(data().get(), null, 4);
 
-    fs.writeFileSync(path.join(opts.destination, 'phaser.json'), str);
+    fs.writeFileSync(path.join(opts.destination, 'gx.json'), str);
 
     var out = new Parser(data().get()).emit();
 
-    fs.writeFileSync(path.join(opts.destination, 'phaser.d.ts'), out);
+    fs.writeFileSync(path.join(opts.destination, 'gx.d.ts'), out);
 };
