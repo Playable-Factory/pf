@@ -1,7 +1,19 @@
 import { Point, TextMetrics, Texture } from "pixi.js-legacy";
 import pfGlobals from "../../../pfGlobals";
-
+/**
+ * A utility class for handling resizing and positioning of game objects.
+ *
+ * @class ResizeHelper
+ */
 export default class ResizeHelper {
+	/**
+	 * Sets the base width and height of a game object based on its type.
+	 *
+	 * @static
+	 * @method ResizeHelper.setBaseWidthHeight
+	 * @param {object} gameObject - The game object whose base width and height to set.
+	 * @returns {object} An object containing the base width and height values.
+	 */
 	static setBaseWidthHeight(gameObject) {
 		let baseWidth, baseHeight;
 
@@ -60,6 +72,15 @@ export default class ResizeHelper {
 		return { baseWidth, baseHeight };
 	}
 
+	/**
+	 * Calculates available space and positioning information for a game object.
+	 *
+	 * @static
+	 * @method ResizeHelper.getSpace
+	 * @param {object} gameObject - The game object for which to calculate space.
+	 * @param {string} orientation - The orientation of the resize data (e.g., "horizontal" or "vertical").
+	 * @returns {object} An object containing available space and positioning data.
+	 */
 	static getSpace(gameObject, orientation) {
 		const data = gameObject.data.resizeData[orientation];
 
@@ -171,6 +192,14 @@ export default class ResizeHelper {
 		};
 	}
 
+	/**
+	 * Retrieves positioning and dimensions bounds of a game object.
+	 *
+	 * @static
+	 * @method ResizeHelper.getBounds
+	 * @param {object} gameObject - The game object for which to retrieve bounds.
+	 * @returns {object} An object containing the bounds data.
+	 */
 	static getBounds(gameObject) {
 		const bounds = {
 			x: 0,
@@ -197,6 +226,15 @@ export default class ResizeHelper {
 		return bounds;
 	}
 
+	/**
+	 * Calculates scaling factors based on available space and resize data.
+	 *
+	 * @static
+	 * @method ResizeHelper.getScale
+	 * @param {object} gameObject - The game object for which to calculate scaling factors.
+	 * @param {string} orientation - The orientation of the resize data (e.g., "horizontal" or "vertical").
+	 * @returns {object} An object containing the scaling factors (x and y).
+	 */
 	static getScale(gameObject, orientation) {
 		const data = gameObject.data.resizeData[orientation];
 		const { topMost, bottomMost, leftMost, rightMost, totalWidth, totalHeight, remainedWidth, remainedHeight } = this.getSpace(gameObject, orientation);
@@ -223,6 +261,15 @@ export default class ResizeHelper {
 		return scale;
 	}
 
+	/**
+	 * Calculates positioning based on available space and alignment data.
+	 *
+	 * @static
+	 * @method ResizeHelper.getPosition
+	 * @param {object} gameObject - The game object for which to calculate positioning.
+	 * @param {string} orientation - The orientation of the resize data (e.g., "horizontal" or "vertical").
+	 * @returns {object} An object containing the calculated position (x and y).
+	 */
 	static getPosition(gameObject, orientation) {
 		const data = gameObject.data.resizeData[orientation];
 		const { topMost, bottomMost, leftMost, rightMost, totalWidth, totalHeight, remainedWidth, remainedHeight } = this.getSpace(gameObject, orientation);
@@ -296,6 +343,14 @@ export default class ResizeHelper {
 		return position;
 	}
 
+	/**
+	 * Finds the maximum and minimum X positions among the children of a game object.
+	 *
+	 * @static
+	 * @method ResizeHelper.findMaxAndMinX
+	 * @param {object} obj - The game object whose children to analyze.
+	 * @returns {object} An object containing the minimum (min) and maximum (max) X positions.
+	 */
 	static findMaxAndMinX(obj) {
 		let minX = Infinity;
 		let maxX = -Infinity;
@@ -324,6 +379,14 @@ export default class ResizeHelper {
 		return { min: minX, max: maxX };
 	}
 
+	/**
+	 * Finds the maximum and minimum Y positions among the children of a game object.
+	 *
+	 * @static
+	 * @method ResizeHelper.findMaxAndMinY
+	 * @param {object} obj - The game object whose children to analyze.
+	 * @returns {object} An object containing the minimum (min) and maximum (max) Y positions.
+	 */
 	static findMaxAndMinY(obj) {
 		let minY = Infinity;
 		let maxY = -Infinity;
@@ -352,6 +415,13 @@ export default class ResizeHelper {
 		return { min: minY, max: maxY };
 	}
 
+	/**
+	 * Recalculates the bounds and dimensions of a container game object after resizing.
+	 *
+	 * @static
+	 * @method ResizeHelper.recalculateContainerBounds
+	 * @param {object} obj - The container game object to recalculate bounds for.
+	 */
 	static recalculateContainerBounds(obj) {
 		const minMaxX = ResizeHelper.findMaxAndMinX(obj);
 		const minMaxY = ResizeHelper.findMaxAndMinY(obj);

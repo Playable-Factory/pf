@@ -1,11 +1,38 @@
+import * as PIXI from "pixi.js-legacy";
+/**
+ * A class to apply a sprite mask to a PIXI DisplayObject.
+ */
 export default class SpriteMask {
+	/**
+	 * Create a SpriteMask instance.
+	 * @param {PIXI.DisplayObject} obj - The DisplayObject to apply the mask to.
+	 * @param {PIXI.Sprite} mask - The sprite mask to apply.
+	 * @param {boolean} [invertAlpha=false] - Whether to invert the alpha of the mask.
+	 */
 	constructor(obj, mask, invertAlpha = false) {
+		/**
+		 * The DisplayObject to apply the mask to.
+		 * @type {PIXI.DisplayObject}
+		 */
 		this.obj = obj;
+
+		/**
+		 * The sprite mask to apply.
+		 * @type {PIXI.Sprite}
+		 */
 		this.mask = mask;
+
+		/**
+		 * Whether to invert the alpha of the mask.
+		 * @type {boolean}
+		 */
 		this.invertAlpha = invertAlpha;
 		this.init();
 	}
 
+	/**
+	 * Initialize the sprite mask.
+	 */
 	init() {
 		if (!this.obj.filters) {
 			this.obj.filters = [];

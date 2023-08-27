@@ -5,13 +5,35 @@ import Vector2 from "./curve-2d/Vector2";
 import gsap, { Power0 } from "gsap";
 import gx from "pf.js/src/2d";
 
+/**
+ * Utility class containing various helper methods.
+ */
 class Utils {
+	/**
+	 * Create a Utils instance.
+	 * @param {PIXI.Container} pixiScene - The PIXI scene.
+	 */
 	constructor(pixiScene) {
 		this.scene = pixiScene;
 	}
+	/**
+	 * Apply a sprite mask to a sprite.
+	 * @param {PIXI.Sprite} sprite - The sprite to apply the mask to.
+	 * @param {PIXI.Sprite} mask - The sprite mask to apply.
+	 * @param {boolean} invertAlpha - Whether to invert the alpha of the mask.
+	 */
 	spriteMask(sprite, mask, invertAlpha) {
 		new SpriteMask(sprite, mask, invertAlpha);
 	}
+	/**
+	 * Create a curve animation.
+	 * @param {Object} startPoint - The start point of the curve.
+	 * @param {Object} endPoint - The end point of the curve.
+	 * @param {Object} controlPoint - The control point of the curve.
+	 * @param {boolean} enableDebug - Whether to enable debug graphics.
+	 * @param {number} duration - The duration of the animation.
+	 * @param {Function} callback - The callback function for each animation step.
+	 */
 	curve(startPoint, endPoint, controlPoint, enableDebug = false) {
 		let path = { t: 0, vec: new Vector2() };
 

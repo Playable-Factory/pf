@@ -15,9 +15,18 @@ import NineSlice from "./gameobjects/nineslice";
 import Scene from "./gameobjects/scene";
 import Viewport from "./gameobjects/viewport";
 
+/**
+ * The `gx` class provides methods for initializing the game scene and adding game objects.
+ */
 class gx {
-	// static add = new GameObjectFactory();
-
+	/**
+	 * Initialize the game scene and setup various global variables.
+	 * @param {PIXI.Application} pixiApp - The PIXI application instance.
+	 * @param {Object} editorConfig - The editor configuration object.
+	 * @param {Object} TextureCache - The PIXI texture cache.
+	 * @param {Object} Resources - The PIXI loader resources.
+	 * @returns {Scene} The created game scene.
+	 */
 	static init(pixiApp, editorConfig, TextureCache, Resources) {
 		let pixiScene = new Scene();
 		pixiScene.interactive = true;
@@ -44,7 +53,15 @@ class gx {
 		let sceneController = new SceneController(pixiScene, editorConfig);
 		this.scene = sceneController;
 
+		/**
+		 * Factory for creating game objects and adding them to the scene.
+		 * @type {GameObjectFactory}
+		 */
 		this.add = new GameObjectFactory(pixiScene);
+		/**
+		 * Utility methods for game development.
+		 * @type {Utils}
+		 */
 		this.utils = new Utils(pixiScene);
 
 		return pixiScene;

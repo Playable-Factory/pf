@@ -8,8 +8,15 @@ import pfGlobals from "pf.js/src/2d/pfGlobals";
 const Resources = Loader.shared.resources;
 
 let scenes = [];
-
+/**
+ * Represents a controller for managing scenes and objects in a 2D game or application.
+ */
 class SceneController {
+	/**
+	 * Creates an instance of SceneController.
+	 * @param {Scene2D} scene2D - The 2D scene instance.
+	 * @param {EditorConfig} editorConfig - The editor configuration.
+	 */
 	constructor(scene2D, editorConfig) {
 		this.editorConfig = editorConfig;
 		this.scene2D = scene2D;
@@ -31,6 +38,11 @@ class SceneController {
 		this.allAnims = allAnims;
 	}
 
+	/**
+	 * Clones a given object and its children, if any.
+	 * @param {PIXI.DisplayObject} obj - The object to clone.
+	 * @returns {PIXI.DisplayObject} The cloned object.
+	 */
 	cloneObject(obj) {
 		let clone = (obj) => {
 			if (obj.isEditorObject) {
@@ -84,7 +96,11 @@ class SceneController {
 
 		return returnObj;
 	}
-
+	/**
+	 * Instantiates a prefab by creating objects based on prefab data.
+	 * @param {string} prefabName - The name of the prefab to instantiate.
+	 * @returns {PIXI.DisplayObject} The instantiated object.
+	 */
 	instantiate(prefabName) {
 		let traverse = (data, parent) => {
 			if (data.children) {
@@ -106,6 +122,12 @@ class SceneController {
 		}
 	}
 
+	/**
+	 * Creates and adds a PIXI.js display object based on the provided data.
+	 * @param {Object} data - The object data used for creating the display object.
+	 * @returns {PIXI.DisplayObject} The created display object.
+	 * @private
+	 */
 	_addObject(data) {
 		let obj;
 
@@ -367,6 +389,11 @@ class SceneController {
 		return obj;
 	}
 
+	/**
+	 * Recursively retrieves an array of all child objects within a given parent object.
+	 * @param {PIXI.DisplayObject} parent - The parent object to retrieve children from.
+	 * @returns {PIXI.DisplayObject[]} An array of child objects.
+	 */
 	getAllChilds(parent) {
 		const objects = [];
 
@@ -390,6 +417,12 @@ class SceneController {
 		return objects;
 	}
 
+	/**
+	 * Retrieves an object by its name from the specified scene or list of scenes.
+	 * @param {string} name - The name of the object to retrieve.
+	 * @param {Scene2D} [fromScene] - The scene to search for the object.
+	 * @returns {PIXI.DisplayObject} The retrieved object, if found.
+	 */
 	getObject(name, fromScene) {
 		let obj;
 
@@ -403,6 +436,12 @@ class SceneController {
 		return obj;
 	}
 
+	/**
+	 * Retrieves an object by its UUID from the specified scene or list of scenes.
+	 * @param {string} uuid - The UUID of the object to retrieve.
+	 * @param {Scene2D} [fromScene] - The scene to search for the object.
+	 * @returns {PIXI.DisplayObject} The retrieved object, if found.
+	 */
 	getObjectByUUID(uuid, fromScene) {
 		let obj;
 
@@ -416,6 +455,11 @@ class SceneController {
 		return obj;
 	}
 
+	/**
+	 * Updates all entities within the scenes.
+	 * @param {number} time - The current time.
+	 * @param {number} delta - The time elapsed since the last update.
+	 */
 	update(time, delta) {
 		for (let scene of scenes) {
 			for (let i = 0; i < scene.entityList.length; i++) {
@@ -425,6 +469,11 @@ class SceneController {
 		}
 	}
 
+	/**
+	 * Resizes all entities within the scenes.
+	 * @param {number} w - The new width.
+	 * @param {number} h - The new height.
+	 */
 	resize(w, h) {
 		for (let scene of scenes) {
 			for (let obj of scene.entityList) {
@@ -433,11 +482,21 @@ class SceneController {
 		}
 	}
 
+	/**
+	 * Retrieves a scene by its name.
+	 * @param {string} name - The name of the scene to retrieve.
+	 * @returns {Scene2D} The retrieved scene, if found.
+	 */
 	getSceneByName(name) {
 		return scenes.find((scene) => scene.name === name);
 	}
 
-	//SCENE RELATED FUNCTIONS
+	/**
+	 * Starts a specified scene.
+	 * @param {string} name - The name of the scene to start.
+	 * @param {boolean} [removeCurScene] - Whether to remove the current scene.
+	 * @returns {Scene2D} The started scene.
+	 */
 	start(name, removeCurScene) {
 		let scene = scenes.find((scene) => scene.name === name);
 
@@ -578,6 +637,10 @@ class SceneController {
 		return scene;
 	}
 
+	/**
+	 * Fills public variables in components of the provided entity list.
+	 * @param {PIXI.DisplayObject[]} entityList - The list of entities to fill variables for.
+	 */
 	fillPublicVariables(entityList) {
 		for (let obj of entityList) {
 			obj.entity.runOnAllComponents((component) => {
@@ -587,6 +650,10 @@ class SceneController {
 		}
 	}
 
+	/**
+	 * Removes an object from the scene and related data.
+	 * @param {PIXI.DisplayObject} obj - The object to remove.
+	 */
 	removeObject(obj) {
 		let scene = obj.sceneRef;
 		if (!scene) return;
@@ -605,6 +672,10 @@ class SceneController {
 		}
 	}
 
+	/**
+	 * Removes a scene by its name.
+	 * @param {string} name - The name of the scene to remove.
+	 */
 	remove(name) {
 		let scene = scenes.find((scene) => scene.name === name);
 
@@ -616,12 +687,20 @@ class SceneController {
 		this._removeScene(scene);
 	}
 
+	/**
+	 * Removes all scenes and related data.
+	 */
 	removeAll() {
 		scenes.forEach((scene) => {
 			this._removeScene(scene);
 		});
 	}
 
+	/**
+	 * Removes a scene and its related data.
+	 * @param {Scene2D} scene - The scene to remove.
+	 * @private
+	 */
 	_removeScene(scene) {
 		if (!scene) return;
 
@@ -639,6 +718,13 @@ class SceneController {
 
 export default SceneController;
 
+/**
+ * Converts RGB color values to a hexadecimal representation.
+ * @param {number} r - The red color component (0-1).
+ * @param {number} g - The green color component (0-1).
+ * @param {number} b - The blue color component (0-1).
+ * @returns {string} The hexadecimal color representation.
+ */
 function RGBToHex(r, g, b) {
 	r *= 255;
 	g *= 255;

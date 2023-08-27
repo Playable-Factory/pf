@@ -13,7 +13,19 @@ import gx from "pf.js/src/2d";
 
 const Resources = Loader.shared.resources;
 
+/**
+ * Class representing the main 2D application.
+ */
 class Main2D {
+	/**
+	 * Create a Main2D instance.
+	 * @param {object} config - The configuration options for the PIXI application.
+	 * @param {object} editorConfig - The editor configuration options.
+	 * @param {object} assets - The assets to load.
+	 * @param {Function} readyCallback - The callback function to be called when assets are loaded and the app is ready.
+	 * @param {Function} resizeCallback - The callback function to be called when the canvas is resized.
+	 * @param {Function} updateCallback - The callback function to be called on each update tick.
+	 */
 	constructor(config, editorConfig, assets, readyCallback, resizeCallback, updateCallback) {
 		this.resizeCallback = resizeCallback;
 		this.updateCallback = updateCallback;
@@ -66,29 +78,50 @@ class Main2D {
 		});
 	}
 
+	/**
+	 * Pause the application's update loop.
+	 */
 	pause() {
 		gsap.ticker.sleep();
 	}
 
+	/**
+	 * Resume the application's update loop.
+	 */
 	resume() {
 		gsap.ticker.wake();
 	}
 
+	/**
+	 * Update the application's logic.
+	 * @param {number} time - The current time in milliseconds.
+	 * @param {number} delta - The time elapsed since the last frame update.
+	 */
 	update(time, delta) {
 		this.updateCallback && this.updateCallback(time, delta);
 		gx.scene.update(time, delta);
 		// console.log(gx.scene);
 	}
 
+	/**
+	 * Render the PIXI application.
+	 */
 	render() {
 		this.pixiApp.ticker.update();
 	}
 
+	/**
+	 * Initialize the top banner.
+	 * @param {object} data - Data for initializing the top banner.
+	 */
 	initTopBanner(data) {
 		let topBanner = new Banner(this.pixiScene, data);
 		this.topBanner = topBanner;
 	}
 
+	/**
+	 * Handle assets loaded event.
+	 */
 	assetsLoaded() {
 		let mapNames = this.editorConfig.mapNames2D;
 
@@ -121,6 +154,10 @@ class Main2D {
 		}
 	}
 
+	/**
+	 * Get all animation names and their associated UUIDs from loaded resources.
+	 * @returns {object} - Object containing animation names and UUIDs.
+	 */
 	getAllAnims() {
 		let allAnims = {};
 		for (let uuid in Resources) {
@@ -131,6 +168,10 @@ class Main2D {
 		return allAnims;
 	}
 
+	/**
+	 * Initialize the post-processing effects.
+	 * @param {object} data - Data for initializing post-process effects.
+	 */
 	initPostProcess = (data) => {
 		let postprocess = new PostProcessing();
 		this.postprocess = postprocess;
@@ -138,6 +179,11 @@ class Main2D {
 		window.pfUpdatePostProcessValues(data.pfPostprocessData);
 	};
 
+	/**
+	 * Resize the PIXI canvas and update scene properties accordingly.
+	 * @param {number} w - The new width of the canvas.
+	 * @param {number} h - The new height of the canvas.
+	 */
 	resizeCanvas(w, h) {
 		let scene = this.pixiScene;
 
@@ -158,6 +204,11 @@ class Main2D {
 		scene.lastHeight = h;
 	}
 
+	/**
+	 * Resize the PIXI canvas and its contents.
+	 * @param {number} w - The new width.
+	 * @param {number} h - The new height.
+	 */
 	resize(w, h) {
 		let { width, height } = this.responsive.resize(this.pixiApp, w, h);
 

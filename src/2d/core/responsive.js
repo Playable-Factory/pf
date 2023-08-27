@@ -1,9 +1,24 @@
+/**
+ * A class to handle responsive resizing of the PIXI canvas and its contents.
+ */
 class Responsive {
+	/**
+	 * Create a Responsive instance.
+	 * @param {PIXI.Application} pixiApp - The PIXI application instance.
+	 * @param {PIXI.Container} scene - The PIXI scene to be resized responsively.
+	 */
 	constructor(pixiApp, scene) {
 		this.pixiApp = pixiApp;
 		this.pixiScene = scene;
 	}
 
+	/**
+	 * Resize the PIXI canvas and maintain the aspect ratio of the content.
+	 * @param {PIXI.Application} app - The PIXI application instance.
+	 * @param {number} iw - The new width of the canvas.
+	 * @param {number} ih - The new height of the canvas.
+	 * @returns {{width: number, height: number}} The resized width and height.
+	 */
 	resize(app, iw, ih) {
 		var gameWidth = app.renderer.options.width;
 		var gameHeight = app.renderer.options.height;
@@ -52,6 +67,11 @@ class Responsive {
 		return { width, height };
 	}
 
+	/**
+	 * Resize the objects within the PIXI scene based on the new dimensions.
+	 * @param {number} w - The new width of the canvas.
+	 * @param {number} h - The new height of the canvas.
+	 */
 	resizeObjects(w, h) {
 		// let app = this.pixiApp;
 
@@ -103,6 +123,11 @@ class Responsive {
 		}
 	}
 
+	/**
+	 * Recursively collect all game objects within a PIXI container.
+	 * @param {PIXI.Container} container - The PIXI container to collect objects from.
+	 * @param {PIXI.DisplayObject[]} resultArray - The array to store collected objects.
+	 */
 	getAllGameObjects(container, resultArray) {
 		container.children.forEach((child) => {
 			resultArray.push(child);

@@ -9,10 +9,17 @@ import { Spritesheet, utils } from "pixi.js-legacy";
 // import { sound } from "@pixi/sound";
 
 //Assets.loader._parsers[0].config.preferWorkers = false;
-
+/**
+ * Class responsible for loading various types of assets in a 2D game.
+ */
 class Loader2D {
 	constructor() {}
 
+	/**
+	 * Load a list of assets and call the callback when all assets are loaded.
+	 * @param {Object[]} assetList - List of asset objects to load.
+	 * @param {Function} callback - Callback function to execute after all assets are loaded.
+	 */
 	load(assetList, callback) {
 		let loadAsset = (asset) => {
 			// let asset = assetList[i];
@@ -31,7 +38,7 @@ class Loader2D {
 				this.loadBitmapFont(asset.key, asset.src, asset.xml, assetLoaded);
 			} else if (asset.type == "gltf") {
 				this.loadGltf(asset.key, asset.src, assetLoaded);
-			} 
+			}
 			// else if (asset.type == "sound") {
 			// 	this.loadSound(asset.key, asset.src, asset.json, assetLoaded);
 			// }
@@ -69,6 +76,14 @@ class Loader2D {
 		}
 	}
 
+	/**
+	 * Load a Spine animation.
+	 * @param {string} key - Key to identify the loaded asset.
+	 * @param {string} imageFile - Image file path.
+	 * @param {string} jsonData - JSON data for the Spine animation.
+	 * @param {string} atlasData - Atlas data for the Spine animation.
+	 * @param {Function} callback - Callback function to execute after the Spine animation is loaded.
+	 */
 	async loadSpine(key, imageFile, jsonData, atlasData, callback) {
 		Assets.add(key, imageFile);
 		await Assets.load(key);
@@ -85,6 +100,13 @@ class Loader2D {
 		callback();
 	}
 
+	/**
+	 * Load a bitmap font.
+	 * @param {string} key - Key to identify the loaded asset.
+	 * @param {string} imageFile - Image file path.
+	 * @param {string} xmlData - XML data for the bitmap font.
+	 * @param {Function} callback - Callback function to execute after the bitmap font is loaded.
+	 */
 	async loadBitmapFont(key, imageFile, xmlData, callback) {
 		const parse = function (xml) {
 			var data = new PIXI.BitmapFontData();
@@ -145,12 +167,24 @@ class Loader2D {
 		callback();
 	}
 
+	/**
+	 * Load an image.
+	 * @param {string} key - Key to identify the loaded asset.
+	 * @param {string} imageFile - Image file path.
+	 * @param {Function} callback - Callback function to execute after the image is loaded.
+	 */
 	async loadImage(key, imageFile, callback) {
 		Assets.add(key, imageFile);
 		await Assets.load(key);
 		callback();
 	}
 
+	/**
+	 * Load a video.
+	 * @param {string} key - Key to identify the loaded asset.
+	 * @param {string} videoFile - Video file path.
+	 * @param {Function} callback - Callback function to execute after the video is loaded.
+	 */
 	loadVideo(key, videoFile, callback) {
 		var video = document.createElement("VIDEO");
 		if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
@@ -174,6 +208,13 @@ class Loader2D {
 		video.muted = "muted";
 	}
 
+	/**
+	 * Load an atlas.
+	 * @param {string} key - Key to identify the loaded asset.
+	 * @param {string} imageFile - Image file path.
+	 * @param {Object} atlasData - Atlas data.
+	 * @param {Function} callback - Callback function to execute after the atlas is loaded.
+	 */
 	async loadAtlas(key, imageFile, atlasData, callback) {
 		Assets.add(key, imageFile);
 		const asset = await Assets.load(key);
@@ -205,6 +246,12 @@ class Loader2D {
 		});
 	}
 
+	/**
+	 * Load a glTF model.
+	 * @param {string} key - Key to identify the loaded asset.
+	 * @param {string} gltfSrc - glTF source data.
+	 * @param {Function} callback - Callback function to execute after the glTF model is loaded.
+	 */
 	loadGltf(key, gltfSrc, callback) {
 		let src = JSON.parse(gltfSrc);
 		glTFAsset.load(src, PIXI.Loader.shared, (gltf) => {
