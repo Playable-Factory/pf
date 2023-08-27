@@ -6,7 +6,7 @@ import { Assets } from "@pixi/assets";
 // import globals from "../../../globals";
 import { Spritesheet, utils } from "pixi.js-legacy";
 // import { Buffer } from 'buffer';
-import { sound } from "@pixi/sound";
+// import { sound } from "@pixi/sound";
 
 //Assets.loader._parsers[0].config.preferWorkers = false;
 
@@ -31,9 +31,10 @@ class Loader2D {
 				this.loadBitmapFont(asset.key, asset.src, asset.xml, assetLoaded);
 			} else if (asset.type == "gltf") {
 				this.loadGltf(asset.key, asset.src, assetLoaded);
-			} else if (asset.type == "sound") {
-				this.loadSound(asset.key, asset.src, asset.json, assetLoaded);
-			}
+			} 
+			// else if (asset.type == "sound") {
+			// 	this.loadSound(asset.key, asset.src, asset.json, assetLoaded);
+			// }
 		};
 
 		let numOfAssetLoaded = 0;
@@ -212,6 +213,7 @@ class Loader2D {
 		});
 	}
 
+	/*
 	loadSound(key, src, json, callback) {
 		var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 		var lookup = typeof Uint8Array === "undefined" ? [] : new Uint8Array(256);
@@ -273,6 +275,7 @@ class Loader2D {
 				callback();
 			});
 	}
+	*/
 }
 
 export default Loader2D;

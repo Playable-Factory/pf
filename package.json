@@ -23,5 +23,8 @@
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "playable factory",
-	"license": "ISC"
+	"license": "ISC",
+	"devDependencies": {
+		"typescript": "^5.2.2"
+	}
 }
