@@ -1,115 +1,54 @@
-'use strict';
+"use strict";
 
-const webpack = require('webpack');
-const exec = require('child_process').exec;
+const webpack = require("webpack");
+const exec = require("child_process").exec;
+const TerserPlugin = require('terser-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = [
+	{
+		mode: "production",
+		entry: "./src/2d/index.js",
 
-    {
-        mode: 'development',
+		devtool: "source-map",
 
-        context: `${__dirname}/../src/`,
+		output: {
+			path: `${__dirname}/../build/`,
+			globalObject: "this",
+			sourceMapFilename: "[file].map",
+			devtoolModuleFilenameTemplate: "webpack:///[resource-path]", // string
+			devtoolFallbackModuleFilenameTemplate: "webpack:///[resource-path]?[hash]", // string
+			filename: "[name].js",
+			library: {
+				name: "gx",
+				type: "umd",
+				umdNamedDefine: true,
+			},
+		},
 
-        entry: {
-            phaser: './phaser.js'
-        },
+		performance: { hints: false },
 
-        devtool: 'source-map',
+		plugins: [new webpack.DefinePlugin({})],
 
-        output: {
-            path: `${__dirname}/../build/`,
-            globalObject: 'this',
-            sourceMapFilename: '[file].map',
-            devtoolModuleFilenameTemplate: 'webpack:///[resource-path]', // string
-            devtoolFallbackModuleFilenameTemplate: 'webpack:///[resource-path]?[hash]', // string
-            filename: '[name].js',
-            library: {
-                name: 'Phaser',
-                type: 'umd',
-                umdNamedDefine: true,
-            }
-        },
+		devtool: "source-map",
 
-        performance: { hints: false },
-
-        plugins: [
-            new webpack.DefinePlugin({
-                "typeof CANVAS_RENDERER": JSON.stringify(true),
-                "typeof WEBGL_RENDERER": JSON.stringify(true),
-                "typeof WEBGL_DEBUG": JSON.stringify(true),
-                "typeof EXPERIMENTAL": JSON.stringify(true),
-                "typeof PLUGIN_3D": JSON.stringify(false),
-                "typeof PLUGIN_CAMERA3D": JSON.stringify(false),
-                "typeof PLUGIN_FBINSTANT": JSON.stringify(false),
-                "typeof FEATURE_SOUND": JSON.stringify(true)
-            }),
-            {
-                apply: (compiler) => {
-                    compiler.hooks.afterEmit.tap('AfterEmitPlugin', (compilation) => {
-                        exec('node scripts/copy-to-examples-watch.js', (err, stdout, stderr) => {
-                            if (stdout) process.stdout.write(stdout);
-                            if (stderr) process.stderr.write(stderr);
-                        });
-                    });
-                }
-            }
-        ],
-
-        devtool: 'source-map'
-    },
-    /*
-    {
-        experiments: {
-            outputModule: true,
-        },
-
-        mode: 'development',
-
-        context: `${__dirname}/../src/`,
-
-        entry: {
-            phaser: './phaser-esm.js'
-        },
-
-        devtool: 'source-map',
-
-        output: {
-            path: `${__dirname}/../build/`,
-            sourceMapFilename: 'phaser.esm.js.map',
-            devtoolModuleFilenameTemplate: 'webpack:///[resource-path]', // string
-            devtoolFallbackModuleFilenameTemplate: 'webpack:///[resource-path]?[hash]', // string
-            filename: 'phaser.esm.js',
-            library: {
-                type: 'module'
-            }
-        },
-
-        performance: { hints: false },
-
-        plugins: [
-            new webpack.DefinePlugin({
-                "typeof CANVAS_RENDERER": JSON.stringify(true),
-                "typeof WEBGL_RENDERER": JSON.stringify(true),
-                "typeof WEBGL_DEBUG": JSON.stringify(true),
-                "typeof EXPERIMENTAL": JSON.stringify(true),
-                "typeof PLUGIN_3D": JSON.stringify(false),
-                "typeof PLUGIN_CAMERA3D": JSON.stringify(false),
-                "typeof PLUGIN_FBINSTANT": JSON.stringify(false),
-                "typeof FEATURE_SOUND": JSON.stringify(true)
-            }),
-            {
-                apply: (compiler) => {
-                    compiler.hooks.afterEmit.tap('AfterEmitPlugin', (compilation) => {
-                        exec('node scripts/copy-esm-to-examples-watch.js', (err, stdout, stderr) => {
-                            if (stdout) process.stdout.write(stdout);
-                            if (stderr) process.stderr.write(stderr);
-                        });
-                    });
-                }
-            }
-        ],
-
-        devtool: 'source-map'
-    }
-    */
+		optimization: {
+			minimizer: [
+				new TerserPlugin({
+					include: /\.min\.js$/,
+					parallel: true,
+					extractComments: false,
+					terserOptions: {
+						format: {
+							comments: false,
+						},
+						compress: true,
+						ie8: false,
+						ecma: 6,
+						warnings: false,
+					},
+				}),
+			],
+		},
+	},
 ];
