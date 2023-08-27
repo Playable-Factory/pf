@@ -25,6 +25,7 @@
 	"author": "playable factory",
 	"license": "ISC",
 	"devDependencies": {
+		"@webdoc/cli": "^2.2.0",
 		"typescript": "^5.2.2"
 	}
 }

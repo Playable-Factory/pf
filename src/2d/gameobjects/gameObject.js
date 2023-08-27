@@ -6,82 +6,184 @@ import Skew from "./props/skew";
 import pfGlobals from "../pfGlobals";
 import { ColorOverlayFilter } from "pixi-filters";
 
+import * as PIXI from "pixi.js-legacy";
+/**
+ * Base class for game objects.
+ *
+ * @class GameObject
+ */
 class GameObject {
+	/**
+	 * Creates an instance of GameObject.
+	 *
+	 * @constructor
+	 * @param {PIXI.DisplayObject} pixiObj - The PIXI display object associated with this game object.
+	 * @param {number} [x=0] - X position of the game object.
+	 * @param {number} [y=0] - Y position of the game object.
+	 */
 	constructor(pixiObj, x = 0, y = 0) {
+		/**
+		 * The PIXI display object associated with this game object.
+		 * @type {PIXI.DisplayObject}
+		 */
 		this.pixiObj = pixiObj;
-		if (!pixiObj.anchor) {
-			this.anchor = null;
-		}
-		if (!pixiObj.pivot) {
-			this.pivot = null;
-		}
 
+		/**
+		 * The anchor point of the PIXI object.
+		 * @type {PIXI.Point|null}
+		 */
+		this.anchor = !pixiObj.anchor ? null : undefined;
+
+		/**
+		 * The pivot point of the PIXI object.
+		 * @type {PIXI.Point|null}
+		 */
+		this.pivot = !pixiObj.pivot ? null : undefined;
+
+		/**
+		 * The base width of the PIXI object.
+		 * @type {number}
+		 */
 		this.baseWidth = this.pixiObj.width;
+
+		/**
+		 * The base height of the PIXI object.
+		 * @type {number}
+		 */
 		this.baseHeight = this.pixiObj.height;
 
+		/**
+		 * Event listeners attached to the game object.
+		 * @type {Object.<string, Function[]>}
+		 */
+		this.eventListeners = {};
+
+		// Set the default origin and position
 		this.setOrigin(0.5, 0.5);
 		this.setPosition(x, y);
 
+		// Alias for setOrigin
 		this.setPivot = this.setOrigin;
-
-		this.eventListeners = {};
 	}
 
+	/**
+	 * Adds a child PIXI display object to the current game object.
+	 *
+	 * @method addChild
+	 * @param {GameObject} child - The child game object to add.
+	 */
 	addChild(child) {
-		if (!child.pixiObj) {
+		const hasPixiObject = !!child.pixiObj;
+
+		if (!hasPixiObject) {
 			console.warn("Child does not have a pixi object");
 			return;
 		}
+
 		this.pixiObj.addChild(child.pixiObj);
 	}
 
+	/**
+	 * Removes a child PIXI display object from the current game object.
+	 *
+	 * @method removeChild
+	 * @param {GameObject} child - The child game object to remove.
+	 */
 	removeChild(child) {
-		if (!child.pixiObj) {
+		const hasPixiObject = !!child.pixiObj;
+
+		if (!hasPixiObject) {
 			console.warn("Child does not have a pixi object");
 			return;
 		}
+
 		this.pixiObj.removeChild(child.pixiObj);
 	}
 
+	/**
+	 * Attaches a child game object to the current game object and repositions it to match world position.
+	 *
+	 * @method attach
+	 * @param {GameObject} child - The child game object to attach.
+	 */
 	attach(child) {
 		const worldPosition = child.getGlobalPosition();
+
+		// Adds the child game object and repositions it to match the world position
 		this.addChild(child);
 		const newPosition = this.toLocal(worldPosition);
 		child.setPosition(newPosition.x, newPosition.y);
 	}
 
+	/**
+	 * Removes the current game object from its parent.
+	 *
+	 * @method remove
+	 */
 	remove() {
 		this.pixiObj.parent.remove(this.pixiObj);
 	}
 
+	/**
+	 * Returns an array of child GameObjects associated with this GameObject.
+	 * @return {GameObject[]}
+	 */
 	get children() {
 		return this.pixiObj.children.map((child) => child.gameObject);
 	}
 
+	/**
+	 * Returns the parent GameObject of this GameObject.
+	 * @return {GameObject}
+	 */
 	get parent() {
 		return this.pixiObj.parent.gameObject;
 	}
 
+	/**
+	 * Sets the visibility of the GameObject.
+	 * @param {boolean} value
+	 */
 	set visible(value) {
 		this.pixiObj.visible = value;
 	}
 
+	/**
+	 * Returns the visibility status of the GameObject.
+	 * @return {boolean}
+	 */
 	get visible() {
 		return this.pixiObj.visible;
 	}
 
+	/**
+	 * Sets the x-coordinate of the GameObject.
+	 * @param {number} value
+	 */
 	set x(value) {
 		this.pixiObj.x = value;
 	}
 
+	/**
+	 * Returns the x-coordinate of the GameObject.
+	 * @return {number}
+	 */
 	get x() {
 		return this.pixiObj.x;
 	}
 
+	/**
+	 * Sets the y-coordinate of the GameObject.
+	 * @param {number} value
+	 */
 	set y(value) {
 		this.pixiObj.y = value;
 	}
 
+	/**
+	 * Returns the y-coordinate of the GameObject.
+	 * @return {number}
+	 */
 	get y() {
 		return this.pixiObj.y;
 	}
