@@ -1,4 +1,4 @@
-// import gx from "pf.js/src";
+// import pf2D from "pf.js/src";
 import objectTypes from "./objectTypes";
 import Position from "./props/position";
 import Scale from "./props/scale";
@@ -7,6 +7,7 @@ import pfGlobals from "../pfGlobals";
 import { ColorOverlayFilter } from "pixi-filters";
 
 import * as PIXI from "pixi.js-legacy";
+import GameObjectFactory from "./factory";
 /**
  * Base class for game objects.
  *
@@ -57,6 +58,12 @@ class GameObject {
 		 * @type {Object.<string, Function[]>}
 		 */
 		this.eventListeners = {};
+
+		/**
+		 * Game Object Factory
+		 * @type {GameObjectFactory}
+		 */
+		this.add = new GameObjectFactory(this);
 
 		// Set the default origin and position
 		this.setOrigin(0.5, 0.5);
@@ -550,16 +557,16 @@ class GameObject {
 			let newObj = null;
 
 			if (type == objectTypes.SPRITE) {
-				newObj = pfGlobals.gx.add.sprite(obj.x, obj.y, obj.textureName);
+				newObj = pfGlobals.pf2D.add.sprite(obj.x, obj.y, obj.textureName);
 			} else if (type == objectTypes.TEXT) {
-				newObj = pfGlobals.gx.add.text(obj.x, obj.y, obj.text, obj.style);
+				newObj = pfGlobals.pf2D.add.text(obj.x, obj.y, obj.text, obj.style);
 			} else if (type == objectTypes.ANIMATED_SPRITE) {
-				newObj = pfGlobals.gx.add.animatedSprite(obj.x, obj.y, obj.animKey, obj.isPlaying, obj.loop);
+				newObj = pfGlobals.pf2D.add.animatedSprite(obj.x, obj.y, obj.animKey, obj.isPlaying, obj.loop);
 				newObj.animationSpeed = obj.animationSpeed;
 			} else if (type == objectTypes.SPINE) {
-				newObj = pfGlobals.gx.add.spine(obj.x, obj.y, obj.spineName, obj.skinName, obj.animName, obj.loop);
+				newObj = pfGlobals.pf2D.add.spine(obj.x, obj.y, obj.spineName, obj.skinName, obj.animName, obj.loop);
 			} else if (type == objectTypes.CONTAINER) {
-				newObj = pfGlobals.gx.add.container(obj.x, obj.y);
+				newObj = pfGlobals.pf2D.add.container(obj.x, obj.y);
 			}
 
 			newObj.x = obj.x;

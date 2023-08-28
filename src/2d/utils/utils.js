@@ -3,7 +3,7 @@ import SpriteMask from "./spriteMask";
 import QuadraticBezier from "./curve-2d/QuadraticBezierCurve";
 import Vector2 from "./curve-2d/Vector2";
 import gsap, { Power0 } from "gsap";
-import gx from "pf.js/src/2d";
+import pf2D from "pf.js/src/2d";
 
 /**
  * Utility class containing various helper methods.
@@ -44,7 +44,7 @@ class Utils {
 
 		if (enableDebug) {
 			console.log(curve);
-			let graphics = gx.add.graphics();
+			let graphics = pf2D.add.graphics();
 			graphics.lineStyle(2, 0xff00ff, 1);
 
 			let points = curve.getPoints(30);

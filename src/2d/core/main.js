@@ -9,7 +9,7 @@ import PixiPlugin from "gsap/PixiPlugin";
 import CustomEase from "gsap/CustomEase";
 import { utils, Loader, Rectangle } from "pixi.js-legacy";
 import Banner from "./utils/banner";
-import gx from "pf.js/src/2d";
+import pf2D from "pf.js/src/2d";
 
 const Resources = Loader.shared.resources;
 
@@ -61,7 +61,7 @@ class Main2D {
 		// app.stage.interactive = true;
 		// app.stage.sortableChildren = true;
 
-		let scene = gx.init(app, editorConfig, utils.TextureCache, Resources);
+		let scene = pf2D.init(app, editorConfig, utils.TextureCache, Resources);
 		this.pixiApp = app;
 		this.pixiScene = scene;
 		this.scene = scene;
@@ -99,8 +99,7 @@ class Main2D {
 	 */
 	update(time, delta) {
 		this.updateCallback && this.updateCallback(time, delta);
-		gx.scene.update(time, delta);
-		// console.log(gx.scene);
+		pf2D.scene.update(time, delta);
 	}
 
 	/**

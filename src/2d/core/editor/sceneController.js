@@ -2,7 +2,7 @@ import { Loader } from "pixi.js-legacy";
 import ResizeHelper from "./helpers/resizeHelper";
 import Entity from "../../../ecs/entity";
 import { v4 as uuidv4 } from "uuid";
-import gx from "pf.js/src/2d";
+import pf2D from "pf.js/src/2d";
 import pfGlobals from "pf.js/src/2d/pfGlobals";
 
 const Resources = Loader.shared.resources;
@@ -132,7 +132,7 @@ class SceneController {
 		let obj;
 
 		if (data.type == "container") {
-			obj = gx.add.container(0, 0);
+			obj = this.scene2D.add.container(0, 0);
 			obj.setOrigin(data.pivot.x, data.pivot.y);
 			// obj = new PIXI.Container();
 			// obj.pivot.set(data.pivot.x, data.pivot.y);
@@ -158,26 +158,26 @@ class SceneController {
 				}
 			}
 
-			obj = gx.add.sprite(0, 0, data?.texture?.uuid);
+			obj = this.scene2D.add.sprite(0, 0, data?.texture?.uuid);
 			obj.setOrigin(data.anchor.x, data.anchor.y).setSkew(data.skew.x, data.skew.y);
 		} else if (data.type == "spine") {
 			let loop = data.loop === undefined ? true : data.loop;
-			obj = gx.add.spine(0, 0, data.texture.uuid, data.skinKey, data.animationKey, loop);
+			obj = this.scene2D.add.spine(0, 0, data.texture.uuid, data.skinKey, data.animationKey, loop);
 			obj.timeScale = data.animationSpeed;
 			obj.setOrigin(data.pivot.x, data.pivot.y);
 		} else if (data.type == "particle") {
-			obj = gx.add.particleEmitter(0, 0, data.particleData);
+			obj = this.scene2D.add.particleEmitter(0, 0, data.particleData);
 			obj.setOrigin(data.pivot.x, data.pivot.y);
 
 			obj.setSpawnPos(data.width * 0.5, data.height * 0.5);
 			obj.setEmit(data.playAtStart);
 		} else if (data.type == "animatedSprite") {
-			obj = gx.add.animatedSprite(0, 0, data.animationKey, data.autoPlay, data.loop);
+			obj = this.scene2D.add.animatedSprite(0, 0, data.animationKey, data.autoPlay, data.loop);
 			obj.animationSpeed = data.animationSpeed;
 			obj.setOrigin(data.anchor.x, data.anchor.y);
 			obj.setSkew(data.skew.x, data.skew.y);
 		} else if (data.type == "graphics") {
-			obj = gx.add.graphics(0, 0);
+			obj = this.scene2D.add.graphics(0, 0);
 
 			let rawFillColor = data.fill;
 			let fillColor = RGBToHex(rawFillColor[0], rawFillColor[1], rawFillColor[2]);
@@ -231,11 +231,11 @@ class SceneController {
 				lineJoin: "round",
 			};
 
-			obj = gx.add.text(0, 0, data.text, style);
+			obj = this.scene2D.add.text(0, 0, data.text, style);
 			obj.resolution = data.resolution;
 			obj.setOrigin(data.anchor.x, data.anchor.y);
 		} else if (data.type == "nineslice") {
-			obj = gx.add.nineslice(0, 0, data.texture.uuid, data.origWidth, data.origHeight, data.leftWidth, data.rightWidth, data.topHeight, data.bottomHeight);
+			obj = this.scene2D.add.nineslice(0, 0, data.texture.uuid, data.origWidth, data.origHeight, data.leftWidth, data.rightWidth, data.topHeight, data.bottomHeight);
 			obj.setOrigin(data.pivot.x, data.pivot.y);
 		}
 
@@ -514,7 +514,7 @@ class SceneController {
 
 		if (scene.viewportData && scene.viewportData.enabled) {
 			const viewportData = scene.viewportData;
-			const viewport = gx.add.viewport({
+			const viewport = this.scene2D.add.viewport({
 				screenWidth: window.innerWidth,
 				screenHeight: window.innerHeight,
 				worldWidth: 0,
@@ -532,7 +532,7 @@ class SceneController {
 
 			viewport.drag().pinch().wheel().decelerate();
 
-			viewport.debug = gx.add.graphics(0, 0);
+			viewport.debug = this.scene2D.add.graphics(0, 0);
 			viewport.debug.zIndex = 9999;
 			viewport.addChild(viewport.debug);
 
@@ -611,7 +611,7 @@ class SceneController {
 					if (data.type == "graphics") {
 						targetObj.mask = obj;
 					} else {
-						gx.utils.spriteMask(targetObj, obj, data.invertAlpha);
+						pf2D.utils.spriteMask(targetObj, obj, data.invertAlpha);
 						// new SpriteMask(targetObj, obj, data.invertAlpha);
 					}
 				}

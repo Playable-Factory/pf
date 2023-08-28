@@ -18,7 +18,7 @@ import Viewport from "./gameobjects/viewport";
 /**
  * The `gx` class provides methods for initializing the game scene and adding game objects.
  */
-class gx {
+class pf2D {
 	/**
 	 * Initialize the game scene and setup various global variables.
 	 * @param {PIXI.Application} pixiApp - The PIXI application instance.
@@ -32,9 +32,9 @@ class gx {
 		pixiScene.interactive = true;
 		pixiScene.sortableChildren = true;
 		pixiApp.stage.addChild(pixiScene.pixiObj);
-		gx.scene = pixiScene;
+		this.scene = pixiScene;
 
-		pfGlobals.gx = this;
+		pfGlobals.pf2D = this;
 		pfGlobals.pixiScene = pixiScene;
 
 		let allAnims = {};
@@ -67,13 +67,4 @@ class gx {
 		return pixiScene;
 	}
 }
-
-// var gx = {
-//     init: (pixiScene) => {
-//         gx.scene = pixiScene;
-
-//     },
-//     add: new GameObjectFactory(),
-// }
-
-export default gx;
+export default pf2D;
