@@ -1,5 +1,4 @@
 // import { AnimatedSprite, Graphics, Loader, TextStyle, Text, Texture, utils, NineSlicePlane } from "pixi.js-legacy";
-import { Sprite, utils } from "pixi.js-legacy";
 
 import GameObject from "./gameObject";
 import objectTypes from "./objectTypes";
@@ -34,12 +33,21 @@ class Text extends GameObject {
 	get style() {
 		return this.pixiObj.style;
 	}
-
+	///COLOR
 	set color(color) {
 		this.pixiObj.style.fill = color;
 	}
 
 	get color() {
+		return this.pixiObj.style.fill;
+	}
+
+	///FILL
+	set fill(color) {
+		this.pixiObj.style.fill = color;
+	}
+
+	get fill() {
 		return this.pixiObj.style.fill;
 	}
 
