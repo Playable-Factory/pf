@@ -27,7 +27,6 @@ class SceneController {
 		let pixiSceneData = this.editorConfig.sceneData2D || this.editorConfig.pixiSceneData;
 
 		for (let sceneData of pixiSceneData) {
-			console.log(sceneData);
 			let scene = this.stage2D.add.scene(sceneData.name);
 			scenes.push(scene);
 			scene.objects = sceneData.objects;
@@ -504,7 +503,6 @@ class SceneController {
 	 */
 	start(name, removeCurScene) {
 		let scene = scenes.find((scene) => scene.name === name);
-		console.log(scene);
 		if (!scene) {
 			console.warn("Scene not found");
 			return;
