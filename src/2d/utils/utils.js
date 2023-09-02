@@ -3,7 +3,7 @@ import SpriteMask from "./spriteMask";
 import QuadraticBezier from "./curve-2d/QuadraticBezierCurve";
 import Vector2 from "./curve-2d/Vector2";
 import gsap, { Power0 } from "gsap";
-import pf2D from "pf.js/src/2d";
+import pf2D from "../index";
 
 /**
  * Utility class containing various helper methods.

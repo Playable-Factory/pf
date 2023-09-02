@@ -2,8 +2,9 @@ import { Loader } from "pixi.js-legacy";
 import ResizeHelper from "./helpers/resizeHelper";
 import Entity from "../../../ecs/entity";
 import { v4 as uuidv4 } from "uuid";
-import pf2D from "pf.js/src/2d";
-import pfGlobals from "pf.js/src/2d/pfGlobals";
+import pf2D from "../../index";
+import pfGlobals from "../../pfGlobals";
+import Scene from "../../gameobjects/scene";
 
 const Resources = Loader.shared.resources;
 
@@ -14,8 +15,8 @@ let scenes = [];
 class SceneController {
 	/**
 	 * Creates an instance of SceneController.
-	 * @param {Scene2D} scene2D - The 2D scene instance.
-	 * @param {EditorConfig} editorConfig - The editor configuration.
+	 * @param {Scene} scene2D - The 2D scene instance.
+	 * @param {Object} editorConfig - The editor configuration.
 	 */
 	constructor(scene2D, editorConfig) {
 		this.editorConfig = editorConfig;
@@ -420,7 +421,7 @@ class SceneController {
 	/**
 	 * Retrieves an object by its name from the specified scene or list of scenes.
 	 * @param {string} name - The name of the object to retrieve.
-	 * @param {Scene2D} [fromScene] - The scene to search for the object.
+	 * @param {Scene} [fromScene] - The scene to search for the object.
 	 * @returns {PIXI.DisplayObject} The retrieved object, if found.
 	 */
 	getObject(name, fromScene) {
@@ -439,7 +440,7 @@ class SceneController {
 	/**
 	 * Retrieves an object by its UUID from the specified scene or list of scenes.
 	 * @param {string} uuid - The UUID of the object to retrieve.
-	 * @param {Scene2D} [fromScene] - The scene to search for the object.
+	 * @param {Scene} [fromScene] - The scene to search for the object.
 	 * @returns {PIXI.DisplayObject} The retrieved object, if found.
 	 */
 	getObjectByUUID(uuid, fromScene) {
@@ -485,7 +486,7 @@ class SceneController {
 	/**
 	 * Retrieves a scene by its name.
 	 * @param {string} name - The name of the scene to retrieve.
-	 * @returns {Scene2D} The retrieved scene, if found.
+	 * @returns {Scene} The retrieved scene, if found.
 	 */
 	getSceneByName(name) {
 		return scenes.find((scene) => scene.name === name);
@@ -495,7 +496,7 @@ class SceneController {
 	 * Starts a specified scene.
 	 * @param {string} name - The name of the scene to start.
 	 * @param {boolean} [removeCurScene] - Whether to remove the current scene.
-	 * @returns {Scene2D} The started scene.
+	 * @returns {Scene} The started scene.
 	 */
 	start(name, removeCurScene) {
 		let scene = scenes.find((scene) => scene.name === name);
@@ -698,7 +699,7 @@ class SceneController {
 
 	/**
 	 * Removes a scene and its related data.
-	 * @param {Scene2D} scene - The scene to remove.
+	 * @param {Scene} scene - The scene to remove.
 	 * @private
 	 */
 	_removeScene(scene) {

@@ -1,4 +1,3 @@
-// import pf2D from "pf.js/src";
 import objectTypes from "./objectTypes";
 import Position from "./props/position";
 import Scale from "./props/scale";

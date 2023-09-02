@@ -9,7 +9,7 @@ import PixiPlugin from "gsap/PixiPlugin";
 import CustomEase from "gsap/CustomEase";
 import { utils, Loader, Rectangle } from "pixi.js-legacy";
 import Banner from "./utils/banner";
-import pf2D from "pf.js/src/2d";
+import pf2D from "../index";
 
 const Resources = Loader.shared.resources;
 

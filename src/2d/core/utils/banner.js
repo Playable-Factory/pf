@@ -1,10 +1,10 @@
 import { gsap } from "gsap";
 import { Assets } from "@pixi/assets";
-import Text from "pf.js/src/2d/gameobjects/text";
-import Graphics from "pf.js/src/2d/gameobjects/graphics";
-import Sprite from "pf.js/src/2d/gameobjects/sprite";
-import Container from "pf.js/src/2d/gameobjects/container";
-import TilingSprite from "pf.js/src/2d/gameobjects/tilingSprite";
+import Text from "../../gameobjects/text";
+import Graphics from "../../gameobjects/graphics";
+import Sprite from "../../gameobjects/sprite";
+import Container from "../../gameobjects/container";
+import TilingSprite from "../../gameobjects/tilingSprite";
 
 // const { Container, Graphics, Text, Sprite, Texture, TilingSprite, utils } = require("pixi.js-legacy");
 // const TextureCache = utils.TextureCache;
