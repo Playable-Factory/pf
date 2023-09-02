@@ -1,3 +1,5 @@
+import Stage from "../gameobjects/stage";
+
 /**
  * A class to handle responsive resizing of the PIXI canvas and its contents.
  */
@@ -5,11 +7,11 @@ class Responsive {
 	/**
 	 * Create a Responsive instance.
 	 * @param {PIXI.Application} pixiApp - The PIXI application instance.
-	 * @param {PIXI.Container} scene - The PIXI scene to be resized responsively.
+	 * @param {Stage} stage - The stage to be resized responsively.
 	 */
-	constructor(pixiApp, scene) {
+	constructor(pixiApp, stage) {
 		this.pixiApp = pixiApp;
-		this.pixiScene = scene;
+		this.pixiStage = stage;
 	}
 
 	/**
@@ -68,7 +70,7 @@ class Responsive {
 	}
 
 	/**
-	 * Resize the objects within the PIXI scene based on the new dimensions.
+	 * Resize the objects within the stage based on the new dimensions.
 	 * @param {number} w - The new width of the canvas.
 	 * @param {number} h - The new height of the canvas.
 	 */
@@ -76,7 +78,7 @@ class Responsive {
 		// let app = this.pixiApp;
 
 		const objects = [];
-		this.getAllGameObjects(this.pixiScene, objects);
+		this.getAllGameObjects(this.pixiStage, objects);
 
 		// debugger;
 		for (var obj of objects) {

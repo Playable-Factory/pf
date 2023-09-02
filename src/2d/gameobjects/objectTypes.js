@@ -10,6 +10,7 @@ export default {
 	SPINE: "spine",
 	NINESLICE: "nineslice",
 	SCENE: "scene",
+	STAGE: "stage",
 	VIEWPORT: "viewport",
 	RECTANGLE: "rectangle",
 	CIRCLE: "circle",

@@ -10,6 +10,7 @@ import CustomEase from "gsap/CustomEase";
 import { utils, Loader, Rectangle } from "pixi.js-legacy";
 import Banner from "./utils/banner";
 import pf2D from "../index";
+import SceneController from "pff.js/src/2d/core/editor/sceneController";
 
 const Resources = Loader.shared.resources;
 
@@ -61,13 +62,12 @@ class Main2D {
 		// app.stage.interactive = true;
 		// app.stage.sortableChildren = true;
 
-		let scene = pf2D.init(app, editorConfig, utils.TextureCache, Resources);
+		this.stage = pf2D.init(app, editorConfig, utils.TextureCache, Resources);
 		this.pixiApp = app;
-		this.pixiScene = scene;
-		this.scene = scene;
+		this.pixiStage = this.stage;
 
 		let loader = new Loader2D();
-		this.responsive = new Responsive(app, scene);
+		this.responsive = new Responsive(app, this.stage);
 
 		loader.load(assets.normal, () => {
 			this.assetsLoaded();
@@ -114,7 +114,7 @@ class Main2D {
 	 * @param {object} data - Data for initializing the top banner.
 	 */
 	initTopBanner(data) {
-		let topBanner = new Banner(this.pixiScene, data);
+		let topBanner = new Banner(this.pixiStage, data);
 		this.topBanner = topBanner;
 	}
 
@@ -179,28 +179,40 @@ class Main2D {
 	};
 
 	/**
-	 * Resize the PIXI canvas and update scene properties accordingly.
+	 * Resize the PIXI canvas and update stage properties accordingly.
 	 * @param {number} w - The new width of the canvas.
 	 * @param {number} h - The new height of the canvas.
 	 */
 	resizeCanvas(w, h) {
-		let scene = this.pixiScene;
+		let stage = this.pixiStage;
 
-		if (scene.interactive) {
-			scene.hitArea = new PIXI.Rectangle(0, 0, w, h);
+		if (stage.interactive) {
+			stage.hitArea = new PIXI.Rectangle(0, 0, w, h);
 		}
 
 		let aspectRatio = w / h;
 		let squareness = aspectRatio > 1 ? 1 / aspectRatio : aspectRatio;
 		let isLandscape = w > h;
 
-		scene.aspectRatio = aspectRatio;
-		scene.squareness = squareness;
-		scene.isLandscape = isLandscape;
-		scene.currentWidth = w;
-		scene.currentHeight = h;
-		scene.lastWidth = w;
-		scene.lastHeight = h;
+		stage.aspectRatio = aspectRatio;
+		stage.squareness = squareness;
+		stage.isLandscape = isLandscape;
+		stage.currentWidth = w;
+		stage.currentHeight = h;
+		stage.lastWidth = w;
+		stage.lastHeight = h;
+
+		this.width = w;
+		this.height = h;
+		this.aspectRatio = aspectRatio;
+		this.squareness = squareness;
+		this.isLandscape = isLandscape;
+
+		pf2D.width = w;
+		pf2D.height = h;
+		pf2D.aspectRatio = aspectRatio;
+		pf2D.squareness = squareness;
+		pf2D.isLandscape = isLandscape;
 	}
 
 	/**
@@ -211,7 +223,7 @@ class Main2D {
 	resize(w, h) {
 		let { width, height } = this.responsive.resize(this.pixiApp, w, h);
 
-		this.pixiScene.filterArea = new Rectangle(0, 0, w, h);
+		this.pixiStage.filterArea = new Rectangle(0, 0, w, h);
 
 		this.resizeCanvas(width, height);
 		this.resizeCallback && this.resizeCallback(width, height);

@@ -94,9 +94,9 @@ export default class ResizeHelper {
 
 		let parentBounds = {};
 
-		if (gameObject.parent == pfGlobals.pixiScene) {
-			totalWidth = pfGlobals.pixiScene.lastWidth;
-			totalHeight = pfGlobals.pixiScene.lastHeight;
+		if (gameObject.parent == pfGlobals.pixiStage) {
+			totalWidth = pfGlobals.pixiStage.lastWidth;
+			totalHeight = pfGlobals.pixiStage.lastHeight;
 
 			parentBounds = {
 				x: 0,

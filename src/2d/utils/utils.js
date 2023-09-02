@@ -11,11 +11,8 @@ import pf2D from "../index";
 class Utils {
 	/**
 	 * Create a Utils instance.
-	 * @param {PIXI.Container} pixiScene - The PIXI scene.
 	 */
-	constructor(pixiScene) {
-		this.scene = pixiScene;
-	}
+	constructor() {}
 	/**
 	 * Apply a sprite mask to a sprite.
 	 * @param {PIXI.Sprite} sprite - The sprite to apply the mask to.

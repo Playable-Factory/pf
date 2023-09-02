@@ -659,9 +659,9 @@ declare class SpriteMask {
 declare class Utils {
     /**
      * 
-     * @param pixiScene The PIXI scene.
+     * @param pixiStage The PIXI scene.
      */
-    constructor(pixiScene: PIXI.Container);
+    constructor(pixiStage: PIXI.Container);
 
     /**
      * Apply a sprite mask to a sprite.

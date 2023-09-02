@@ -13,6 +13,7 @@ import Graphics from "./gameobjects/graphics";
 import Rectangle from "./gameobjects/shape/rectangle";
 import NineSlice from "./gameobjects/nineslice";
 import Scene from "./gameobjects/scene";
+import Stage from "./gameobjects/stage";
 import Viewport from "./gameobjects/viewport";
 
 /**
@@ -20,22 +21,22 @@ import Viewport from "./gameobjects/viewport";
  */
 class pf2D {
 	/**
-	 * Initialize the game scene and setup various global variables.
+	 * Initialize the game stage and setup various global variables.
 	 * @param {PIXI.Application} pixiApp - The PIXI application instance.
 	 * @param {Object} editorConfig - The editor configuration object.
 	 * @param {Object} TextureCache - The PIXI texture cache.
 	 * @param {Object} Resources - The PIXI loader resources.
-	 * @returns {Scene} The created game scene.
+	 * @returns {Stage} The created game stage.
 	 */
 	static init(pixiApp, editorConfig, TextureCache, Resources) {
-		let pixiScene = new Scene();
-		pixiScene.interactive = true;
-		pixiScene.sortableChildren = true;
-		pixiApp.stage.addChild(pixiScene.pixiObj);
-		this.scene = pixiScene;
+		let pixiStage = new Stage();
+		pixiStage.interactive = true;
+		pixiStage.sortableChildren = true;
+		pixiApp.stage.addChild(pixiStage.pixiObj);
+		this.stage = pixiStage;
 
 		pfGlobals.pf2D = this;
-		pfGlobals.pixiScene = pixiScene;
+		pfGlobals.pixiStage = pixiStage;
 
 		let allAnims = {};
 
@@ -50,21 +51,24 @@ class pf2D {
 		pfGlobals.Resources = Resources;
 		pfGlobals.pixiApp = pixiApp;
 
-		let sceneController = new SceneController(pixiScene, editorConfig);
-		this.scene = sceneController;
+		/**
+		 * Scene Controller
+		 * @type {SceneController}
+		 */
+		this.scene = new SceneController(pixiStage, editorConfig);
 
 		/**
-		 * Factory for creating game objects and adding them to the scene.
+		 * Factory for creating game objects and adding them to the stage.
 		 * @type {GameObjectFactory}
 		 */
-		this.add = new GameObjectFactory(pixiScene);
+		this.add = new GameObjectFactory(pixiStage);
 		/**
 		 * Utility methods for game development.
 		 * @type {Utils}
 		 */
-		this.utils = new Utils(pixiScene);
+		this.utils = new Utils();
 
-		return pixiScene;
+		return pixiStage;
 	}
 }
 export default pf2D;

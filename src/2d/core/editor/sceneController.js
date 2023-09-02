@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 import pf2D from "../../index";
 import pfGlobals from "../../pfGlobals";
 import Scene from "../../gameobjects/scene";
+import Stage from "../../gameobjects/stage";
 
 const Resources = Loader.shared.resources;
 
@@ -15,12 +16,12 @@ let scenes = [];
 class SceneController {
 	/**
 	 * Creates an instance of SceneController.
-	 * @param {Scene} scene2D - The 2D scene instance.
+	 * @param {Stage} stage2D - The 2D stage instance.
 	 * @param {Object} editorConfig - The editor configuration.
 	 */
-	constructor(scene2D, editorConfig) {
+	constructor(stage2D, editorConfig) {
 		this.editorConfig = editorConfig;
-		this.scene2D = scene2D;
+		this.stage2D = stage2D;
 		this.stuffsMapList2D = app.globals.stuffsMapList2D;
 
 		let pixiSceneData = this.editorConfig.sceneData2D || this.editorConfig.pixiSceneData;
@@ -133,7 +134,7 @@ class SceneController {
 		let obj;
 
 		if (data.type == "container") {
-			obj = this.scene2D.add.container(0, 0);
+			obj = this.stage2D.add.container(0, 0);
 			obj.setOrigin(data.pivot.x, data.pivot.y);
 			// obj = new PIXI.Container();
 			// obj.pivot.set(data.pivot.x, data.pivot.y);
@@ -159,26 +160,26 @@ class SceneController {
 				}
 			}
 
-			obj = this.scene2D.add.sprite(0, 0, data?.texture?.uuid);
+			obj = this.stage2D.add.sprite(0, 0, data?.texture?.uuid);
 			obj.setOrigin(data.anchor.x, data.anchor.y).setSkew(data.skew.x, data.skew.y);
 		} else if (data.type == "spine") {
 			let loop = data.loop === undefined ? true : data.loop;
-			obj = this.scene2D.add.spine(0, 0, data.texture.uuid, data.skinKey, data.animationKey, loop);
+			obj = this.stage2D.add.spine(0, 0, data.texture.uuid, data.skinKey, data.animationKey, loop);
 			obj.timeScale = data.animationSpeed;
 			obj.setOrigin(data.pivot.x, data.pivot.y);
 		} else if (data.type == "particle") {
-			obj = this.scene2D.add.particleEmitter(0, 0, data.particleData);
+			obj = this.stage2D.add.particleEmitter(0, 0, data.particleData);
 			obj.setOrigin(data.pivot.x, data.pivot.y);
 
 			obj.setSpawnPos(data.width * 0.5, data.height * 0.5);
 			obj.setEmit(data.playAtStart);
 		} else if (data.type == "animatedSprite") {
-			obj = this.scene2D.add.animatedSprite(0, 0, data.animationKey, data.autoPlay, data.loop);
+			obj = this.stage2D.add.animatedSprite(0, 0, data.animationKey, data.autoPlay, data.loop);
 			obj.animationSpeed = data.animationSpeed;
 			obj.setOrigin(data.anchor.x, data.anchor.y);
 			obj.setSkew(data.skew.x, data.skew.y);
 		} else if (data.type == "graphics") {
-			obj = this.scene2D.add.graphics(0, 0);
+			obj = this.stage2D.add.graphics(0, 0);
 
 			let rawFillColor = data.fill;
 			let fillColor = RGBToHex(rawFillColor[0], rawFillColor[1], rawFillColor[2]);
@@ -232,11 +233,11 @@ class SceneController {
 				lineJoin: "round",
 			};
 
-			obj = this.scene2D.add.text(0, 0, data.text, style);
+			obj = this.stage2D.add.text(0, 0, data.text, style);
 			obj.resolution = data.resolution;
 			obj.setOrigin(data.anchor.x, data.anchor.y);
 		} else if (data.type == "nineslice") {
-			obj = this.scene2D.add.nineslice(0, 0, data.texture.uuid, data.origWidth, data.origHeight, data.leftWidth, data.rightWidth, data.topHeight, data.bottomHeight);
+			obj = this.stage2D.add.nineslice(0, 0, data.texture.uuid, data.origWidth, data.origHeight, data.leftWidth, data.rightWidth, data.topHeight, data.bottomHeight);
 			obj.setOrigin(data.pivot.x, data.pivot.y);
 		}
 
@@ -273,10 +274,10 @@ class SceneController {
 			}
 		}
 
-		let scene2D = this.scene2D;
+		let stage2D = this.stage2D;
 
 		if (obj.data.parentUUID) {
-			const parent = scene2D.children.find((a) => a.uuid == obj.data.parentUUID);
+			const parent = stage2D.children.find((a) => a.uuid == obj.data.parentUUID);
 			if (parent) {
 				parent.addChild(obj);
 			}
@@ -285,7 +286,7 @@ class SceneController {
 				this.pixiViewport.addChild(obj);
 			} else {
 				// let pixiObj = obj.pixiObj || obj;
-				scene2D.addChild(obj);
+				stage2D.addChild(obj);
 			}
 		}
 
@@ -296,10 +297,10 @@ class SceneController {
 			if (data && (data.resizeData || data.staticTransformData)) {
 				obj.onResizeCallback = function (w, h) {
 					if (!w) {
-						w = scene2D.lastWidth;
+						w = stage2D.lastWidth;
 					}
 					if (!h) {
-						h = scene2D.lastHeight;
+						h = stage2D.lastHeight;
 					}
 					if (this.refObjects) {
 						for (let refObj of this.refObjects) {
@@ -308,10 +309,10 @@ class SceneController {
 					}
 
 					if (data.resizeData) {
-						let dt = scene2D.lastWidth > scene2D.lastHeight ? data.resizeData.landscape : data.resizeData.portrait;
+						let dt = stage2D.lastWidth > stage2D.lastHeight ? data.resizeData.landscape : data.resizeData.portrait;
 
 						let orientation = "";
-						if (scene2D.lastWidth > scene2D.lastHeight) {
+						if (stage2D.lastWidth > stage2D.lastHeight) {
 							if (dt.enabled) {
 								orientation = "landscape";
 							} else {
@@ -327,10 +328,10 @@ class SceneController {
 						let position = ResizeHelper.getPosition(obj, orientation);
 						this.position.set(position.x, position.y);
 					} else if (data.staticTransformData) {
-						let dt = scene2D.lastWidth > scene2D.lastHeight ? data.staticTransformData.landscape : data.staticTransformData.portrait;
+						let dt = stage2D.lastWidth > stage2D.lastHeight ? data.staticTransformData.landscape : data.staticTransformData.portrait;
 
 						let orientation = "";
-						if (scene2D.lastWidth > scene2D.lastHeight) {
+						if (stage2D.lastWidth > stage2D.lastHeight) {
 							if (dt.enabled) {
 								orientation = "landscape";
 							} else {
@@ -405,7 +406,7 @@ class SceneController {
 
 				if (child.children.length) {
 					const childObjects = this.getAllChilds(child);
-					if (child != this.scene2D) {
+					if (child != this.stage2D) {
 						childObjects.push(child);
 					}
 					objects.push(...childObjects);
@@ -500,7 +501,7 @@ class SceneController {
 	 */
 	start(name, removeCurScene) {
 		let scene = scenes.find((scene) => scene.name === name);
-
+		console.log(scene);
 		if (!scene) {
 			console.warn("Scene not found");
 			return;
@@ -515,7 +516,7 @@ class SceneController {
 
 		if (scene.viewportData && scene.viewportData.enabled) {
 			const viewportData = scene.viewportData;
-			const viewport = this.scene2D.add.viewport({
+			const viewport = this.stage2D.add.viewport({
 				screenWidth: window.innerWidth,
 				screenHeight: window.innerHeight,
 				worldWidth: 0,
@@ -527,13 +528,13 @@ class SceneController {
 			pfGlobals.pixiViewport = viewport;
 			scene.viewport = viewport;
 
-			// this.scene2D.addChild(viewport);
+			// this.stage2D.addChild(viewport);
 
 			window.viewport = viewport;
 
 			viewport.drag().pinch().wheel().decelerate();
 
-			viewport.debug = this.scene2D.add.graphics(0, 0);
+			viewport.debug = this.stage2D.add.graphics(0, 0);
 			viewport.debug.zIndex = 9999;
 			viewport.addChild(viewport.debug);
 
@@ -574,7 +575,7 @@ class SceneController {
 				viewport.debug.lineStyle(6, 0xff9c0a, 1);
 				viewport.debug.drawRect(0, 0, worldWidth, worldHeight);
 			};
-			viewport.onResizeCallback(this.scene2D.lastWidth, this.scene2D.lastHeight);
+			viewport.onResizeCallback(this.stage2D.lastWidth, this.stage2D.lastHeight);
 
 			viewport.moveCenter(viewportData.startX, viewportData.startY);
 		}

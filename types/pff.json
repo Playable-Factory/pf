@@ -5719,7 +5719,7 @@
                 "name": "Utils",
                 "type": "ClassDeclaration",
                 "paramnames": [
-                    "pixiScene"
+                    "pixiStage"
                 ]
             }
         },
@@ -5741,7 +5741,7 @@
                     }
                 },
                 "description": "The PIXI scene.",
-                "name": "pixiScene"
+                "name": "pixiStage"
             }
         ],
         "___id": "T000002R002861",
