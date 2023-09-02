@@ -78,13 +78,11 @@ class GameObjectFactory {
 	 * @method GameObjectFactory#scene
 	 * @since 1.0.0
 	 *
-	 * @param {number} x - X position of the scene.
-	 * @param {number} y - Y position of the scene.
-	 *
+	 * @param {string} name - The name of the scene.
 	 * @return {Scene} The created Scene.
 	 */
-	scene(x, y) {
-		let scene = new Scene(x, y);
+	scene(name) {
+		let scene = new Scene(name);
 		return scene;
 	}
 

@@ -3,8 +3,16 @@ import Container from "./container";
 import objectTypes from "./objectTypes";
 
 class Scene extends Container {
-	constructor(x, y) {
-		super(x, y);
+	constructor(name) {
+		super(0, 0);
+
+		this.name = name;
+		this.entityList = [];
+		this.objList = [];
+
+		this.objects = [];
+		this.uuid = "";
+		this.viewportData = {};
 
 		this.pixiObj.gameObject = this;
 		this.isScene = true;

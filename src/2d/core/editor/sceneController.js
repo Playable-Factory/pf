@@ -26,10 +26,13 @@ class SceneController {
 
 		let pixiSceneData = this.editorConfig.sceneData2D || this.editorConfig.pixiSceneData;
 
-		for (let scene of pixiSceneData) {
+		for (let sceneData of pixiSceneData) {
+			console.log(sceneData);
+			let scene = this.stage2D.add.scene(sceneData.name);
 			scenes.push(scene);
-			scene.entityList = [];
-			scene.objList = [];
+			scene.objects = sceneData.objects;
+			scene.uuid = sceneData.uuid;
+			scene.viewportData = sceneData.viewportData;
 		}
 		let allAnims = {};
 		for (let uuid in Resources) {
