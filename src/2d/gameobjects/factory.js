@@ -9,6 +9,7 @@ import ParticleEmitter from "./particleEmitter";
 import Scene from "./scene";
 import Viewport from "./viewport";
 import Rectangle from "./shape/rectangle";
+import Circle from "./shape/circle";
 import GameObject from "./gameObject";
 
 /**
@@ -178,6 +179,25 @@ class GameObjectFactory {
 		let rect = new Rectangle(x, y, width, height, color);
 		this.parentGameObject.addChild(rect);
 		return rect;
+	}
+
+	/**
+	 * Adds a Rectangle game object.
+	 *
+	 * @method GameObjectFactory#circle
+	 * @since 1.0.0
+	 *
+	 * @param {number} x - X position of the Circle object.
+	 * @param {number} y - Y position of the Circle object.
+	 * @param {number} radius - Radius of the Circle.
+	 * @param {string} color - Color of the Circle.
+	 *
+	 * @return {Circle} The created Circle game object.
+	 */
+	circle(x, y, radius, color) {
+		let circle = new Circle(x, y, radius, color);
+		this.parentGameObject.addChild(circle);
+		return circle;
 	}
 
 	/**

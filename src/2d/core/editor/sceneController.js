@@ -134,7 +134,7 @@ class SceneController {
 	 */
 	_addObject(data) {
 		let obj;
-
+		console.log("Adding object: ", data)
 		if (data.type == "container") {
 			obj = this.stage2D.add.container(0, 0);
 			obj.setOrigin(data.pivot.x, data.pivot.y);

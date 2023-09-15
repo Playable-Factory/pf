@@ -65,6 +65,7 @@ class Main2D {
 		this.stage = pf2D.init(app, editorConfig, utils.TextureCache, Resources);
 		this.pixiApp = app;
 		this.pixiStage = this.stage;
+		window.stage = this.stage;
 
 		let loader = new Loader2D();
 		this.responsive = new Responsive(app, this.stage);

@@ -11,6 +11,7 @@ import GameObject from "./gameobjects/gameObject";
 import Spine from "./gameobjects/spine";
 import Graphics from "./gameobjects/graphics";
 import Rectangle from "./gameobjects/shape/rectangle";
+import Circle from "./gameobjects/shape/circle";
 import NineSlice from "./gameobjects/nineslice";
 import Scene from "./gameobjects/scene";
 import Stage from "./gameobjects/stage";
@@ -18,6 +19,10 @@ import Viewport from "./gameobjects/viewport";
 
 /**
  * The `gx` class provides methods for initializing the game scene and adding game objects.
+ */
+/**
+ * A class for initializing the game stage and setting up various global variables.
+ * @class
  */
 class pf2D {
 	/**
