@@ -1,12 +1,39 @@
 // import { AnimatedSprite, Graphics, Loader, TextStyle, Text, Texture, utils, NineSlicePlane } from "pixi.js-legacy";
 import { Texture } from "pixi.js-legacy";
 import * as Particles from "@pixi/particle-emitter";
-
+import { EmitterConfigV3 } from "@pixi/particle-emitter";
 import GameObject from "./gameObject";
 import pfGlobals from "../pfGlobals";
 import objectTypes from "./objectTypes";
 
+
+
+/**
+ * ParticleEmitter class represents a game object that emits particles.
+ * @extends GameObject
+ */
 class ParticleEmitter extends GameObject {
+	/**
+	 * Creates an instance of ParticleEmitter.
+	 * @param {number} x - The x coordinate of the emitter.
+	 * @param {number} y - The y coordinate of the emitter.
+	 * @param {EmitterConfigV3} particleData - The particle data object.
+	 * @param {Array} particleData.behaviors - The array of particle behaviors.
+	 * @param {boolean} particleData.shapeSpawnEnabled - Whether the particle shape spawn is enabled.
+	 * @param {string} particleData.curShape - The current particle shape.
+	 * @param {Object} particleData.lifetime - The particle lifetime object.
+	 * @param {number} particleData.lifetime.x - The minimum lifetime of the particle.
+	 * @param {number} particleData.lifetime.y - The maximum lifetime of the particle.
+	 * @param {number} particleData.frequency - The frequency of particle emission.
+	 * @param {number} particleData.spawnChance - The chance of particle spawn.
+	 * @param {number} particleData.particlesPerWave - The number of particles per wave.
+	 * @param {number} particleData.emitterLifetime - The lifetime of the emitter.
+	 * @param {number} particleData.maxParticles - The maximum number of particles.
+	 * @param {Object} particleData.pos - The position of the particle.
+	 * @param {number} particleData.pos.x - The x coordinate of the particle position.
+	 * @param {number} particleData.pos.y - The y coordinate of the particle position.
+	 * @param {boolean} particleData.addAtBack - Whether to add the particle at the back.
+	 */
 	constructor(x, y, particleData) {
 		let enabledBehaviors = particleData.behaviors.filter((a) => a.config.enabled);
 		let textureBehaviour = enabledBehaviors.find((a) => a.type == "textureSingle");
@@ -67,18 +94,30 @@ class ParticleEmitter extends GameObject {
 		this.isParticleEmitter = true;
 		this.type = objectTypes.PARTICLE_EMITTER;
 	}
-
+	/**
+	 * Enables the particle emission.
+	 */
 	enable() {
 		this.emitter.emit = true;
 	}
+	/**
+	 * Disables the particle emission.
+	 */
 	disable() {
 		this.emitter.emit = false;
 	}
-
+	/**
+	 * Sets the particle emission.
+	 * @param {boolean} value - The value to set the particle emission.
+	 */
 	setEmit(value) {
 		this.emitter.emit = value;
 	}
-
+	/**
+	 * Sets the spawn position of the particle.
+	 * @param {number} x - The x coordinate of the spawn position.
+	 * @param {number} y - The y coordinate of the spawn position.
+	 */
 	setSpawnPos(x, y) {
 		this.emitter.spawnPos.x = x;
 		this.emitter.spawnPos.y = y;

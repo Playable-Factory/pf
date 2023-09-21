@@ -23,7 +23,7 @@ export default class Coordinate {
 		let parents = [];
 
 		while (obj.parent) {
-			if (obj.parent != globals.pixiScene && obj.parent != pixiGlobals.scene) {
+			if (obj.parent != globals.pixiStage) {
 				scaleX /= obj.parent.scale.x;
 				scaleY /= obj.parent.scale.y;
 				parents.push(obj.parent);
@@ -51,7 +51,7 @@ export default class Coordinate {
 		let parents = [];
 
 		while (obj.parent) {
-			if (obj.parent != globals.pixiScene && obj.parent != pixiGlobals.scene) {
+			if (obj.parent != globals.pixiStage) {
 				scaleX *= obj.parent.scale.x;
 				scaleY *= obj.parent.scale.y;
 				parents.push(obj.parent);
@@ -78,7 +78,7 @@ export default class Coordinate {
 		let parents = [];
 
 		while (obj.parent) {
-			if (obj.parent != globals.pixiScene && obj.parent != pixiGlobals.scene) {
+			if (obj.parent != globals.pixiStage) {
 				rotation += obj.parent.rotation;
 				parents.push(obj.parent);
 				obj = obj.parent;
@@ -105,7 +105,7 @@ export default class Coordinate {
 		let parents = [];
 
 		while (tempObj.parent) {
-			if (tempObj.parent != globals.pixiScene && tempObj.parent != pixiGlobals.scene) {
+			if (tempObj.parent != globals.pixiStage) {
 				rotation -= tempObj.parent.rotation;
 				parents.push(tempObj.parent);
 				tempObj = tempObj.parent;
@@ -131,7 +131,7 @@ export default class Coordinate {
 	 */
 	static getGlobalData(obj, cX, cY, cW, cH) {
 		const cont = obj.parent;
-		if (cont != globals.pixiScene) {
+		if (cont != globals.pixiStage) {
 			const x = cX || obj.x;
 			const y = cY || obj.y;
 			const width = cW || obj.width;
@@ -154,7 +154,7 @@ export default class Coordinate {
             const xRotated = gX * cosA - gY * sinA;
             const yRotated = gX * sinA + gY * cosA; */
 
-			if (cont.parent != globals.pixiScene) {
+			if (cont.parent != globals.pixiStage) {
 				return Coordinate.getGlobalData(cont, gX, gY, gW, gH);
 			} else {
 				return {
@@ -188,7 +188,7 @@ export default class Coordinate {
 	 */
 	static getLocalData(obj, cX, cY, cW, cH) {
 		const cont = obj.parent;
-		if (cont != globals.pixiScene) {
+		if (cont != globals.pixiStage) {
 			const x = cX || obj.x;
 			const y = cY || obj.y;
 			const width = cW || obj.width;
@@ -199,7 +199,7 @@ export default class Coordinate {
 			const gW = width / cont.scale.x;
 			const gH = height / cont.scale.y;
 
-			if (cont.parent != globals.pixiScene) {
+			if (cont.parent != globals.pixiStage) {
 				return Coordinate.getLocalData(cont, gX, gY, gW, gH);
 			} else {
 				return {

@@ -5,7 +5,7 @@
             "filename": "containerHelper.js",
             "lineno": 3,
             "columnno": 0,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core\\editor\\helpers",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core\\editor\\helpers",
             "code": {}
         },
         "description": "A utility class for working with containers and calculating their dimensions.",
@@ -22,7 +22,7 @@
             "filename": "containerHelper.js",
             "lineno": 11,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core\\editor\\helpers",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core\\editor\\helpers",
             "code": {}
         },
         "description": "Finds the maximum and minimum X coordinates of the children within the container.",
@@ -69,7 +69,7 @@
             "filename": "containerHelper.js",
             "lineno": 53,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core\\editor\\helpers",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core\\editor\\helpers",
             "code": {}
         },
         "description": "Finds the maximum and minimum Y coordinates of the children within the container.",
@@ -116,7 +116,7 @@
             "filename": "coordinate.js",
             "lineno": 3,
             "columnno": 0,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core\\editor\\helpers",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core\\editor\\helpers",
             "code": {}
         },
         "description": "A utility class for handling coordinate transformations and calculations.",
@@ -133,7 +133,7 @@
             "filename": "coordinate.js",
             "lineno": 11,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core\\editor\\helpers",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core\\editor\\helpers",
             "code": {}
         },
         "description": "Converts the scale of an object to local scale, accounting for parent transformations.",
@@ -180,7 +180,7 @@
             "filename": "coordinate.js",
             "lineno": 39,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core\\editor\\helpers",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core\\editor\\helpers",
             "code": {}
         },
         "description": "Converts the scale of an object to global scale, accounting for parent transformations.",
@@ -227,7 +227,7 @@
             "filename": "coordinate.js",
             "lineno": 67,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core\\editor\\helpers",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core\\editor\\helpers",
             "code": {}
         },
         "description": "Converts the rotation of an object to global rotation, accounting for parent transformations.",
@@ -274,7 +274,7 @@
             "filename": "coordinate.js",
             "lineno": 93,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core\\editor\\helpers",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core\\editor\\helpers",
             "code": {}
         },
         "description": "Converts the rotation of an object to local rotation, accounting for parent transformations.",
@@ -321,7 +321,7 @@
             "filename": "coordinate.js",
             "lineno": 120,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core\\editor\\helpers",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core\\editor\\helpers",
             "code": {}
         },
         "description": "Retrieves global positioning and dimensions data of an object within its parent hierarchy.",
@@ -424,7 +424,7 @@
             "filename": "coordinate.js",
             "lineno": 177,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core\\editor\\helpers",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core\\editor\\helpers",
             "code": {}
         },
         "description": "Retrieves local positioning and dimensions data of an object within its parent hierarchy.",
@@ -527,7 +527,7 @@
             "filename": "resizeHelper.js",
             "lineno": 3,
             "columnno": 0,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core\\editor\\helpers",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core\\editor\\helpers",
             "code": {}
         },
         "description": "A utility class for handling resizing and positioning of game objects.",
@@ -544,7 +544,7 @@
             "filename": "resizeHelper.js",
             "lineno": 9,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core\\editor\\helpers",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core\\editor\\helpers",
             "code": {}
         },
         "description": "Sets the base width and height of a game object based on its type.",
@@ -591,7 +591,7 @@
             "filename": "resizeHelper.js",
             "lineno": 75,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core\\editor\\helpers",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core\\editor\\helpers",
             "code": {}
         },
         "description": "Calculates available space and positioning information for a game object.",
@@ -651,7 +651,7 @@
             "filename": "resizeHelper.js",
             "lineno": 195,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core\\editor\\helpers",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core\\editor\\helpers",
             "code": {}
         },
         "description": "Retrieves positioning and dimensions bounds of a game object.",
@@ -698,7 +698,7 @@
             "filename": "resizeHelper.js",
             "lineno": 229,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core\\editor\\helpers",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core\\editor\\helpers",
             "code": {}
         },
         "description": "Calculates scaling factors based on available space and resize data.",
@@ -758,7 +758,7 @@
             "filename": "resizeHelper.js",
             "lineno": 264,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core\\editor\\helpers",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core\\editor\\helpers",
             "code": {}
         },
         "description": "Calculates positioning based on available space and alignment data.",
@@ -818,7 +818,7 @@
             "filename": "resizeHelper.js",
             "lineno": 346,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core\\editor\\helpers",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core\\editor\\helpers",
             "code": {}
         },
         "description": "Finds the maximum and minimum X positions among the children of a game object.",
@@ -865,7 +865,7 @@
             "filename": "resizeHelper.js",
             "lineno": 382,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core\\editor\\helpers",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core\\editor\\helpers",
             "code": {}
         },
         "description": "Finds the maximum and minimum Y positions among the children of a game object.",
@@ -912,7 +912,7 @@
             "filename": "resizeHelper.js",
             "lineno": 418,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core\\editor\\helpers",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core\\editor\\helpers",
             "code": {}
         },
         "description": "Recalculates the bounds and dimensions of a container game object after resizing.",
@@ -943,13 +943,13 @@
         "comment": "/**\r\n * Represents a controller for managing scenes and objects in a 2D game or application.\r\n */",
         "meta": {
             "range": [
-                421,
-                20111
+                415,
+                20207
             ],
             "filename": "sceneController.js",
             "lineno": 14,
             "columnno": 0,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core\\editor",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core\\editor",
             "code": {
                 "id": "astnode100003373",
                 "name": "SceneController",
@@ -1001,13 +1001,13 @@
         "comment": "/**\r\n\t * Clones a given object and its children, if any.\r\n\t * @param {PIXI.DisplayObject} obj - The object to clone.\r\n\t * @returns {PIXI.DisplayObject} The cloned object.\r\n\t */",
         "meta": {
             "range": [
-                1363,
-                2591
+                1357,
+                2585
             ],
             "filename": "sceneController.js",
             "lineno": 46,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core\\editor",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core\\editor",
             "code": {
                 "id": "astnode100003474",
                 "name": "SceneController#cloneObject",
@@ -1062,13 +1062,13 @@
         "comment": "/**\r\n\t * Instantiates a prefab by creating objects based on prefab data.\r\n\t * @param {string} prefabName - The name of the prefab to instantiate.\r\n\t * @returns {PIXI.DisplayObject} The instantiated object.\r\n\t */",
         "meta": {
             "range": [
-                2808,
-                3303
+                2802,
+                3297
             ],
             "filename": "sceneController.js",
             "lineno": 104,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core\\editor",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core\\editor",
             "code": {
                 "id": "astnode100003703",
                 "name": "SceneController#instantiate",
@@ -1123,15 +1123,15 @@
         "comment": "/**\r\n\t * Recursively retrieves an array of all child objects within a given parent object.\r\n\t * @param {PIXI.DisplayObject} parent - The parent object to retrieve children from.\r\n\t * @returns {PIXI.DisplayObject[]} An array of child objects.\r\n\t */",
         "meta": {
             "range": [
-                12340,
-                12829
+                12414,
+                12903
             ],
             "filename": "sceneController.js",
             "lineno": 397,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core\\editor",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core\\editor",
             "code": {
-                "id": "astnode100005318",
+                "id": "astnode100005334",
                 "name": "SceneController#getAllChilds",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -1193,15 +1193,15 @@
         "comment": "/**\r\n\t * Retrieves an object by its name from the specified scene or list of scenes.\r\n\t * @param {string} name - The name of the object to retrieve.\r\n\t * @param {Scene2D} [fromScene] - The scene to search for the object.\r\n\t * @returns {PIXI.DisplayObject} The retrieved object, if found.\r\n\t */",
         "meta": {
             "range": [
-                13130,
-                13365
+                13204,
+                13439
             ],
             "filename": "sceneController.js",
             "lineno": 426,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core\\editor",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core\\editor",
             "code": {
-                "id": "astnode100005409",
+                "id": "astnode100005425",
                 "name": "SceneController#getObject",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -1269,15 +1269,15 @@
         "comment": "/**\r\n\t * Retrieves an object by its UUID from the specified scene or list of scenes.\r\n\t * @param {string} uuid - The UUID of the object to retrieve.\r\n\t * @param {Scene2D} [fromScene] - The scene to search for the object.\r\n\t * @returns {PIXI.DisplayObject} The retrieved object, if found.\r\n\t */",
         "meta": {
             "range": [
-                13666,
-                13909
+                13740,
+                13983
             ],
             "filename": "sceneController.js",
             "lineno": 445,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core\\editor",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core\\editor",
             "code": {
-                "id": "astnode100005453",
+                "id": "astnode100005469",
                 "name": "SceneController#getObjectByUUID",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -1345,15 +1345,15 @@
         "comment": "/**\r\n\t * Updates all entities within the scenes.\r\n\t * @param {number} time - The current time.\r\n\t * @param {number} delta - The time elapsed since the last update.\r\n\t */",
         "meta": {
             "range": [
-                14086,
-                14282
+                14160,
+                14356
             ],
             "filename": "sceneController.js",
             "lineno": 463,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core\\editor",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core\\editor",
             "code": {
-                "id": "astnode100005497",
+                "id": "astnode100005513",
                 "name": "SceneController#update",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -1406,15 +1406,15 @@
         "comment": "/**\r\n\t * Resizes all entities within the scenes.\r\n\t * @param {number} w - The new width.\r\n\t * @param {number} h - The new height.\r\n\t */",
         "meta": {
             "range": [
-                14425,
-                14555
+                14499,
+                14629
             ],
             "filename": "sceneController.js",
             "lineno": 477,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core\\editor",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core\\editor",
             "code": {
-                "id": "astnode100005541",
+                "id": "astnode100005557",
                 "name": "SceneController#resize",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -1467,15 +1467,15 @@
         "comment": "/**\r\n\t * Retrieves a scene by its name.\r\n\t * @param {string} name - The name of the scene to retrieve.\r\n\t * @returns {Scene2D} The retrieved scene, if found.\r\n\t */",
         "meta": {
             "range": [
-                14726,
-                14807
+                14800,
+                14881
             ],
             "filename": "sceneController.js",
             "lineno": 490,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core\\editor",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core\\editor",
             "code": {
-                "id": "astnode100005570",
+                "id": "astnode100005586",
                 "name": "SceneController#getSceneByName",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -1528,15 +1528,15 @@
         "comment": "/**\r\n\t * Starts a specified scene.\r\n\t * @param {string} name - The name of the scene to start.\r\n\t * @param {boolean} [removeCurScene] - Whether to remove the current scene.\r\n\t * @returns {Scene2D} The started scene.\r\n\t */",
         "meta": {
             "range": [
-                15036,
-                18435
+                15110,
+                18531
             ],
             "filename": "sceneController.js",
             "lineno": 500,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core\\editor",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core\\editor",
             "code": {
-                "id": "astnode100005587",
+                "id": "astnode100005603",
                 "name": "SceneController#start",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -1604,15 +1604,15 @@
         "comment": "/**\r\n\t * Fills public variables in components of the provided entity list.\r\n\t * @param {PIXI.DisplayObject[]} entityList - The list of entities to fill variables for.\r\n\t */",
         "meta": {
             "range": [
-                18615,
-                18832
+                18711,
+                18928
             ],
             "filename": "sceneController.js",
             "lineno": 644,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core\\editor",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core\\editor",
             "code": {
-                "id": "astnode100006142",
+                "id": "astnode100006162",
                 "name": "SceneController#fillPublicVariables",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -1660,15 +1660,15 @@
         "comment": "/**\r\n\t * Removes an object from the scene and related data.\r\n\t * @param {PIXI.DisplayObject} obj - The object to remove.\r\n\t */",
         "meta": {
             "range": [
-                18966,
-                19311
+                19062,
+                19407
             ],
             "filename": "sceneController.js",
             "lineno": 657,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core\\editor",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core\\editor",
             "code": {
-                "id": "astnode100006174",
+                "id": "astnode100006194",
                 "name": "SceneController#removeObject",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -1707,15 +1707,15 @@
         "comment": "/**\r\n\t * Removes a scene by its name.\r\n\t * @param {string} name - The name of the scene to remove.\r\n\t */",
         "meta": {
             "range": [
-                19423,
-                19605
+                19519,
+                19701
             ],
             "filename": "sceneController.js",
             "lineno": 679,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core\\editor",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core\\editor",
             "code": {
-                "id": "astnode100006251",
+                "id": "astnode100006271",
                 "name": "SceneController#remove",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -1754,15 +1754,15 @@
         "comment": "/**\r\n\t * Removes all scenes and related data.\r\n\t */",
         "meta": {
             "range": [
-                19664,
-                19749
+                19760,
+                19845
             ],
             "filename": "sceneController.js",
             "lineno": 693,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core\\editor",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core\\editor",
             "code": {
-                "id": "astnode100006287",
+                "id": "astnode100006307",
                 "name": "SceneController#removeAll",
                 "type": "MethodDefinition",
                 "paramnames": []
@@ -1785,15 +1785,15 @@
         "comment": "/**\r\n * Converts RGB color values to a hexadecimal representation.\r\n * @param {number} r - The red color component (0-1).\r\n * @param {number} g - The green color component (0-1).\r\n * @param {number} b - The blue color component (0-1).\r\n * @returns {string} The hexadecimal color representation.\r\n */",
         "meta": {
             "range": [
-                20451,
-                20719
+                20547,
+                20815
             ],
             "filename": "sceneController.js",
             "lineno": 728,
             "columnno": 0,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core\\editor",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core\\editor",
             "code": {
-                "id": "astnode100006355",
+                "id": "astnode100006375",
                 "name": "RGBToHex",
                 "type": "FunctionDeclaration",
                 "paramnames": [
@@ -1881,9 +1881,9 @@
             "filename": "loader.js",
             "lineno": 15,
             "columnno": 0,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core",
             "code": {
-                "id": "astnode100006463",
+                "id": "astnode100006483",
                 "name": "Loader2D",
                 "type": "ClassDeclaration",
                 "paramnames": []
@@ -1907,9 +1907,9 @@
             "filename": "loader.js",
             "lineno": 23,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core",
             "code": {
-                "id": "astnode100006470",
+                "id": "astnode100006490",
                 "name": "Loader2D#load",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -1977,9 +1977,9 @@
             "filename": "loader.js",
             "lineno": 87,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core",
             "code": {
-                "id": "astnode100006691",
+                "id": "astnode100006711",
                 "name": "Loader2D#loadSpine",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -2081,9 +2081,9 @@
             "filename": "loader.js",
             "lineno": 110,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core",
             "code": {
-                "id": "astnode100006769",
+                "id": "astnode100006789",
                 "name": "Loader2D#loadBitmapFont",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -2171,9 +2171,9 @@
             "filename": "loader.js",
             "lineno": 176,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core",
             "code": {
-                "id": "astnode100007176",
+                "id": "astnode100007196",
                 "name": "Loader2D#loadImage",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -2247,9 +2247,9 @@
             "filename": "loader.js",
             "lineno": 188,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core",
             "code": {
-                "id": "astnode100007200",
+                "id": "astnode100007220",
                 "name": "Loader2D#loadVideo",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -2322,9 +2322,9 @@
             "filename": "loader.js",
             "lineno": 218,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core",
             "code": {
-                "id": "astnode100007299",
+                "id": "astnode100007319",
                 "name": "Loader2D#loadAtlas",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -2412,9 +2412,9 @@
             "filename": "loader.js",
             "lineno": 255,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core",
             "code": {
-                "id": "astnode100007460",
+                "id": "astnode100007480",
                 "name": "Loader2D#loadGltf",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -2481,15 +2481,15 @@
         "comment": "/**\r\n * Class representing the main 2D application.\r\n */",
         "meta": {
             "range": [
-                530,
-                6334
+                528,
+                6307
             ],
             "filename": "main.js",
             "lineno": 19,
             "columnno": 0,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core",
             "code": {
-                "id": "astnode100007556",
+                "id": "astnode100007576",
                 "name": "Main2D",
                 "type": "ClassDeclaration",
                 "paramnames": [
@@ -2601,9 +2601,9 @@
             "filename": "main.js",
             "lineno": 84,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core",
             "code": {
-                "id": "astnode100007793",
+                "id": "astnode100007813",
                 "name": "Main2D#pause",
                 "type": "MethodDefinition",
                 "paramnames": []
@@ -2632,9 +2632,9 @@
             "filename": "main.js",
             "lineno": 91,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core",
             "code": {
-                "id": "astnode100007804",
+                "id": "astnode100007824",
                 "name": "Main2D#resume",
                 "type": "MethodDefinition",
                 "paramnames": []
@@ -2658,14 +2658,14 @@
         "meta": {
             "range": [
                 2931,
-                3078
+                3051
             ],
             "filename": "main.js",
             "lineno": 100,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core",
             "code": {
-                "id": "astnode100007815",
+                "id": "astnode100007835",
                 "name": "Main2D#update",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -2718,15 +2718,15 @@
         "comment": "/**\r\n\t * Render the PIXI application.\r\n\t */",
         "meta": {
             "range": [
-                3129,
-                3176
+                3102,
+                3149
             ],
             "filename": "main.js",
-            "lineno": 109,
+            "lineno": 108,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core",
             "code": {
-                "id": "astnode100007841",
+                "id": "astnode100007861",
                 "name": "Main2D#render",
                 "type": "MethodDefinition",
                 "paramnames": []
@@ -2749,15 +2749,15 @@
         "comment": "/**\r\n\t * Initialize the top banner.\r\n\t * @param {object} data - Data for initializing the top banner.\r\n\t */",
         "meta": {
             "range": [
-                3291,
-                3400
+                3264,
+                3373
             ],
             "filename": "main.js",
-            "lineno": 117,
+            "lineno": 116,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core",
             "code": {
-                "id": "astnode100007854",
+                "id": "astnode100007874",
                 "name": "Main2D#initTopBanner",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -2796,15 +2796,15 @@
         "comment": "/**\r\n\t * Handle assets loaded event.\r\n\t */",
         "meta": {
             "range": [
-                3450,
-                4376
+                3423,
+                4349
             ],
             "filename": "main.js",
-            "lineno": 125,
+            "lineno": 124,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core",
             "code": {
-                "id": "astnode100007874",
+                "id": "astnode100007894",
                 "name": "Main2D#assetsLoaded",
                 "type": "MethodDefinition",
                 "paramnames": []
@@ -2827,15 +2827,15 @@
         "comment": "/**\r\n\t * Get all animation names and their associated UUIDs from loaded resources.\r\n\t * @returns {object} - Object containing animation names and UUIDs.\r\n\t */",
         "meta": {
             "range": [
-                4542,
-                4734
+                4515,
+                4707
             ],
             "filename": "main.js",
-            "lineno": 161,
+            "lineno": 160,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core",
             "code": {
-                "id": "astnode100008013",
+                "id": "astnode100008033",
                 "name": "Main2D#getAllAnims",
                 "type": "MethodDefinition",
                 "paramnames": []
@@ -2872,15 +2872,15 @@
         "comment": "/**\r\n\t * Initialize the post-processing effects.\r\n\t * @param {object} data - Data for initializing post-process effects.\r\n\t */",
         "meta": {
             "range": [
-                4868,
-                5069
+                4841,
+                5042
             ],
             "filename": "main.js",
-            "lineno": 175,
+            "lineno": 174,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core",
             "code": {
-                "id": "astnode100008045",
+                "id": "astnode100008065",
                 "name": "initPostProcess",
                 "type": "ClassProperty"
             }
@@ -2913,15 +2913,15 @@
         "comment": "/**\r\n\t * Resize the PIXI canvas and update scene properties accordingly.\r\n\t * @param {number} w - The new width of the canvas.\r\n\t * @param {number} h - The new height of the canvas.\r\n\t */",
         "meta": {
             "range": [
-                5264,
-                5745
+                5237,
+                5718
             ],
             "filename": "main.js",
-            "lineno": 187,
+            "lineno": 186,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core",
             "code": {
-                "id": "astnode100008075",
+                "id": "astnode100008095",
                 "name": "Main2D#resizeCanvas",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -2974,15 +2974,15 @@
         "comment": "/**\r\n\t * Resize the PIXI canvas and its contents.\r\n\t * @param {number} w - The new width.\r\n\t * @param {number} h - The new height.\r\n\t */",
         "meta": {
             "range": [
-                5889,
-                6331
+                5862,
+                6304
             ],
             "filename": "main.js",
-            "lineno": 212,
+            "lineno": 211,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core",
             "code": {
-                "id": "astnode100008170",
+                "id": "astnode100008190",
                 "name": "Main2D#resize",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -3041,9 +3041,9 @@
             "filename": "responsive.js",
             "lineno": 4,
             "columnno": 0,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core",
             "code": {
-                "id": "astnode100008257",
+                "id": "astnode100008277",
                 "name": "Responsive",
                 "type": "ClassDeclaration",
                 "paramnames": [
@@ -3099,9 +3099,9 @@
             "filename": "responsive.js",
             "lineno": 22,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core",
             "code": {
-                "id": "astnode100008278",
+                "id": "astnode100008298",
                 "name": "Responsive#resize",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -3211,9 +3211,9 @@
             "filename": "responsive.js",
             "lineno": 75,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core",
             "code": {
-                "id": "astnode100008424",
+                "id": "astnode100008444",
                 "name": "Responsive#resizeObjects",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -3272,9 +3272,9 @@
             "filename": "responsive.js",
             "lineno": 131,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\core",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\core",
             "code": {
-                "id": "astnode100008670",
+                "id": "astnode100008690",
                 "name": "Responsive#getAllGameObjects",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -3338,7 +3338,7 @@
             "filename": "factory.js",
             "lineno": 13,
             "columnno": 0,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\gameobjects",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\gameobjects",
             "code": {}
         },
         "description": "Factory class for creating game objects.",
@@ -3359,9 +3359,9 @@
             "filename": "factory.js",
             "lineno": 23,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\gameobjects",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\gameobjects",
             "code": {
-                "id": "astnode100012971",
+                "id": "astnode100012991",
                 "name": "GameObjectFactory",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -3405,9 +3405,9 @@
             "filename": "factory.js",
             "lineno": 28,
             "columnno": 2,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\gameobjects",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\gameobjects",
             "code": {
-                "id": "astnode100012977",
+                "id": "astnode100012997",
                 "name": "this.scene",
                 "type": "Identifier",
                 "value": "scene",
@@ -3438,7 +3438,7 @@
             "filename": "factory.js",
             "lineno": 31,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\gameobjects",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\gameobjects",
             "code": {}
         },
         "description": "Adds a sprite game object.",
@@ -3512,7 +3512,7 @@
             "filename": "factory.js",
             "lineno": 54,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\gameobjects",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\gameobjects",
             "code": {}
         },
         "description": "Adds an animated sprite game object.",
@@ -3616,7 +3616,7 @@
             "filename": "factory.js",
             "lineno": 74,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\gameobjects",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\gameobjects",
             "code": {}
         },
         "description": "Adds a new scene.",
@@ -3677,7 +3677,7 @@
             "filename": "factory.js",
             "lineno": 90,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\gameobjects",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\gameobjects",
             "code": {}
         },
         "description": "Adds a container game object.",
@@ -3738,7 +3738,7 @@
             "filename": "factory.js",
             "lineno": 107,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\gameobjects",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\gameobjects",
             "code": {}
         },
         "description": "Adds a text game object.",
@@ -3829,7 +3829,7 @@
             "filename": "factory.js",
             "lineno": 126,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\gameobjects",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\gameobjects",
             "code": {}
         },
         "description": "Adds a Spine game object.",
@@ -3944,7 +3944,7 @@
             "filename": "factory.js",
             "lineno": 147,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\gameobjects",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\gameobjects",
             "code": {}
         },
         "description": "Adds a Graphics game object.",
@@ -4005,7 +4005,7 @@
             "filename": "factory.js",
             "lineno": 164,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\gameobjects",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\gameobjects",
             "code": {}
         },
         "description": "Adds a Rectangle game object.",
@@ -4105,7 +4105,7 @@
             "filename": "factory.js",
             "lineno": 184,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\gameobjects",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\gameobjects",
             "code": {}
         },
         "description": "Adds a NineSlice game object.",
@@ -4257,7 +4257,7 @@
             "filename": "factory.js",
             "lineno": 208,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\gameobjects",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\gameobjects",
             "code": {}
         },
         "description": "Adds a ParticleEmitter game object.",
@@ -4331,7 +4331,7 @@
             "filename": "factory.js",
             "lineno": 226,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\gameobjects",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\gameobjects",
             "code": {}
         },
         "description": "Adds a Viewport game object.",
@@ -4379,7 +4379,7 @@
             "filename": "gameObject.js",
             "lineno": 10,
             "columnno": 0,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\gameobjects",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\gameobjects",
             "code": {}
         },
         "description": "Base class for game objects.",
@@ -4394,15 +4394,15 @@
         "comment": "/**\r\n\t * Creates an instance of GameObject.\r\n\t *\r\n\t * @constructor\r\n\t * @param {PIXI.DisplayObject} pixiObj - The PIXI display object associated with this game object.\r\n\t * @param {number} [x=0] - X position of the game object.\r\n\t * @param {number} [y=0] - Y position of the game object.\r\n\t */",
         "meta": {
             "range": [
-                706,
-                1705
+                718,
+                1834
             ],
             "filename": "gameObject.js",
             "lineno": 24,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\gameobjects",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\gameobjects",
             "code": {
-                "id": "astnode100013329",
+                "id": "astnode100013353",
                 "name": "GameObject",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -4472,15 +4472,15 @@
         "comment": "/**\r\n\t\t * The PIXI display object associated with this game object.\r\n\t\t * @type {PIXI.DisplayObject}\r\n\t\t */",
         "meta": {
             "range": [
-                857,
-                879
+                869,
+                891
             ],
             "filename": "gameObject.js",
             "lineno": 29,
             "columnno": 2,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\gameobjects",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\gameobjects",
             "code": {
-                "id": "astnode100013341",
+                "id": "astnode100013365",
                 "name": "this.pixiObj",
                 "type": "Identifier",
                 "value": "pixiObj",
@@ -4509,15 +4509,15 @@
         "comment": "/**\r\n\t\t * The anchor point of the PIXI object.\r\n\t\t * @type {PIXI.Point|null}\r\n\t\t */",
         "meta": {
             "range": [
-                973,
-                1021
+                985,
+                1033
             ],
             "filename": "gameObject.js",
             "lineno": 35,
             "columnno": 2,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\gameobjects",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\gameobjects",
             "code": {
-                "id": "astnode100013347",
+                "id": "astnode100013371",
                 "name": "this.anchor",
                 "type": "ConditionalExpression",
                 "value": "",
@@ -4555,15 +4555,15 @@
         "comment": "/**\r\n\t\t * The pivot point of the PIXI object.\r\n\t\t * @type {PIXI.Point|null}\r\n\t\t */",
         "meta": {
             "range": [
-                1114,
-                1160
+                1126,
+                1172
             ],
             "filename": "gameObject.js",
             "lineno": 41,
             "columnno": 2,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\gameobjects",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\gameobjects",
             "code": {
-                "id": "astnode100013359",
+                "id": "astnode100013383",
                 "name": "this.pivot",
                 "type": "ConditionalExpression",
                 "value": "",
@@ -4601,15 +4601,15 @@
         "comment": "/**\r\n\t\t * The base width of the PIXI object.\r\n\t\t * @type {number}\r\n\t\t */",
         "meta": {
             "range": [
-                1243,
-                1278
+                1255,
+                1290
             ],
             "filename": "gameObject.js",
             "lineno": 47,
             "columnno": 2,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\gameobjects",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\gameobjects",
             "code": {
-                "id": "astnode100013371",
+                "id": "astnode100013395",
                 "name": "this.baseWidth",
                 "type": "MemberExpression",
                 "value": "this.pixiObj.width",
@@ -4638,15 +4638,15 @@
         "comment": "/**\r\n\t\t * The base height of the PIXI object.\r\n\t\t * @type {number}\r\n\t\t */",
         "meta": {
             "range": [
-                1362,
-                1399
+                1374,
+                1411
             ],
             "filename": "gameObject.js",
             "lineno": 53,
             "columnno": 2,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\gameobjects",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\gameobjects",
             "code": {
-                "id": "astnode100013381",
+                "id": "astnode100013405",
                 "name": "this.baseHeight",
                 "type": "MemberExpression",
                 "value": "this.pixiObj.height",
@@ -4675,15 +4675,15 @@
         "comment": "/**\r\n\t\t * Event listeners attached to the game object.\r\n\t\t * @type {Object.<string, Function[]>}\r\n\t\t */",
         "meta": {
             "range": [
-                1513,
-                1537
+                1525,
+                1549
             ],
             "filename": "gameObject.js",
             "lineno": 59,
             "columnno": 2,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\gameobjects",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\gameobjects",
             "code": {
-                "id": "astnode100013391",
+                "id": "astnode100013415",
                 "name": "this.eventListeners",
                 "type": "ObjectExpression",
                 "value": "{}",
@@ -4731,12 +4731,49 @@
         "___s": true
     },
     {
+        "comment": "/**\r\n\t\t * Game Object Factory\r\n\t\t * @type {GameObjectFactory}\r\n\t\t */",
+        "meta": {
+            "range": [
+                1628,
+                1666
+            ],
+            "filename": "gameObject.js",
+            "lineno": 65,
+            "columnno": 2,
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\gameobjects",
+            "code": {
+                "id": "astnode100013421",
+                "name": "this.add",
+                "type": "NewExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "description": "Game Object Factory",
+        "type": {
+            "names": [
+                "GameObjectFactory"
+            ],
+            "parsedType": {
+                "type": "NameExpression",
+                "name": "GameObjectFactory"
+            }
+        },
+        "name": "add",
+        "longname": "GameObject#add",
+        "kind": "member",
+        "memberof": "GameObject",
+        "scope": "instance",
+        "___id": "T000002R001272",
+        "___s": true
+    },
+    {
         "comment": "/**\r\n\t * Adds a child PIXI display object to the current game object.\r\n\t *\r\n\t * @method addChild\r\n\t * @param {GameObject} child - The child game object to add.\r\n\t */",
         "meta": {
             "filename": "gameObject.js",
-            "lineno": 69,
+            "lineno": 75,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\gameobjects",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\gameobjects",
             "code": {}
         },
         "description": "Adds a child PIXI display object to the current game object.",
@@ -4759,16 +4796,16 @@
         ],
         "longname": "addChild",
         "scope": "global",
-        "___id": "T000002R001273",
+        "___id": "T000002R001274",
         "___s": true
     },
     {
         "comment": "/**\r\n\t * Removes a child PIXI display object from the current game object.\r\n\t *\r\n\t * @method removeChild\r\n\t * @param {GameObject} child - The child game object to remove.\r\n\t */",
         "meta": {
             "filename": "gameObject.js",
-            "lineno": 86,
+            "lineno": 92,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\gameobjects",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\gameobjects",
             "code": {}
         },
         "description": "Removes a child PIXI display object from the current game object.",
@@ -4791,16 +4828,16 @@
         ],
         "longname": "removeChild",
         "scope": "global",
-        "___id": "T000002R001276",
+        "___id": "T000002R001277",
         "___s": true
     },
     {
         "comment": "/**\r\n\t * Attaches a child game object to the current game object and repositions it to match world position.\r\n\t *\r\n\t * @method attach\r\n\t * @param {GameObject} child - The child game object to attach.\r\n\t */",
         "meta": {
             "filename": "gameObject.js",
-            "lineno": 103,
+            "lineno": 109,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\gameobjects",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\gameobjects",
             "code": {}
         },
         "description": "Attaches a child game object to the current game object and repositions it to match world position.",
@@ -4823,16 +4860,16 @@
         ],
         "longname": "attach",
         "scope": "global",
-        "___id": "T000002R001279",
+        "___id": "T000002R001280",
         "___s": true
     },
     {
         "comment": "/**\r\n\t * Removes the current game object from its parent.\r\n\t *\r\n\t * @method remove\r\n\t */",
         "meta": {
             "filename": "gameObject.js",
-            "lineno": 118,
+            "lineno": 124,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\gameobjects",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\gameobjects",
             "code": {}
         },
         "description": "Removes the current game object from its parent.",
@@ -4840,22 +4877,22 @@
         "name": "remove",
         "longname": "remove",
         "scope": "global",
-        "___id": "T000002R001283",
+        "___id": "T000002R001284",
         "___s": true
     },
     {
         "comment": "/**\r\n\t * Returns an array of child GameObjects associated with this GameObject.\r\n\t * @return {GameObject[]}\r\n\t */",
         "meta": {
             "range": [
-                3249,
-                3335
+                3378,
+                3464
             ],
             "filename": "gameObject.js",
-            "lineno": 131,
+            "lineno": 137,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\gameobjects",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\gameobjects",
             "code": {
-                "id": "astnode100013539",
+                "id": "astnode100013571",
                 "name": "GameObject#children",
                 "type": "MethodDefinition",
                 "paramnames": []
@@ -4893,22 +4930,22 @@
         "memberof": "GameObject",
         "scope": "instance",
         "params": [],
-        "___id": "T000002R001285",
+        "___id": "T000002R001286",
         "___s": true
     },
     {
         "comment": "/**\r\n\t * Returns the parent GameObject of this GameObject.\r\n\t * @return {GameObject}\r\n\t */",
         "meta": {
             "range": [
-                3433,
-                3493
+                3562,
+                3622
             ],
             "filename": "gameObject.js",
-            "lineno": 139,
+            "lineno": 145,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\gameobjects",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\gameobjects",
             "code": {
-                "id": "astnode100013557",
+                "id": "astnode100013589",
                 "name": "GameObject#parent",
                 "type": "MethodDefinition",
                 "paramnames": []
@@ -4937,22 +4974,22 @@
         "memberof": "GameObject",
         "scope": "instance",
         "params": [],
-        "___id": "T000002R001286",
+        "___id": "T000002R001287",
         "___s": true
     },
     {
         "comment": "/**\r\n\t * Sets the visibility of the GameObject.\r\n\t * @param {boolean} value\r\n\t */",
         "meta": {
             "range": [
-                3582,
-                3639
+                3711,
+                3768
             ],
             "filename": "gameObject.js",
-            "lineno": 147,
+            "lineno": 153,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\gameobjects",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\gameobjects",
             "code": {
-                "id": "astnode100013569",
+                "id": "astnode100013601",
                 "name": "GameObject#visible",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -4983,22 +5020,22 @@
         "kind": "member",
         "memberof": "GameObject",
         "scope": "instance",
-        "___id": "T000002R001287",
+        "___id": "T000002R001288",
         "___s": true
     },
     {
         "comment": "/**\r\n\t * Returns the visibility status of the GameObject.\r\n\t * @return {boolean}\r\n\t */",
         "meta": {
             "range": [
-                3733,
-                3784
+                3862,
+                3913
             ],
             "filename": "gameObject.js",
-            "lineno": 155,
+            "lineno": 161,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\gameobjects",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\gameobjects",
             "code": {
-                "id": "astnode100013582",
+                "id": "astnode100013614",
                 "name": "GameObject#visible",
                 "type": "MethodDefinition",
                 "paramnames": []
@@ -5027,22 +5064,22 @@
         "memberof": "GameObject",
         "scope": "instance",
         "params": [],
-        "___id": "T000002R001289",
+        "___id": "T000002R001290",
         "___s": true
     },
     {
         "comment": "/**\r\n\t * Sets the x-coordinate of the GameObject.\r\n\t * @param {number} value\r\n\t */",
         "meta": {
             "range": [
-                3874,
-                3919
+                4003,
+                4048
             ],
             "filename": "gameObject.js",
-            "lineno": 163,
+            "lineno": 169,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\gameobjects",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\gameobjects",
             "code": {
-                "id": "astnode100013592",
+                "id": "astnode100013624",
                 "name": "GameObject#x",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -5073,22 +5110,22 @@
         "kind": "member",
         "memberof": "GameObject",
         "scope": "instance",
-        "___id": "T000002R001290",
+        "___id": "T000002R001291",
         "___s": true
     },
     {
         "comment": "/**\r\n\t * Returns the x-coordinate of the GameObject.\r\n\t * @return {number}\r\n\t */",
         "meta": {
             "range": [
-                4007,
-                4046
+                4136,
+                4175
             ],
             "filename": "gameObject.js",
-            "lineno": 171,
+            "lineno": 177,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\gameobjects",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\gameobjects",
             "code": {
-                "id": "astnode100013605",
+                "id": "astnode100013637",
                 "name": "GameObject#x",
                 "type": "MethodDefinition",
                 "paramnames": []
@@ -5117,22 +5154,22 @@
         "memberof": "GameObject",
         "scope": "instance",
         "params": [],
-        "___id": "T000002R001292",
+        "___id": "T000002R001293",
         "___s": true
     },
     {
         "comment": "/**\r\n\t * Sets the y-coordinate of the GameObject.\r\n\t * @param {number} value\r\n\t */",
         "meta": {
             "range": [
-                4136,
-                4181
+                4265,
+                4310
             ],
             "filename": "gameObject.js",
-            "lineno": 179,
+            "lineno": 185,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\gameobjects",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\gameobjects",
             "code": {
-                "id": "astnode100013615",
+                "id": "astnode100013647",
                 "name": "GameObject#y",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -5163,22 +5200,22 @@
         "kind": "member",
         "memberof": "GameObject",
         "scope": "instance",
-        "___id": "T000002R001293",
+        "___id": "T000002R001294",
         "___s": true
     },
     {
         "comment": "/**\r\n\t * Returns the y-coordinate of the GameObject.\r\n\t * @return {number}\r\n\t */",
         "meta": {
             "range": [
-                4269,
-                4308
+                4398,
+                4437
             ],
             "filename": "gameObject.js",
-            "lineno": 187,
+            "lineno": 193,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\gameobjects",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\gameobjects",
             "code": {
-                "id": "astnode100013628",
+                "id": "astnode100013660",
                 "name": "GameObject#y",
                 "type": "MethodDefinition",
                 "paramnames": []
@@ -5207,7 +5244,44 @@
         "memberof": "GameObject",
         "scope": "instance",
         "params": [],
-        "___id": "T000002R001295",
+        "___id": "T000002R001296",
+        "___s": true
+    },
+    {
+        "comment": "/**\r\n\t\t * Game Object Factory\r\n\t\t * @type {GameObjectFactory}\r\n\t\t */",
+        "meta": {
+            "range": [
+                368,
+                406
+            ],
+            "filename": "scene.js",
+            "lineno": 17,
+            "columnno": 2,
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\gameobjects",
+            "code": {
+                "id": "astnode100016892",
+                "name": "this.add",
+                "type": "NewExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "description": "Game Object Factory",
+        "type": {
+            "names": [
+                "GameObjectFactory"
+            ],
+            "parsedType": {
+                "type": "NameExpression",
+                "name": "GameObjectFactory"
+            }
+        },
+        "name": "add",
+        "longname": "Scene#add",
+        "kind": "member",
+        "memberof": "Scene",
+        "scope": "instance",
+        "___id": "T000002R001619",
         "___s": true
     },
     {
@@ -5215,41 +5289,41 @@
         "meta": {
             "range": [
                 831,
-                2248
+                2254
             ],
             "filename": "index.js",
             "lineno": 21,
             "columnno": 0,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d",
             "code": {
-                "id": "astnode100018344",
-                "name": "gx",
+                "id": "astnode100018409",
+                "name": "pf2D",
                 "type": "ClassDeclaration",
                 "paramnames": []
             }
         },
         "classdesc": "The `gx` class provides methods for initializing the game scene and adding game objects.",
-        "name": "gx",
-        "longname": "gx",
+        "name": "pf2D",
+        "longname": "pf2D",
         "kind": "class",
         "scope": "global",
-        "___id": "T000002R001741",
+        "___id": "T000002R001746",
         "___s": true
     },
     {
         "comment": "/**\r\n\t * Initialize the game scene and setup various global variables.\r\n\t * @param {PIXI.Application} pixiApp - The PIXI application instance.\r\n\t * @param {Object} editorConfig - The editor configuration object.\r\n\t * @param {Object} TextureCache - The PIXI texture cache.\r\n\t * @param {Object} Resources - The PIXI loader resources.\r\n\t * @returns {Scene} The created game scene.\r\n\t */",
         "meta": {
             "range": [
-                1230,
-                2245
+                1232,
+                2251
             ],
             "filename": "index.js",
             "lineno": 30,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d",
             "code": {
-                "id": "astnode100018347",
-                "name": "gx.init",
+                "id": "astnode100018412",
+                "name": "pf2D.init",
                 "type": "MethodDefinition",
                 "paramnames": [
                     "pixiApp",
@@ -5332,26 +5406,26 @@
             }
         ],
         "name": "init",
-        "longname": "gx.init",
+        "longname": "pf2D.init",
         "kind": "function",
-        "memberof": "gx",
+        "memberof": "pf2D",
         "scope": "static",
-        "___id": "T000002R001742",
+        "___id": "T000002R001747",
         "___s": true
     },
     {
         "comment": "/**\r\n\t\t * Factory for creating game objects and adding them to the scene.\r\n\t\t * @type {GameObjectFactory}\r\n\t\t */",
         "meta": {
             "range": [
-                2058,
-                2101
+                2064,
+                2107
             ],
             "filename": "index.js",
             "lineno": 60,
             "columnno": 2,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d",
             "code": {
-                "id": "astnode100018464",
+                "id": "astnode100018529",
                 "name": "this.add",
                 "type": "NewExpression",
                 "value": "",
@@ -5369,26 +5443,26 @@
             }
         },
         "name": "add",
-        "longname": "gx#add",
+        "longname": "pf2D#add",
         "kind": "member",
-        "memberof": "gx",
+        "memberof": "pf2D",
         "scope": "instance",
-        "___id": "T000002R001759",
+        "___id": "T000002R001764",
         "___s": true
     },
     {
         "comment": "/**\r\n\t\t * Utility methods for game development.\r\n\t\t * @type {Utils}\r\n\t\t */",
         "meta": {
             "range": [
-                2184,
-                2217
+                2190,
+                2223
             ],
             "filename": "index.js",
             "lineno": 65,
             "columnno": 2,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d",
             "code": {
-                "id": "astnode100018472",
+                "id": "astnode100018537",
                 "name": "this.utils",
                 "type": "NewExpression",
                 "value": "",
@@ -5406,11 +5480,11 @@
             }
         },
         "name": "utils",
-        "longname": "gx#utils",
+        "longname": "pf2D#utils",
         "kind": "member",
-        "memberof": "gx",
+        "memberof": "pf2D",
         "scope": "instance",
-        "___id": "T000002R001760",
+        "___id": "T000002R001765",
         "___s": true
     },
     {
@@ -5423,9 +5497,9 @@
             "filename": "spriteMask.js",
             "lineno": 5,
             "columnno": 0,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\utils",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\utils",
             "code": {
-                "id": "astnode100018505",
+                "id": "astnode100029531",
                 "name": "SpriteMask",
                 "type": "ClassDeclaration",
                 "paramnames": [
@@ -5484,7 +5558,7 @@
                 "name": "invertAlpha"
             }
         ],
-        "___id": "T000002R001770",
+        "___id": "T000002R002850",
         "___s": true
     },
     {
@@ -5497,9 +5571,9 @@
             "filename": "spriteMask.js",
             "lineno": 17,
             "columnno": 2,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\utils",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\utils",
             "code": {
-                "id": "astnode100018518",
+                "id": "astnode100029544",
                 "name": "this.obj",
                 "type": "Identifier",
                 "value": "obj",
@@ -5521,7 +5595,7 @@
         "kind": "member",
         "memberof": "SpriteMask",
         "scope": "instance",
-        "___id": "T000002R001771",
+        "___id": "T000002R002851",
         "___s": true
     },
     {
@@ -5534,9 +5608,9 @@
             "filename": "spriteMask.js",
             "lineno": 23,
             "columnno": 2,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\utils",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\utils",
             "code": {
-                "id": "astnode100018524",
+                "id": "astnode100029550",
                 "name": "this.mask",
                 "type": "Identifier",
                 "value": "mask",
@@ -5558,7 +5632,7 @@
         "kind": "member",
         "memberof": "SpriteMask",
         "scope": "instance",
-        "___id": "T000002R001772",
+        "___id": "T000002R002852",
         "___s": true
     },
     {
@@ -5571,9 +5645,9 @@
             "filename": "spriteMask.js",
             "lineno": 29,
             "columnno": 2,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\utils",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\utils",
             "code": {
-                "id": "astnode100018530",
+                "id": "astnode100029556",
                 "name": "this.invertAlpha",
                 "type": "Identifier",
                 "value": "invertAlpha",
@@ -5595,7 +5669,7 @@
         "kind": "member",
         "memberof": "SpriteMask",
         "scope": "instance",
-        "___id": "T000002R001773",
+        "___id": "T000002R002853",
         "___s": true
     },
     {
@@ -5608,9 +5682,9 @@
             "filename": "spriteMask.js",
             "lineno": 36,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\utils",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\utils",
             "code": {
-                "id": "astnode100018540",
+                "id": "astnode100029566",
                 "name": "SpriteMask#init",
                 "type": "MethodDefinition",
                 "paramnames": []
@@ -5626,26 +5700,26 @@
         "memberof": "SpriteMask",
         "scope": "instance",
         "params": [],
-        "___id": "T000002R001774",
+        "___id": "T000002R002854",
         "___s": true
     },
     {
         "comment": "/**\r\n * Utility class containing various helper methods.\r\n */",
         "meta": {
             "range": [
-                325,
+                323,
                 2236
             ],
             "filename": "utils.js",
             "lineno": 11,
             "columnno": 0,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\utils",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\utils",
             "code": {
-                "id": "astnode100018629",
+                "id": "astnode100029655",
                 "name": "Utils",
                 "type": "ClassDeclaration",
                 "paramnames": [
-                    "pixiScene"
+                    "pixiStage"
                 ]
             }
         },
@@ -5667,25 +5741,25 @@
                     }
                 },
                 "description": "The PIXI scene.",
-                "name": "pixiScene"
+                "name": "pixiStage"
             }
         ],
-        "___id": "T000002R001781",
+        "___id": "T000002R002861",
         "___s": true
     },
     {
         "comment": "/**\r\n\t * Apply a sprite mask to a sprite.\r\n\t * @param {PIXI.Sprite} sprite - The sprite to apply the mask to.\r\n\t * @param {PIXI.Sprite} mask - The sprite mask to apply.\r\n\t * @param {boolean} invertAlpha - Whether to invert the alpha of the mask.\r\n\t */",
         "meta": {
             "range": [
-                752,
-                841
+                750,
+                839
             ],
             "filename": "utils.js",
             "lineno": 25,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\utils",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\utils",
             "code": {
-                "id": "astnode100018643",
+                "id": "astnode100029669",
                 "name": "Utils#spriteMask",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -5745,22 +5819,22 @@
         "kind": "function",
         "memberof": "Utils",
         "scope": "instance",
-        "___id": "T000002R001783",
+        "___id": "T000002R002863",
         "___s": true
     },
     {
         "comment": "/**\r\n\t * Create a curve animation.\r\n\t * @param {Object} startPoint - The start point of the curve.\r\n\t * @param {Object} endPoint - The end point of the curve.\r\n\t * @param {Object} controlPoint - The control point of the curve.\r\n\t * @param {boolean} enableDebug - Whether to enable debug graphics.\r\n\t * @param {number} duration - The duration of the animation.\r\n\t * @param {Function} callback - The callback function for each animation step.\r\n\t */",
         "meta": {
             "range": [
-                1293,
+                1291,
                 2233
             ],
             "filename": "utils.js",
             "lineno": 37,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\2d\\utils",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\2d\\utils",
             "code": {
-                "id": "astnode100018656",
+                "id": "astnode100029682",
                 "name": "Utils#curve",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -5861,7 +5935,7 @@
         "kind": "function",
         "memberof": "Utils",
         "scope": "instance",
-        "___id": "T000002R001784",
+        "___id": "T000002R002864",
         "___s": true
     },
     {
@@ -5874,9 +5948,9 @@
             "filename": "entity.js",
             "lineno": 53,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\ecs",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\ecs",
             "code": {
-                "id": "astnode100019031",
+                "id": "astnode100030057",
                 "name": "addComponent",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -5921,7 +5995,7 @@
         "longname": "addComponent",
         "kind": "function",
         "scope": "global",
-        "___id": "T000002R001816",
+        "___id": "T000002R002896",
         "___s": true
     },
     {
@@ -5934,9 +6008,9 @@
             "filename": "entity.js",
             "lineno": 70,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\ecs",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\ecs",
             "code": {
-                "id": "astnode100019086",
+                "id": "astnode100030112",
                 "name": "removeComponent",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -5967,7 +6041,7 @@
         "longname": "removeComponent",
         "kind": "function",
         "scope": "global",
-        "___id": "T000002R001818",
+        "___id": "T000002R002898",
         "___s": true
     },
     {
@@ -5980,9 +6054,9 @@
             "filename": "entity.js",
             "lineno": 86,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\ecs",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\ecs",
             "code": {
-                "id": "astnode100019143",
+                "id": "astnode100030169",
                 "name": "getComponent",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -6027,7 +6101,7 @@
         "longname": "getComponent",
         "kind": "function",
         "scope": "global",
-        "___id": "T000002R001821",
+        "___id": "T000002R002901",
         "___s": true
     },
     {
@@ -6040,9 +6114,9 @@
             "filename": "entity.js",
             "lineno": 106,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\ecs",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\ecs",
             "code": {
-                "id": "astnode100019204",
+                "id": "astnode100030230",
                 "name": "hasComponent",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -6087,7 +6161,7 @@
         "longname": "hasComponent",
         "kind": "function",
         "scope": "global",
-        "___id": "T000002R001826",
+        "___id": "T000002R002906",
         "___s": true
     },
     {
@@ -6100,9 +6174,9 @@
             "filename": "entity.js",
             "lineno": 114,
             "columnno": 1,
-            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pf.js\\src\\ecs",
+            "path": "C:\\Users\\mapacarta\\PP\\editor-template\\node_modules\\pff.js\\src\\ecs",
             "code": {
-                "id": "astnode100019217",
+                "id": "astnode100030243",
                 "name": "getAllComponents",
                 "type": "MethodDefinition",
                 "paramnames": []
@@ -6140,7 +6214,7 @@
         "kind": "function",
         "scope": "global",
         "params": [],
-        "___id": "T000002R001827",
+        "___id": "T000002R002907",
         "___s": true
     }
 ]

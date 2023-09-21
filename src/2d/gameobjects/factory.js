@@ -9,6 +9,8 @@ import ParticleEmitter from "./particleEmitter";
 import Scene from "./scene";
 import Viewport from "./viewport";
 import Rectangle from "./shape/rectangle";
+import Circle from "./shape/circle";
+import GameObject from "./gameObject";
 
 /**
  * Factory class for creating game objects.
@@ -18,14 +20,14 @@ import Rectangle from "./shape/rectangle";
 class GameObjectFactory {
 	/**
 	 * Creates an instance of GameObjectFactory.
-	 * @param {Scene} scene - The scene to which game objects will be added.
+	 * @param {GameObject} gameObject - The Game Object to which game objects will be added.
 	 */
-	constructor(scene) {
+	constructor(gameObject) {
 		/**
-		 * The scene to which game objects will be added.
-		 * @type {Scene}
+		 * The Game Object to which game objects will be added.
+		 * @type {GameObject}
 		 */
-		this.scene = scene;
+		this.parentGameObject = gameObject;
 	}
 
 	/**
@@ -47,7 +49,7 @@ class GameObjectFactory {
 			y = 0;
 		}
 		let img = new Sprite(x, y, texture);
-		this.scene.addChild(img);
+		this.parentGameObject.addChild(img);
 		return img;
 	}
 
@@ -67,7 +69,7 @@ class GameObjectFactory {
 	 */
 	animatedSprite(x, y, animKey, autoplay = true, loop = false) {
 		let aSprite = new AnimatedSprite(x, y, animKey, autoplay, loop);
-		this.scene.addChild(aSprite);
+		this.parentGameObject.addChild(aSprite);
 		return aSprite;
 	}
 
@@ -77,13 +79,11 @@ class GameObjectFactory {
 	 * @method GameObjectFactory#scene
 	 * @since 1.0.0
 	 *
-	 * @param {number} x - X position of the scene.
-	 * @param {number} y - Y position of the scene.
-	 *
+	 * @param {string} name - The name of the scene.
 	 * @return {Scene} The created Scene.
 	 */
-	scene(x, y) {
-		let scene = new Scene(x, y);
+	scene(name) {
+		let scene = new Scene(name);
 		return scene;
 	}
 
@@ -100,7 +100,7 @@ class GameObjectFactory {
 	 */
 	container(x, y) {
 		let container = new Container(x, y);
-		this.scene.addChild(container);
+		this.parentGameObject.addChild(container);
 		return container;
 	}
 
@@ -119,7 +119,7 @@ class GameObjectFactory {
 	 */
 	text(x, y, text = "", style = {}) {
 		let textObj = new Text(x, y, text, style);
-		this.scene.addChild(textObj);
+		this.parentGameObject.addChild(textObj);
 		return textObj;
 	}
 
@@ -140,7 +140,7 @@ class GameObjectFactory {
 	 */
 	spine(x, y, spineName, skinName, animName, loop = false) {
 		let spineObj = new Spine(x, y, spineName, skinName, animName, loop);
-		this.scene.addChild(spineObj);
+		this.parentGameObject.addChild(spineObj);
 		return spineObj;
 	}
 
@@ -157,7 +157,7 @@ class GameObjectFactory {
 	 */
 	graphics(x, y) {
 		let graphics = new Graphics(x, y);
-		this.scene.addChild(graphics);
+		this.parentGameObject.addChild(graphics);
 		return graphics;
 	}
 
@@ -177,8 +177,27 @@ class GameObjectFactory {
 	 */
 	rectangle(x, y, width, height, color) {
 		let rect = new Rectangle(x, y, width, height, color);
-		this.scene.addChild(rect);
+		this.parentGameObject.addChild(rect);
 		return rect;
+	}
+
+	/**
+	 * Adds a Rectangle game object.
+	 *
+	 * @method GameObjectFactory#circle
+	 * @since 1.0.0
+	 *
+	 * @param {number} x - X position of the Circle object.
+	 * @param {number} y - Y position of the Circle object.
+	 * @param {number} radius - Radius of the Circle.
+	 * @param {string} color - Color of the Circle.
+	 *
+	 * @return {Circle} The created Circle game object.
+	 */
+	circle(x, y, radius, color) {
+		let circle = new Circle(x, y, radius, color);
+		this.parentGameObject.addChild(circle);
+		return circle;
 	}
 
 	/**
@@ -201,7 +220,7 @@ class GameObjectFactory {
 	 */
 	nineslice(x, y, texture, width, height, left, right, top, bottom) {
 		let nineslice = new NineSlice(x, y, texture, width, height, left, right, top, bottom);
-		this.scene.addChild(nineslice);
+		this.parentGameObject.addChild(nineslice);
 		return nineslice;
 	}
 
@@ -219,7 +238,7 @@ class GameObjectFactory {
 	 */
 	particleEmitter(x, y, particleData) {
 		let emitter = new ParticleEmitter(x, y, particleData);
-		this.scene.addChild(emitter);
+		this.parentGameObject.addChild(emitter);
 		return emitter;
 	}
 
@@ -235,7 +254,7 @@ class GameObjectFactory {
 	 */
 	viewport(options) {
 		let viewport = new Viewport(options);
-		this.scene.addChild(viewport);
+		this.parentGameObject.addChild(viewport);
 		return viewport;
 	}
 }

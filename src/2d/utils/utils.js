@@ -3,7 +3,7 @@ import SpriteMask from "./spriteMask";
 import QuadraticBezier from "./curve-2d/QuadraticBezierCurve";
 import Vector2 from "./curve-2d/Vector2";
 import gsap, { Power0 } from "gsap";
-import pf2D from "pf.js/src/2d";
+import pf2D from "../index";
 
 /**
  * Utility class containing various helper methods.
@@ -11,11 +11,8 @@ import pf2D from "pf.js/src/2d";
 class Utils {
 	/**
 	 * Create a Utils instance.
-	 * @param {PIXI.Container} pixiScene - The PIXI scene.
 	 */
-	constructor(pixiScene) {
-		this.scene = pixiScene;
-	}
+	constructor() {}
 	/**
 	 * Apply a sprite mask to a sprite.
 	 * @param {PIXI.Sprite} sprite - The sprite to apply the mask to.

@@ -17,11 +17,11 @@ let lutTextureNo = 0;
 
 let data, main;
 class PostProcessing {
-	constructor(scene) {
+	constructor(stage) {
 		data = app.data;
 		main = app.main;
 
-		this.scene = scene;
+		this.stage = stage;
 	}
 
 	init() {
@@ -144,8 +144,8 @@ class PostProcessing {
 	initLUT(textureSrc, lutPower) {
 		this.lutPass = new LutShader();
 
-		this.scene.filters = this.scene.filters || [];
-		this.scene.filters.push(this.lutPass);
+		this.stage.filters = this.stage.filters || [];
+		this.stage.filters.push(this.lutPass);
 
 		this.lutPass.updateValues = (dt) => {
 			let name = "lut" + lutTextureNo;
@@ -170,8 +170,8 @@ class PostProcessing {
 		this.unreal_bloomPass = new BloomShader();
 		this.unreal_bloomPass.intensity = intensity;
 
-		this.scene.filters = this.scene.filters || [];
-		this.scene.filters.push(this.unreal_bloomPass);
+		this.stage.filters = this.stage.filters || [];
+		this.stage.filters.push(this.unreal_bloomPass);
 
 		this.unreal_bloomPass.updateValues = (dt) => {
 			this.unreal_bloomPass.intensity = dt.exposure;
@@ -202,8 +202,8 @@ class PostProcessing {
 		this.filmPass.sCount = sCount;
 		this.filmPass.grayscale = grayscale;
 
-		this.scene.filters = this.scene.filters || [];
-		this.scene.filters.push(this.filmPass);
+		this.stage.filters = this.stage.filters || [];
+		this.stage.filters.push(this.filmPass);
 
 		this.filmPass.updateValues = (dt) => {
 			this.filmPass.nIntensity = dt.nIntensity;
@@ -215,8 +215,8 @@ class PostProcessing {
 		this.pixelatePass = new PixelShader();
 		this.pixelatePass.pixelSize = pixelSize;
 
-		this.scene.filters = this.scene.filters || [];
-		this.scene.filters.push(this.pixelatePass);
+		this.stage.filters = this.stage.filters || [];
+		this.stage.filters.push(this.pixelatePass);
 
 		this.pixelatePass.updateValues = (dt) => {
 			this.pixelatePass.pixelSize = dt.pixelSize;
@@ -234,8 +234,8 @@ class PostProcessing {
 			this.colorEditPass.saturation = dt.saturation;
 		};
 
-		this.scene.filters = this.scene.filters || [];
-		this.scene.filters.push(this.colorEditPass);
+		this.stage.filters = this.stage.filters || [];
+		this.stage.filters.push(this.colorEditPass);
 	}
 
 	// /////VIGNETTE
@@ -253,8 +253,8 @@ class PostProcessing {
 			this.vignettePass.animateRatio = dt.animateRatio;
 		};
 
-		this.scene.filters = this.scene.filters || [];
-		this.scene.filters.push(this.vignettePass);
+		this.stage.filters = this.stage.filters || [];
+		this.stage.filters.push(this.vignettePass);
 	}
 
 	// }
@@ -265,8 +265,8 @@ class PostProcessing {
 		this.toonPass.outlineColor = outlineColor;
 		this.toonPass.edgeSens = edgeSens;
 
-		this.scene.filters = this.scene.filters || [];
-		this.scene.filters.push(this.toonPass);
+		this.stage.filters = this.stage.filters || [];
+		this.stage.filters.push(this.toonPass);
 		this.toonPass.updateValues = (dt) => {
 			this.toonPass.outlineColor = dt.outlineColor;
 			this.toonPass.edgeSens = dt.edgeSens;
