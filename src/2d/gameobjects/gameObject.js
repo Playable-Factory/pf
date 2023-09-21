@@ -29,18 +29,24 @@ class GameObject {
 		 */
 		this.pixiObj = pixiObj;
 
-		/**
-		 * The anchor point of the PIXI object.
-		 * @type {PIXI.Point|null}
-		 */
-		this.anchor = !pixiObj.anchor ? null : undefined;
+		if (!this.pixiObj.anchor) { 
+			this.anchor = null
+		}
 
-		/**
-		 * The pivot point of the PIXI object.
-		 * @type {PIXI.Point|null}
-		 */
-		this.pivot = !pixiObj.pivot ? null : undefined;
+		if (!this.pixiObj.pivot) {
+			this.pivot = null;
+		}
+		// /**
+		//  * The anchor point of the PIXI object.
+		//  * @type {PIXI.Point|null}
+		//  */
+		// this.anchor = !pixiObj.anchor ? null : undefined;
 
+		// /**
+		//  * The pivot point of the PIXI object.
+		//  * @type {PIXI.Point|null}
+		//  */
+		// this.pivot = !pixiObj.pivot ? null : undefined;
 		/**
 		 * The base width of the PIXI object.
 		 * @type {number}
@@ -137,7 +143,7 @@ class GameObject {
 	 * @return {GameObject[]}
 	 */
 	get children() {
-		return this.pixiObj.children.map((child) => child.gameObject);
+		return this.pixiObj.children.map((child) => child.gameObject).filter(e=>e);
 	}
 
 	/**
@@ -147,6 +153,29 @@ class GameObject {
 	get parent() {
 		return this.pixiObj.parent.gameObject;
 	}
+
+	getChildByName (name,deep)
+	{ 
+
+		  for (var i = 0, j = this.children.length; i < j; i++) {
+        if (this.children[i].name === name) {
+            return this.children[i];
+        }
+    }
+    if (deep) {
+        for (var i = 0, j = this.children.length; i < j; i++) {
+            var child = this.children[i];
+            if (!child.getChildByName) {
+                continue;
+            }
+            var target = child.getChildByName(name, true);
+            if (target) {
+                return target;
+            }
+        }
+    }
+    return null;
+}
 
 	/**
 	 * Sets the visibility of the GameObject.

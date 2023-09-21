@@ -28,6 +28,8 @@ class Spine extends GameObject {
 		super(pixiObj, x, y);
 		pixiObj.gameObject = this;
 
+		//this.pixiObj = pixiObj;
+		
 		this.skinName = skinName || "default";
 		this.setSkinByName(this.skinName);
 
@@ -40,6 +42,20 @@ class Spine extends GameObject {
 		this.isSpine = true;
 		this.type = objectTypes.SPINE;
 	}
+
+
+
+	get skeleton ()
+	{
+		return this.pixiObj.skeleton;
+	}
+
+	get state ()
+	{
+		return this.pixiObj.state;
+	}
+
+
 	/**
 	 * Sets the skin of the Spine game object by name.
 	 * @param {string} skinName - The name of the skin to set.
