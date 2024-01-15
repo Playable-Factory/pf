@@ -1,0 +1,116 @@
+@keyframes alpha2 {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+#custom-preloader-pf{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #333;
+    z-index: 99999;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    justify-content: center;
+    justify-content: space-evenly;
+
+}
+/*TOP PART*/
+.custom-preloader-item-top{
+    width: 50%;
+    max-height: 40%;
+    text-align: center;
+    
+
+}
+
+.custom-preloader-item-top>*{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/*BOTTOM PART*/
+.custom-preloader-item-bottom{
+    max-width: 40%;
+    max-height: 10%;
+    text-align: center;
+
+}
+
+.custom-preloader-item-bottom>*{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+
+/* PF - LOGO */
+
+@keyframes gear-turn {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+@keyframes play-pulse {
+    0%   {transform: scale(1);}
+    14%  {transform: scale(0.9);}
+    28%  {transform: scale(1);}
+    100% {transform: scale(1);}
+}
+
+
+#custom-pf-logo{
+    width: 250px;
+    height: 220px;
+
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+
+    transform-origin: bottom left;
+    transform: scale(0.15);
+
+}
+
+#custom-play{
+    position: absolute;
+    left: 0;
+    top: 15px;
+
+    animation-name: play-pulse;
+    animation-duration: 0.7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+#custom-title{
+    position: absolute;
+    left: 300px;
+    top: 20px;
+
+    /* animation-name: play-pulse;
+    animation-duration: 0.7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out; */
+}
+
+#custom-gear{
+    position: absolute;
+    left: 45px;
+
+    animation-name: gear-turn;
+    animation-duration: 2.66s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}

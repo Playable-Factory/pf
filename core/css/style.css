@@ -1,0 +1,67 @@
+@keyframes alpha {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.rail-hand{
+    position: absolute;
+    width:120px;
+    height:120px;
+
+    animation-name: pulse;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.rail-hand img{
+    transform: rotate(-10deg);
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.low-fuel{
+    position: absolute;
+    transform-origin: top left;
+
+    animation-name: alpha;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+
+.info-text{
+    position: absolute;
+    text-align: center;
+    font-size: 40px;
+    font-family: ui-font;
+    width:100%;
+
+    color: #d1445e;
+
+    animation-name: pulse;
+    animation-duration: 0.15s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+}
+
+.circle-bar{
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    background: #ffffff;
+    width: 150px;
+    height: 150px;
+    z-index: 990;
+}
+
+.rail-hand, .text-box{
+    /*transition:  left 0.5s, top 0.5s;*/
+}
