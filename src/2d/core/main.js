@@ -44,8 +44,7 @@ class Main2D {
 
 		PIXI.settings.PREFER_ENV = PIXI.ENV.WEBGL2;
 		const app = new PIXI.Application(config);
-		let parent = document.getElementById("gameContainer") || document.body;
-		parent.appendChild(app.view);
+		document.body.appendChild(app.view);
 
 		gsap.registerPlugin(PixiPlugin, CustomEase);
 		PixiPlugin.registerPIXI(PIXI);
@@ -57,10 +56,6 @@ class Main2D {
 			this.render();
 			this.postprocess && this.postprocess.update(time, delta / 1000);
 		});
-
-		app.view.style.zIndex = 1;
-		// app.stage.interactive = true;
-		// app.stage.sortableChildren = true;
 
 		this.stage = pf2D.init(app, editorConfig, utils.TextureCache, Resources);
 		this.pixiApp = app;

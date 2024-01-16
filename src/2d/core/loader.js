@@ -1,19 +1,15 @@
 import { TextureAtlas } from "pixi-spine";
 import { SkeletonJson, AtlasAttachmentLoader } from "@pixi-spine/runtime-4.1";
-//import { SkeletonJson, AtlasAttachmentLoader } from '@pixi-spine/all-3.8';
 //import { glTFAsset } from "pixi3d";
 import { Assets } from "@pixi/assets";
-// import globals from "../../../globals";
 import { Spritesheet, utils } from "pixi.js-legacy";
-// import { Buffer } from 'buffer';
-// import { sound } from "@pixi/sound";
 
 //Assets.loader._parsers[0].config.preferWorkers = false;
 /**
  * Class responsible for loading various types of assets in a 2D game.
  */
 class Loader2D {
-	constructor() {}
+	constructor() { }
 
 	/**
 	 * Load a list of assets and call the callback when all assets are loaded.
@@ -194,9 +190,9 @@ class Loader2D {
 		video.setAttribute("playsinline", "playsinline");
 
 		video.addEventListener("canplay", function () {
-			if (globals.isGameStarted) {
-				return;
-			}
+			// if (globals.isGameStarted) {
+			// 	return;
+			// }
 
 			var vidRes = new PIXI.VideoResource(video);
 			var baseTexture = new PIXI.BaseTexture(vidRes);
@@ -255,74 +251,10 @@ class Loader2D {
 	loadGltf(key, gltfSrc, callback) {
 		let src = JSON.parse(gltfSrc);
 		glTFAsset.load(src, PIXI.Loader.shared, (gltf) => {
-			globals.gltfAssets[key] = gltf;
+			// globals.gltfAssets[key] = gltf;
 			callback();
 		});
 	}
-
-	/*
-	loadSound(key, src, json, callback) {
-		var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
-		var lookup = typeof Uint8Array === "undefined" ? [] : new Uint8Array(256);
-		for (var i = 0; i < chars.length; i++) {
-			lookup[chars.charCodeAt(i)] = i;
-		}
-
-		var decode = function (base64) {
-			var bufferLength = base64.length * 0.75,
-				len = base64.length,
-				i,
-				p = 0,
-				encoded1,
-				encoded2,
-				encoded3,
-				encoded4;
-			if (base64[base64.length - 1] === "=") {
-				bufferLength--;
-				if (base64[base64.length - 2] === "=") {
-					bufferLength--;
-				}
-			}
-			var arraybuffer = new ArrayBuffer(bufferLength),
-				bytes = new Uint8Array(arraybuffer);
-			for (i = 0; i < len; i += 4) {
-				encoded1 = lookup[base64.charCodeAt(i)];
-				encoded2 = lookup[base64.charCodeAt(i + 1)];
-				encoded3 = lookup[base64.charCodeAt(i + 2)];
-				encoded4 = lookup[base64.charCodeAt(i + 3)];
-				bytes[p++] = (encoded1 << 2) | (encoded2 >> 4);
-				bytes[p++] = ((encoded2 & 15) << 4) | (encoded3 >> 2);
-				bytes[p++] = ((encoded3 & 3) << 6) | (encoded4 & 63);
-			}
-			return arraybuffer;
-		};
-
-		fetch(src)
-			.then((res) => res.blob())
-			.then(
-				(blob) =>
-					new Promise((resolve) => {
-						const reader = new FileReader();
-						reader.onload = () => {
-							resolve(reader.result);
-						};
-						reader.readAsDataURL(blob);
-					})
-			)
-			.then((str) => {
-				const data = str.split(",").slice(1).join(",");
-				const buffer = decode(data);
-
-				sound.add(key, {
-					url: buffer,
-					source: buffer,
-					sprites: json && json.spritemap,
-				});
-
-				callback();
-			});
-	}
-	*/
 }
 
 export default Loader2D;
